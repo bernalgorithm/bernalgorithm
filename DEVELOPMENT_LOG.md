@@ -17,3 +17,14 @@ This is a living log of my progress making my personal website.
   - Implemented dynamic route `app/posts/[slug]/page.tsx` backed by `generateStaticParams()` to pre-render individual article HTML pages during build.
 - **Takeaway**: With App Router, RSCs streamline markdown rendering at build time, eliminating client-side bundle weight while guaranteeing clean static HTML output suitable for static hosts like GitHub Pages.
 
+## [2026-10-13] - Silicon Breakthrough & Lab Notebook UI/UX Overhaul
+- **Problem**: Wanted a second flagship interactive embedded-themed game alongside PCB Bird Runner that demonstrates deterministic 60 FPS 2D physics, multi-stage hardware progression, and zero-asset procedural Web Audio synthesis, while elevating the overall portfolio UI/UX into a cohesive Embedded & Web Engineering Lab Notebook without running two simultaneous 60 FPS canvas loops on the landing page.
+- **Decision**:
+  - Built `SiliconBreakthroughGame.tsx`, a hardware-themed *Breakout* / *Arkanoid* game where an oscilloscope trigger paddle reflects signal pulses to desolder SMD passives, SOIC transceivers, and 3-HP security fuses across 3 stages.
+  - Separated high-frequency 60 FPS kinematics (`useRef` state loop inside `requestAnimationFrame`) from low-frequency React UI telemetry (`useState`)—mirroring the embedded firmware pattern of separating fast timer ISRs from background main-loop display updates.
+  - Created `HardwareWorkbench.tsx` to provide a tabbed module switcher between **Silicon Breakthrough** and **PCB Bird Runner**, mounting only the active canvas so keyboard listeners (`Space`, arrows) and `requestAnimationFrame` loops remain isolated.
+  - Overhauled `app/layout.tsx`, `app/page.tsx`, `app/posts/[slug]/page.tsx`, and `app/globals.css` with a dark PCB/blueprint grid aesthetic, sticky telemetry navbar, Core Engineering Domain Matrix (Firmware ↔ Hardware ↔ Web), and structured Lab Notebook dispatch cards.
+  - Authored `content/serverless-grocery-sync-architecture.md` to document the multi-tenant Firebase Firestore synchronization, collision-resistant pairing codes, and subcollection isolation built in `groceryList`.
+- **Takeaway**: Treating the HTML5 Canvas loop like a deterministic hardware ISR prevents React re-render overhead, and isolating active simulations behind a workbench multiplexer keeps client CPU/GPU utilization minimal while showcasing full-stack UI/UX polish.
+
+
