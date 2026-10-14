@@ -28,7 +28,8 @@ const SKILL_GROUPS = [
     accent: 'text-cyan-400',
     skills: [
       'Embedded Linux (Ubuntu / User-Space Daemons)',
-      'Cellular Gateways (Cradlepoint, Teltonika, MultiTech, Milesight)',
+      'Cellular & LoRa Gateways (Cradlepoint, Teltonika, MultiTech, Milesight)',
+      'LoRa / LoRaWAN',
       'Embedded Cellular Modems & Wi-Fi',
       'DHCP Servers & NAT / Port Forwarding',
       'Azure IoT & Docker',
@@ -54,6 +55,7 @@ const SKILL_GROUPS = [
     skills: [
       'Claude Code',
       'Google Antigravity (agy)',
+      'GitHub Copilot',
       'Gemini',
       'Context Architecture (CLAUDE.md / AGENTS.md)',
       'Rule-Based Decision Engines',
@@ -83,7 +85,7 @@ const EXPERIENCE = [
       },
       {
         lead: 'AI-Augmented Systems Engineering',
-        text: 'Pioneered agentic development workflows (Claude Code, Google Antigravity, declarative CLAUDE.md / AGENTS.md context guardrails, and automated diagnostic tooling) to translate system architecture into verified C/C++, Python, and TypeScript implementations while accelerating protocol debugging and cross-OS refactoring.',
+        text: 'Pioneered AI-assisted and agentic development workflows (GitHub Copilot, Claude Code, Google Antigravity, declarative CLAUDE.md / AGENTS.md context guardrails, and automated diagnostic tooling) to translate system architecture into verified C/C++, Python, and TypeScript implementations while accelerating protocol debugging and cross-OS refactoring.',
       },
       {
         lead: 'Fleet OS Modernization & Runtime Optimization',
@@ -97,11 +99,11 @@ const EXPERIENCE = [
     bullets: [
       {
         lead: 'Multi-Protocol Sensor & Actuator Integration',
-        text: 'Developed production edge software and Python/Bash/C++ daemons to integrate multi-vendor industrial sensors, variable-rate dosing pumps, and PLCs across OPC UA, Modbus (TCP/IP & RTU), and analog/digital I/O networks, routing real-time telemetry to Azure IoT via MQTT.',
+        text: 'Developed production edge software and Python/Bash/C++ daemons to integrate multi-vendor industrial sensors, variable-rate dosing pumps, and PLCs across OPC UA, Modbus (TCP/IP & RTU), LoRa, and analog/digital I/O networks, routing real-time telemetry to Azure IoT via MQTT.',
       },
       {
-        lead: 'Industrial Edge Networking & Cellular Backhaul',
-        text: 'Designed and configured multi-device field networks behind dedicated cellular gateways (Cradlepoint, Teltonika, MultiTech, Milesight) as well as onboard embedded cellular modems and Wi-Fi interfaces on headless Linux SBCs—configuring DHCP servers, NAT / port-forwarding rules, and automated Linux provisioning scripts to streamline global hardware bring-up and remote diagnostics.',
+        lead: 'Industrial Edge Networking, Cellular & LoRa Backhaul',
+        text: 'Designed and configured multi-device field networks across dedicated cellular and LoRa gateways (Cradlepoint, Teltonika, MultiTech, Milesight) as well as onboard embedded cellular modems and Wi-Fi interfaces on headless Linux SBCs—configuring DHCP servers, NAT / port-forwarding rules, and automated Linux provisioning scripts to streamline global hardware bring-up and remote diagnostics.',
       },
     ],
   },
@@ -210,19 +212,19 @@ export default function ResumePage() {
           </h2>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
             Senior Embedded Systems and Industrial IoT (IIoT) Engineer with 7+ years of
-            experience architecting fault-tolerant edge software, industrial
-            cellular/network topologies, closed-loop sensor-to-actuator control systems,
-            and enterprise digitization platforms deployed across{' '}
+            experience architecting fault-tolerant edge software, industrial cellular and
+            LoRa network topologies, closed-loop sensor-to-actuator control systems, and
+            enterprise digitization platforms deployed across{' '}
             <span className="text-white font-semibold">
               20+ countries spanning 6 continents
             </span>{' '}
             (12 years total industrial R&amp;D and automation tenure). Specializes in
             bridging physical plant hardware with cloud infrastructure across industrial
-            fieldbuses and cellular backhaul gateways, masking field-hardware instability
-            through self-healing protocol state machines, and leveraging agentic AI
-            workflows (
+            fieldbuses and wireless/cellular backhaul gateways, masking field-hardware
+            instability through self-healing protocol state machines, and leveraging
+            AI-augmented workflows (
             <span className="text-white font-semibold">
-              Claude Code, Google Antigravity, Gemini
+              Claude Code, Google Antigravity, GitHub Copilot, Gemini
             </span>
             ) with strict architectural guardrails to deliver production systems across
             C/C++, Python, Bash, and TypeScript.

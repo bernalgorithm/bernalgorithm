@@ -9,8 +9,8 @@ const ENGINEERING_DOMAINS = [
     subtitle: 'Global Edge Systems (20+ Countries)',
     accent: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10',
     description:
-      'Architecting production Embedded Linux systems, cellular gateway topologies (Cradlepoint, Teltonika, MultiTech, Milesight), and remote LTS OS upgrades across 6 continents.',
-    skills: ['Embedded Linux (Ubuntu)', 'Cellular Gateways & Modems', 'DHCP & NAT / Port Forwarding', 'Python & Bash', 'C / C++', 'Azure IoT'],
+      'Architecting production Embedded Linux systems, cellular/LoRa gateway topologies (Cradlepoint, Teltonika, MultiTech, Milesight), and remote LTS OS upgrades across 6 continents.',
+    skills: ['Embedded Linux (Ubuntu)', 'Cellular & LoRa Gateways', 'DHCP & NAT / Port Forwarding', 'Python & Bash', 'C / C++', 'Azure IoT'],
   },
   {
     id: 'SYS_02',
@@ -19,7 +19,7 @@ const ENGINEERING_DOMAINS = [
     accent: 'text-cyan-400 border-cyan-500/30 bg-cyan-500/10',
     description:
       'Engineering self-healing protocol state machines that mask hardware-layer resets and orchestrate closed-loop sensor-to-actuator control across industrial networks and physical I/O.',
-    skills: ['Modbus (TCP/IP & RTU)', 'OPC UA', 'Analog & Digital I/O', 'MQTT', 'PLCs & Ladder Logic', 'Closed-Loop Control'],
+    skills: ['Modbus (TCP/IP & RTU)', 'OPC UA', 'LoRa / LoRaWAN', 'Analog & Digital I/O', 'MQTT', 'PLCs & Ladder Logic'],
   },
   {
     id: 'SYS_03',
@@ -27,8 +27,8 @@ const ENGINEERING_DOMAINS = [
     subtitle: 'Agentic Velocity & SME Decision Engines',
     accent: 'text-amber-400 border-amber-500/30 bg-amber-500/10',
     description:
-      'Codifying domain SME heuristics into enterprise decision engines and orchestrating agentic AI workflows (CLAUDE.md, AGENTS.md) to deliver verified software across C/C++, Python, and TypeScript.',
-    skills: ['Claude Code', 'Google Antigravity', 'Gemini', 'SME Decision Engines', 'Next.js & TypeScript', 'GitHub Actions CI/CD'],
+      'Codifying domain SME heuristics into enterprise decision engines and orchestrating AI-augmented workflows (CLAUDE.md, AGENTS.md) to deliver verified software across C/C++, Python, and TypeScript.',
+    skills: ['Claude Code', 'Google Antigravity', 'GitHub Copilot', 'Gemini', 'SME Decision Engines', 'Next.js & TypeScript'],
   },
 ];
 
