@@ -147,7 +147,7 @@ export default function ResumePage() {
         <div className="flex flex-wrap items-center gap-3">
           <PrintResumeButton />
           <a
-            href="/Alexander_Bernal_Resume.docx"
+            href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/Alexander_Bernal_Resume.docx`}
             download="Alexander_Bernal_Resume.docx"
             className="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-mono text-xs font-black tracking-wider transition shadow-lg shadow-emerald-500/10"
           >
