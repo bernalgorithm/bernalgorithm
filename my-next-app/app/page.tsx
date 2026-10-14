@@ -5,30 +5,30 @@ import { getSortedPostsData } from '@/lib/posts';
 const ENGINEERING_DOMAINS = [
   {
     id: 'SYS_01',
-    title: 'Embedded & Bare-Metal Firmware',
-    subtitle: 'Deterministic Real-Time Execution',
+    title: 'Embedded Linux & Fleet Architecture',
+    subtitle: 'Global Edge Systems (20+ Countries)',
     accent: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10',
     description:
-      'Architecting cycle-accurate Interrupt Service Routines (ISRs), DMA ring buffers, watchdog fault recovery, and low-power state machines on resource-constrained microcontrollers.',
-    skills: ['C / C++', 'ARM Cortex-M', 'STM32', 'FreeRTOS', 'DMA & Timers', 'Memory Maps'],
+      'Architecting production C/C++ firmware and Embedded Linux systems across 6 continents, including remote LTS fleet migrations and lightweight cloud SDK runtimes.',
+    skills: ['C / C++', 'Embedded Linux (Ubuntu)', 'Cross-Compilation', 'Azure IoT', 'Python & Bash', 'Watchdog & OTA'],
   },
   {
     id: 'SYS_02',
-    title: 'Hardware Bring-Up & Bus Protocols',
-    subtitle: 'Silicon-to-Sensor Interfacing',
+    title: 'Self-Healing Fieldbus & Hardware I/O',
+    subtitle: 'Fault-Tolerant Cyber-Physical Control',
     accent: 'text-cyan-400 border-cyan-500/30 bg-cyan-500/10',
     description:
-      'Bringing up custom PCBs from schematic review to logic analyzer verification—debugging high-speed serial buses, signal integrity, and JTAG/SWD boundary-scan chains.',
-    skills: ['SPI / I2C / UART', 'CAN Bus', 'JTAG / SWD', 'Oscilloscope / Logic', 'ADC / PWM', 'IoT Telemetry'],
+      'Architecting self-healing protocol state machines that mask hardware-layer resets and orchestrate closed-loop sensor-to-actuator control across industrial buses and raw signaling pins.',
+    skills: ['Modbus (TCP/IP & RTU)', 'OPC UA', '4–20mA Current Loops', '5V Discrete Digital I/O', 'MQTT', 'PLCs & Pumps'],
   },
   {
     id: 'SYS_03',
-    title: 'Modern Web & Interactive Systems',
-    subtitle: 'Zero-Runtime Static & 60FPS Canvas',
+    title: 'AI-Augmented & Digitization Platforms',
+    subtitle: 'Agentic Velocity & SME Decision Engines',
     accent: 'text-amber-400 border-amber-500/30 bg-amber-500/10',
     description:
-      'Applying firmware discipline to the browser: decoupling 60 FPS HTML5 Canvas physics loops from React state hydration, and compiling content via React Server Components.',
-    skills: ['Next.js App Router', 'React 19 (RSC)', 'TypeScript', 'HTML5 Canvas 2D', 'Web Audio Synth', 'Tailwind CSS'],
+      'Codifying domain SME heuristics into enterprise decision engines and leveraging agentic AI workflows (CLAUDE.md, AGENTS.md) to ship verified C/C++, Python, and Next.js systems.',
+    skills: ['Claude Code', 'Google Antigravity', 'Gemini', 'SME Decision Engines', 'Next.js & TypeScript', 'GitHub Actions CI/CD'],
   },
 ];
 
@@ -44,7 +44,7 @@ export default function Home() {
             STATUS: ONLINE // CLOCK LOCKED
           </span>
           <span className="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-400">
-            IOT &bull; EMBEDDED &bull; FIRMWARE &bull; FULL-STACK WEB
+            IIOT &bull; EMBEDDED LINUX &bull; CYBER-PHYSICAL &bull; AI-AUGMENTED
           </span>
         </div>
 
@@ -53,22 +53,28 @@ export default function Home() {
         </h1>
 
         <p className="text-base sm:text-xl text-slate-300 max-w-3xl leading-relaxed mb-6">
-          Engineering portfolio &amp; living lab notebook bridging{' '}
+          Engineering portfolio &amp; living lab notebook of{' '}
+          <span className="text-white font-semibold">Alexander Bernal</span>—bridging{' '}
           <span className="text-emerald-400 font-semibold">
-            bare-metal embedded firmware discipline
+            industrial embedded systems &amp; closed-loop hardware control
           </span>{' '}
           with{' '}
           <span className="text-cyan-400 font-semibold">
-            modern web architecture
+            agentic AI workflows &amp; modern web architecture
           </span>
-          . Exploring deterministic systems, hardware-in-the-loop simulations, and
-          compiler-driven software design.
+          .
         </p>
 
         <div className="flex flex-wrap items-center gap-3 pt-2 font-mono text-xs">
+          <Link
+            href="/resume"
+            className="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black tracking-wider transition shadow-lg shadow-emerald-500/10"
+          >
+            VIEW RESUME / CV &rarr;
+          </Link>
           <a
             href="#workbench"
-            className="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black tracking-wider transition shadow-lg shadow-emerald-500/10"
+            className="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-emerald-500/40 font-bold transition"
           >
             LAUNCH HARDWARE WORKBENCH &darr;
           </a>
@@ -77,12 +83,6 @@ export default function Home() {
             className="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 font-bold transition"
           >
             READ LAB NOTEBOOK ({allPostsData.length})
-          </a>
-          <a
-            href="#architecture"
-            className="px-4 py-2.5 rounded-xl bg-slate-950/60 hover:bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800/80 transition"
-          >
-            SYSTEMS ARCHITECTURE
           </a>
         </div>
       </section>

@@ -64,6 +64,12 @@ export default function RootLayout({
               >
                 03.Notebook
               </Link>
+              <Link
+                href="/resume"
+                className="px-2.5 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/20 font-bold transition"
+              >
+                04.Resume
+              </Link>
               <a
                 href="https://github.com/bernalgorithm"
                 target="_blank"
