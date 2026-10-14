@@ -44,8 +44,8 @@ const SKILL_GROUPS = [
       'OPC UA',
       'Modbus (TCP/IP & RTU)',
       'MQTT',
-      '4–20mA Analog Current Loops',
-      '5V Discrete Digital I/O',
+      'Analog Current Loops',
+      'Discrete Digital I/O',
       'PLCs & Ladder Logic',
     ],
   },
@@ -98,7 +98,7 @@ const EXPERIENCE = [
     bullets: [
       {
         lead: 'Multi-Protocol Sensor & Actuator Integration',
-        text: 'Developed production C/C++ firmware and Python/Bash daemons to orchestrate multi-vendor industrial sensors, variable-rate dosing pumps, and PLCs across OPC UA, Modbus (TCP/IP & RTU), 4–20mA analog current loops, and 5V discrete Digital I/O signaling networks, routing real-time telemetry via MQTT.',
+        text: 'Developed production C/C++ firmware and Python/Bash daemons to orchestrate multi-vendor industrial sensors, variable-rate dosing pumps, and PLCs across OPC UA, Modbus (TCP/IP & RTU), analog current-loop signaling, and discrete Digital I/O networks, routing real-time telemetry via MQTT.',
       },
       {
         lead: 'Automated Provisioning & Hardware Bring-Up',

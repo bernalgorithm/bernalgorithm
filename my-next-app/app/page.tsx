@@ -19,7 +19,7 @@ const ENGINEERING_DOMAINS = [
     accent: 'text-cyan-400 border-cyan-500/30 bg-cyan-500/10',
     description:
       'Architecting self-healing protocol state machines that mask hardware-layer resets and orchestrate closed-loop sensor-to-actuator control across industrial buses and raw signaling pins.',
-    skills: ['Modbus (TCP/IP & RTU)', 'OPC UA', '4–20mA Current Loops', '5V Discrete Digital I/O', 'MQTT', 'PLCs & Pumps'],
+    skills: ['Modbus (TCP/IP & RTU)', 'OPC UA', 'Analog Current Loops', 'Discrete Digital I/O', 'MQTT', 'PLCs & Pumps'],
   },
   {
     id: 'SYS_03',

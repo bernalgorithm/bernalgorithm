@@ -16,7 +16,7 @@ Memphis, TN | 901-220-1510 | me@alexanderbernal.dev | linkedin.com/in/bernaale |
 | :--- | :--- |
 | **Languages** | C, C++, Python, Bash, TypeScript, JavaScript, SQL, x86 Assembly |
 | **Embedded Linux & Fleet Ops** | Embedded Linux (Ubuntu/Kernel/User-Space), Cross-Compilation Toolchains, Azure IoT, Docker, Watchdog & Fail-Safe OTA |
-| **Robotics, Fieldbus & Hardware I/O** | Closed-Loop Actuator/Pump Control, Self-Healing Protocol State Machines, OPC UA, Modbus (TCP/IP & RTU), MQTT, 4–20mA Analog Current Loops, 5V Discrete Digital I/O, PLCs & Ladder Logic |
+| **Robotics, Fieldbus & Hardware I/O** | Closed-Loop Actuator/Pump Control, Self-Healing Protocol State Machines, OPC UA, Modbus (TCP/IP & RTU), MQTT, Analog Current Loops, Discrete Digital I/O, PLCs & Ladder Logic |
 | **AI & Agentic Engineering** | Claude Code, Google Antigravity (`agy`), Gemini, Context Architecture (`CLAUDE.md` / `AGENTS.md`), Compiler-Driven Agentic Verification, Automated Test & Refactoring Workflows |
 | **Full-Stack & Digitization** | Rule-Based Decision Engines, React / Next.js, Tailwind CSS, Firebase / Firestore, GitHub Actions (CI/CD), Azure DevOps, Git |
 
@@ -34,7 +34,7 @@ Memphis, TN | 901-220-1510 | me@alexanderbernal.dev | linkedin.com/in/bernaale |
 * **Fleet OS Modernization & Runtime Optimization:** Cross-compiled core **C/C++** firmware toolchains to support remote in-field **Embedded Linux LTS** distribution upgrades, while replacing heavy containerized edge runtimes with lightweight native cloud SDK daemons (cutting firmware footprint by **~50%**).
 
 #### **Associate Digital Innovation Engineer** | *June 2019 – March 2022*
-* **Multi-Protocol Sensor & Actuator Integration:** Developed production **C/C++** firmware and **Python/Bash** daemons to orchestrate multi-vendor industrial sensors, variable-rate dosing pumps, and **PLCs** across **OPC UA**, **Modbus (TCP/IP & RTU)**, **4–20mA analog current loops**, and **5V discrete Digital I/O** signaling networks, routing real-time telemetry via **MQTT**.
+* **Multi-Protocol Sensor & Actuator Integration:** Developed production **C/C++** firmware and **Python/Bash** daemons to orchestrate multi-vendor industrial sensors, variable-rate dosing pumps, and **PLCs** across **OPC UA**, **Modbus (TCP/IP & RTU)**, **analog current-loop signaling**, and **discrete Digital I/O** networks, routing real-time telemetry via **MQTT**.
 * **Automated Provisioning & Hardware Bring-Up:** Built Linux shell and Python automation frameworks to streamline industrial PC provisioning, network configuration, and hardware-in-the-loop field validation, significantly reducing manual commissioning time for global deployments.
 
 #### **Regulatory Specialist (Automation & Data Engineering)** | *September 2016 – May 2019*
