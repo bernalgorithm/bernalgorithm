@@ -1,12 +1,12 @@
 # Alexander Bernal — Resume
 
 **ALEXANDER BERNAL**  
-Memphis, TN | 901-220-1510 | me@alexanderbernal.dev | linkedin.com/in/bernaale | github.com/bernalgorithm | bernalgorithm.github.io
+Memphis, TN | 901-220-1510 | me@alexanderbernal.dev | linkedin.com/in/bernaale | github.com/bernalgorithm | bernalgorithm.github.io/bernalgorithm
 
 ---
 
 ## PROFESSIONAL SUMMARY
-**Senior Embedded Linux, Cyber-Physical Systems (IIoT/Robotics) & AI-Augmented Software Engineer** with 7+ years of experience architecting fault-tolerant edge firmware, closed-loop sensor-to-actuator control systems, and enterprise digitization platforms deployed across **20+ countries spanning 6 continents**. Proven track record of taking industrial hardware-software systems from bare-metal and Embedded Linux bring-up to global commercial scale, masking hardware-layer instability through self-healing protocol state machines, and pioneering agentic engineering workflows (**Claude Code, Google Antigravity, Gemini**) to accelerate C/C++, Python, and full-stack TypeScript delivery.
+**Senior Embedded Systems and Industrial IoT (IIoT) Engineer** with 7+ years of experience architecting fault-tolerant edge software, closed-loop sensor-to-actuator control systems, and enterprise digitization platforms deployed across **20+ countries spanning 6 continents** (12 years total industrial R&D and automation tenure). Specializes in bridging physical hardware with cloud infrastructure, masking field-hardware instability through self-healing protocol state machines, and leveraging agentic AI workflows (**Claude Code, Google Antigravity, Gemini**) with strict architectural guardrails to deliver production systems across C/C++, Python, Bash, and TypeScript.
 
 ---
 
@@ -14,10 +14,10 @@ Memphis, TN | 901-220-1510 | me@alexanderbernal.dev | linkedin.com/in/bernaale |
 
 | Category | Skills |
 | :--- | :--- |
-| **Languages** | C, C++, Python, Bash, TypeScript, JavaScript, SQL, x86 Assembly |
-| **Embedded Linux & Fleet Ops** | Embedded Linux (Ubuntu/Kernel/User-Space), Cross-Compilation Toolchains, Azure IoT, Docker, Watchdog & Fail-Safe OTA |
-| **Robotics, Fieldbus & Hardware I/O** | Closed-Loop Actuator/Pump Control, Self-Healing Protocol State Machines, OPC UA, Modbus (TCP/IP & RTU), MQTT, Analog Current Loops, Discrete Digital I/O, PLCs & Ladder Logic |
-| **AI & Agentic Engineering** | Claude Code, Google Antigravity (`agy`), Gemini, Context Architecture (`CLAUDE.md` / `AGENTS.md`), Compiler-Driven Agentic Verification, Automated Test & Refactoring Workflows |
+| **Systems & Languages** | Systems Architecture, Python, C, C++, Bash, TypeScript, JavaScript, SQL |
+| **Embedded Linux & Edge Ops** | Embedded Linux (Ubuntu, User-Space Daemons, System & Network Configuration), Azure IoT, Docker, Remote Fleet Upgrades & Watchdog Recovery |
+| **Industrial I/O & Fieldbus** | Closed-Loop Actuator/Pump Control, Self-Healing Protocol State Machines, OPC UA, Modbus (TCP/IP & RTU), MQTT, Analog & Digital I/O, PLCs & Ladder Logic |
+| **AI & Agentic Engineering** | Claude Code, Google Antigravity (`agy`), Gemini, Context Architecture (`CLAUDE.md` / `AGENTS.md`), Automated Verification & Cross-Language Refactoring |
 | **Full-Stack & Digitization** | Rule-Based Decision Engines, React / Next.js, Tailwind CSS, Firebase / Firestore, GitHub Actions (CI/CD), Azure DevOps, Git |
 
 ---
@@ -27,15 +27,15 @@ Memphis, TN | 901-220-1510 | me@alexanderbernal.dev | linkedin.com/in/bernaale |
 ### **Buckman** — *Memphis, TN*
 
 #### **Digital Innovation Engineer** | *March 2022 – Present*
-* **Global Cyber-Physical Architecture:** Lead the end-to-end architecture, C/C++ firmware, and Embedded Linux software design for smart automated chemical dosing systems—orchestrating closed-loop sensor-to-actuator control from concept through global commercial deployment across **20+ countries spanning 6 continents**.
-* **Self-Healing Fieldbus & Hardware Fault Tolerance:** Engineered fault-tolerant **Modbus (TCP/IP & RTU)**, **OPC UA**, and **MQTT** communication state machines with automated session recovery and state reconciliation to mask unannounced 20–40 minute hardware resets on legacy third-party pump controllers—guaranteeing continuous closed-loop actuation with zero customer-visible disruption.
-* **Enterprise SME Knowledge Digitization:** Architected a guided technical configuration and decision-support platform that codifies Subject Matter Expert (SME) domain heuristics into a deterministic recommendation engine—automating equipment/chemistry selection and standardizing global commercial proposals.
-* **AI-Augmented Systems Engineering:** Pioneered agentic development workflows (**Claude Code**, declarative `CLAUDE.md` guardrails, and automated diagnostic tooling) to accelerate low-level protocol debugging, cross-OS refactoring, and CI/CD test verification.
-* **Fleet OS Modernization & Runtime Optimization:** Cross-compiled core **C/C++** firmware toolchains to support remote in-field **Embedded Linux LTS** distribution upgrades, while replacing heavy containerized edge runtimes with lightweight native cloud SDK daemons (cutting firmware footprint by **~50%**).
+* **Global IIoT & Closed-Loop Architecture:** Lead the end-to-end systems architecture, Embedded Linux software design, and firmware integration for smart automated chemical dosing systems—orchestrating closed-loop sensor-to-actuator control from concept through global commercial deployment across **20+ countries spanning 6 continents**.
+* **Self-Healing Fieldbus & Hardware Fault Tolerance:** Engineered fault-tolerant **Modbus (TCP/IP & RTU)**, **OPC UA**, and **MQTT** communication state machines with automated session recovery and state reconciliation to mask unannounced 20–40 minute hardware resets on legacy third-party pump controllers—guaranteeing continuous closed-loop operation with zero customer-visible disruption.
+* **Enterprise SME Knowledge Digitization:** Architected a guided technical configuration and decision-support platform that codifies Subject Matter Expert (SME) domain heuristics into a deterministic recommendation engine—automating equipment and chemistry selection to standardize global commercial proposals.
+* **AI-Augmented Systems Engineering:** Pioneered agentic development workflows (**Claude Code**, **Google Antigravity**, declarative `CLAUDE.md` / `AGENTS.md` context guardrails, and automated diagnostic tooling) to translate system architecture into verified **C/C++**, **Python**, and **TypeScript** implementations while accelerating protocol debugging and cross-OS refactoring.
+* **Fleet OS Modernization & Runtime Optimization:** Ported and compiled core **C/C++** edge software to support remote in-field **Embedded Linux LTS** distribution upgrades, while replacing heavy containerized edge runtimes with lightweight native cloud SDK daemons (cutting deployment footprint by **~50%**).
 
 #### **Associate Digital Innovation Engineer** | *June 2019 – March 2022*
-* **Multi-Protocol Sensor & Actuator Integration:** Developed production **C/C++** firmware and **Python/Bash** daemons to orchestrate multi-vendor industrial sensors, variable-rate dosing pumps, and **PLCs** across **OPC UA**, **Modbus (TCP/IP & RTU)**, **analog current-loop signaling**, and **discrete Digital I/O** networks, routing real-time telemetry via **MQTT**.
-* **Automated Provisioning & Hardware Bring-Up:** Built Linux shell and Python automation frameworks to streamline industrial PC provisioning, network configuration, and hardware-in-the-loop field validation, significantly reducing manual commissioning time for global deployments.
+* **Multi-Protocol Sensor & Actuator Integration:** Developed production edge software and **Python/Bash/C++** daemons to integrate multi-vendor industrial sensors, variable-rate dosing pumps, and **PLCs** across **OPC UA**, **Modbus (TCP/IP & RTU)**, and **analog/digital I/O** networks, routing real-time telemetry to **Azure IoT** via **MQTT**.
+* **Automated Provisioning & Hardware Bring-Up:** Built Linux shell and Python automation frameworks to streamline industrial PC provisioning, network configuration, and hardware-in-the-loop validation, significantly reducing manual commissioning time for global deployments.
 
 #### **Regulatory Specialist (Automation & Data Engineering)** | *September 2016 – May 2019*
 * **Compliance Automation Pipeline:** Designed and deployed an automated **Python** and **XML** data aggregation pipeline to compile, validate, and submit federal EPA Pesticide Production Reports, saving **hundreds of engineering hours annually**.
@@ -48,14 +48,14 @@ Memphis, TN | 901-220-1510 | me@alexanderbernal.dev | linkedin.com/in/bernaale |
 
 ## ENGINEERING LAB & SELECTED PROJECTS
 
-* **AI-Native Systems Lab & Technical Portfolio (`bernalgorithm.github.io`):** Designed and built a static-exported **Next.js / TypeScript** engineering lab notebook and interactive 60 FPS hardware simulation workbench using **Google Antigravity** and **Gemini**, enforcing strict architectural boundaries via `AGENTS.md` and compiler-verified **GitHub Actions** CI/CD pipelines.
+* **AI-Augmented Engineering Portfolio & Systems Lab (`bernalgorithm.github.io/bernalgorithm`):** Architected and deployed a statically exported **Next.js / TypeScript** technical portfolio and lab notebook using **Google Antigravity** and **Gemini**, enforcing declarative `AGENTS.md` context boundaries and automated **GitHub Actions** CI/CD pipelines.
 
 ---
 
 ## EDUCATION
 
 **Oregon State University** — *B.S., Computer Science* (2017 – 2019)
-* **Academic Leadership:** University Tutor and Grader for Computer Science coursework, mentoring students in C++ object-oriented architecture, memory management, and debugging.
+* **Academic Focus:** Served as a university tutor and grader for Computer Science coursework, guiding students through object-oriented programming implementations and debugging in C++.
 
 **University of Memphis** — *B.S., Chemistry (ACS Certified) & B.S., Biology* (2008 – 2014)
 * **NSF Computational Research:** Awarded National Science Foundation (NSF) funding to model and analyze energetic profiles of metallo-organic molecules on high-performance Linux supercomputing clusters.

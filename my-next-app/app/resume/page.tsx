@@ -5,38 +5,37 @@ import { PrintResumeButton } from '@/components/PrintResumeButton';
 export const metadata: Metadata = {
   title: 'Resume | Alexander Bernal — Embedded Systems & AI-Augmented Engineer',
   description:
-    'Resume of Alexander Bernal: Senior Embedded Systems, Cyber-Physical IIoT/Robotics, and AI-Augmented Software Engineer.',
+    'Resume of Alexander Bernal: Senior Embedded Systems, Industrial IoT (IIoT), and AI-Augmented Software Engineer.',
 };
 
 const SKILL_GROUPS = [
   {
-    category: 'Languages & Systems',
+    category: 'Systems & Languages',
     accent: 'text-emerald-400',
     skills: [
+      'Systems Architecture',
+      'Python',
       'C',
       'C++',
-      'Python',
       'Bash',
       'TypeScript',
       'JavaScript',
       'SQL',
-      'x86 Assembly',
-      'Cross-Compilation Toolchains',
     ],
   },
   {
-    category: 'Embedded Linux & Fleet Ops',
+    category: 'Embedded Linux & Edge Ops',
     accent: 'text-cyan-400',
     skills: [
-      'Embedded Linux (Ubuntu/Kernel/User-Space)',
-      'Cross-Compilation Toolchains',
+      'Embedded Linux (Ubuntu / User-Space Daemons)',
+      'System & Network Configuration',
       'Azure IoT',
       'Docker',
-      'Watchdog & Fail-Safe OTA',
+      'Remote Fleet Upgrades & Watchdog Recovery',
     ],
   },
   {
-    category: 'Robotics, Fieldbus & Hardware I/O',
+    category: 'Industrial I/O & Fieldbus',
     accent: 'text-amber-400',
     skills: [
       'Closed-Loop Actuator/Pump Control',
@@ -44,8 +43,7 @@ const SKILL_GROUPS = [
       'OPC UA',
       'Modbus (TCP/IP & RTU)',
       'MQTT',
-      'Analog Current Loops',
-      'Discrete Digital I/O',
+      'Analog & Digital I/O',
       'PLCs & Ladder Logic',
     ],
   },
@@ -68,27 +66,27 @@ const EXPERIENCE = [
   {
     title: 'Digital Innovation Engineer',
     period: 'March 2022 – Present',
-    badge: 'CURRENT // STAFF-LEVEL SYSTEMS SCOPE',
+    badge: 'CURRENT // SYSTEMS ARCHITECTURE & IIOT LEAD',
     bullets: [
       {
-        lead: 'Global Cyber-Physical Architecture',
-        text: 'Lead the end-to-end architecture, C/C++ firmware, and Embedded Linux software design for smart automated chemical dosing systems—orchestrating closed-loop sensor-to-actuator control from concept through global commercial deployment across 20+ countries spanning 6 continents.',
+        lead: 'Global IIoT & Closed-Loop Architecture',
+        text: 'Lead the end-to-end systems architecture, Embedded Linux software design, and firmware integration for smart automated chemical dosing systems—orchestrating closed-loop sensor-to-actuator control from concept through global commercial deployment across 20+ countries spanning 6 continents.',
       },
       {
         lead: 'Self-Healing Fieldbus & Hardware Fault Tolerance',
-        text: 'Engineered fault-tolerant Modbus (TCP/IP & RTU), OPC UA, and MQTT communication state machines with automated session recovery and state reconciliation to mask unannounced 20–40 minute hardware resets on legacy third-party pump controllers—guaranteeing continuous closed-loop actuation with zero customer-visible disruption.',
+        text: 'Engineered fault-tolerant Modbus (TCP/IP & RTU), OPC UA, and MQTT communication state machines with automated session recovery and state reconciliation to mask unannounced 20–40 minute hardware resets on legacy third-party pump controllers—guaranteeing continuous closed-loop operation with zero customer-visible disruption.',
       },
       {
         lead: 'Enterprise SME Knowledge Digitization',
-        text: 'Architected a guided technical configuration and decision-support platform that codifies Subject Matter Expert (SME) domain heuristics into a deterministic recommendation engine—automating equipment/chemistry selection and standardizing global commercial proposals.',
+        text: 'Architected a guided technical configuration and decision-support platform that codifies Subject Matter Expert (SME) domain heuristics into a deterministic recommendation engine—automating equipment and chemistry selection to standardize global commercial proposals.',
       },
       {
         lead: 'AI-Augmented Systems Engineering',
-        text: 'Pioneered agentic development workflows (Claude Code, declarative CLAUDE.md guardrails, and automated diagnostic tooling) to accelerate low-level protocol debugging, cross-OS refactoring, and CI/CD test verification.',
+        text: 'Pioneered agentic development workflows (Claude Code, Google Antigravity, declarative CLAUDE.md / AGENTS.md context guardrails, and automated diagnostic tooling) to translate system architecture into verified C/C++, Python, and TypeScript implementations while accelerating protocol debugging and cross-OS refactoring.',
       },
       {
         lead: 'Fleet OS Modernization & Runtime Optimization',
-        text: 'Cross-compiled core C/C++ firmware toolchains to support remote in-field Embedded Linux LTS distribution upgrades, while replacing heavy containerized edge runtimes with lightweight native cloud SDK daemons (cutting firmware footprint by ~50%).',
+        text: 'Ported and compiled core C/C++ edge software to support remote in-field Embedded Linux LTS distribution upgrades, while replacing heavy containerized edge runtimes with lightweight native cloud SDK daemons (cutting deployment footprint by ~50%).',
       },
     ],
   },
@@ -98,11 +96,11 @@ const EXPERIENCE = [
     bullets: [
       {
         lead: 'Multi-Protocol Sensor & Actuator Integration',
-        text: 'Developed production C/C++ firmware and Python/Bash daemons to orchestrate multi-vendor industrial sensors, variable-rate dosing pumps, and PLCs across OPC UA, Modbus (TCP/IP & RTU), analog current-loop signaling, and discrete Digital I/O networks, routing real-time telemetry via MQTT.',
+        text: 'Developed production edge software and Python/Bash/C++ daemons to integrate multi-vendor industrial sensors, variable-rate dosing pumps, and PLCs across OPC UA, Modbus (TCP/IP & RTU), and analog/digital I/O networks, routing real-time telemetry to Azure IoT via MQTT.',
       },
       {
         lead: 'Automated Provisioning & Hardware Bring-Up',
-        text: 'Built Linux shell and Python automation frameworks to streamline industrial PC provisioning, network configuration, and hardware-in-the-loop field validation, significantly reducing manual commissioning time.',
+        text: 'Built Linux shell and Python automation frameworks to streamline industrial PC provisioning, network configuration, and hardware-in-the-loop validation, significantly reducing manual commissioning time for global deployments.',
       },
     ],
   },
@@ -162,7 +160,7 @@ export default function ResumePage() {
         <header className="border-b border-slate-800 pb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
             <div className="font-mono text-xs text-emerald-400 font-bold tracking-widest uppercase mb-1">
-              CURRICULUM VITAE // SYSTEMS &amp; FIRMWARE ARCHITECTURE
+              CURRICULUM VITAE // SYSTEMS &amp; IIOT ARCHITECTURE
             </div>
             <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
               Alexander Bernal
@@ -210,21 +208,22 @@ export default function ResumePage() {
             01 // Professional Summary
           </h2>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Senior Embedded Linux, Cyber-Physical Systems (IIoT/Robotics) &amp; AI-Augmented
-            Software Engineer with 7+ years of experience architecting fault-tolerant edge
-            firmware, closed-loop sensor-to-actuator control systems, and enterprise
-            digitization platforms deployed across{' '}
+            Senior Embedded Systems and Industrial IoT (IIoT) Engineer with 7+ years of
+            experience architecting fault-tolerant edge software, closed-loop
+            sensor-to-actuator control systems, and enterprise digitization platforms
+            deployed across{' '}
             <span className="text-white font-semibold">
               20+ countries spanning 6 continents
-            </span>
-            . Proven track record of taking industrial hardware-software systems from
-            bare-metal and Embedded Linux bring-up to global commercial scale, masking
-            hardware-layer instability through self-healing protocol state machines, and
-            pioneering agentic engineering workflows (
+            </span>{' '}
+            (12 years total industrial R&amp;D and automation tenure). Specializes in
+            bridging physical hardware with cloud infrastructure, masking field-hardware
+            instability through self-healing protocol state machines, and leveraging
+            agentic AI workflows (
             <span className="text-white font-semibold">
               Claude Code, Google Antigravity, Gemini
             </span>
-            ) to accelerate C/C++, Python, and full-stack TypeScript delivery.
+            ) with strict architectural guardrails to deliver production systems across
+            C/C++, Python, Bash, and TypeScript.
           </p>
         </section>
 
@@ -310,18 +309,18 @@ export default function ResumePage() {
           <div className="rounded-2xl border border-slate-800/90 bg-slate-900/30 p-4 space-y-1.5">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <h3 className="text-sm font-bold text-white">
-                AI-Native Systems Lab &amp; Technical Portfolio (bernalgorithm.github.io)
+                AI-Augmented Engineering Portfolio &amp; Systems Lab (bernalgorithm.github.io)
               </h3>
               <span className="font-mono text-xs text-emerald-400">
                 Next.js &bull; TypeScript &bull; Antigravity &bull; Gemini
               </span>
             </div>
             <p className="text-sm text-slate-300 leading-relaxed">
-              Designed and built a static-exported Next.js / TypeScript engineering lab
-              notebook and interactive 60 FPS hardware simulation workbench using Google
-              Antigravity and Gemini, enforcing strict architectural boundaries via{' '}
-              <code className="font-mono text-xs text-cyan-300">AGENTS.md</code> and
-              compiler-verified GitHub Actions CI/CD pipelines.
+              Architected and deployed a statically exported Next.js and TypeScript
+              technical portfolio and lab notebook using Google Antigravity and Gemini,
+              enforcing declarative{' '}
+              <code className="font-mono text-xs text-cyan-300">AGENTS.md</code> context
+              boundaries and automated GitHub Actions CI/CD pipelines.
             </p>
           </div>
         </section>
@@ -341,9 +340,9 @@ export default function ResumePage() {
                 B.S., Computer Science
               </div>
               <p className="text-xs text-slate-300 leading-relaxed pt-1">
-                Served as University Tutor and Grader for Computer Science coursework,
-                mentoring students in C++ object-oriented architecture, memory management,
-                and debugging.
+                Served as a university tutor and grader for Computer Science coursework,
+                guiding students through object-oriented programming implementations and
+                debugging in C++.
               </p>
             </div>
 

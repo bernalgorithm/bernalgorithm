@@ -9,8 +9,8 @@ const ENGINEERING_DOMAINS = [
     subtitle: 'Global Edge Systems (20+ Countries)',
     accent: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10',
     description:
-      'Architecting production C/C++ firmware and Embedded Linux systems across 6 continents, including remote LTS fleet migrations and lightweight cloud SDK runtimes.',
-    skills: ['C / C++', 'Embedded Linux (Ubuntu)', 'Cross-Compilation', 'Azure IoT', 'Python & Bash', 'Watchdog & OTA'],
+      'Architecting production Embedded Linux systems and edge software across 6 continents, including remote in-field LTS OS migrations and lightweight native cloud SDK runtimes.',
+    skills: ['Embedded Linux (Ubuntu)', 'Python & Bash', 'C / C++', 'Azure IoT', 'Remote Fleet Upgrades', 'Watchdog Recovery'],
   },
   {
     id: 'SYS_02',
@@ -18,8 +18,8 @@ const ENGINEERING_DOMAINS = [
     subtitle: 'Fault-Tolerant Cyber-Physical Control',
     accent: 'text-cyan-400 border-cyan-500/30 bg-cyan-500/10',
     description:
-      'Architecting self-healing protocol state machines that mask hardware-layer resets and orchestrate closed-loop sensor-to-actuator control across industrial buses and raw signaling pins.',
-    skills: ['Modbus (TCP/IP & RTU)', 'OPC UA', 'Analog Current Loops', 'Discrete Digital I/O', 'MQTT', 'PLCs & Pumps'],
+      'Engineering self-healing protocol state machines that mask hardware-layer resets and orchestrate closed-loop sensor-to-actuator control across industrial networks and physical I/O.',
+    skills: ['Modbus (TCP/IP & RTU)', 'OPC UA', 'Analog & Digital I/O', 'MQTT', 'PLCs & Ladder Logic', 'Closed-Loop Control'],
   },
   {
     id: 'SYS_03',
@@ -27,7 +27,7 @@ const ENGINEERING_DOMAINS = [
     subtitle: 'Agentic Velocity & SME Decision Engines',
     accent: 'text-amber-400 border-amber-500/30 bg-amber-500/10',
     description:
-      'Codifying domain SME heuristics into enterprise decision engines and leveraging agentic AI workflows (CLAUDE.md, AGENTS.md) to ship verified C/C++, Python, and Next.js systems.',
+      'Codifying domain SME heuristics into enterprise decision engines and orchestrating agentic AI workflows (CLAUDE.md, AGENTS.md) to deliver verified software across C/C++, Python, and TypeScript.',
     skills: ['Claude Code', 'Google Antigravity', 'Gemini', 'SME Decision Engines', 'Next.js & TypeScript', 'GitHub Actions CI/CD'],
   },
 ];
