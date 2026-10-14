@@ -6,7 +6,7 @@ Memphis, TN | 901-220-1510 | me@alexanderbernal.dev | linkedin.com/in/bernaale |
 ---
 
 ## PROFESSIONAL SUMMARY
-**Senior Embedded Systems and Industrial IoT (IIoT) Engineer** with 7+ years of experience architecting fault-tolerant edge software, closed-loop sensor-to-actuator control systems, and enterprise digitization platforms deployed across **20+ countries spanning 6 continents** (12 years total industrial R&D and automation tenure). Specializes in bridging physical hardware with cloud infrastructure, masking field-hardware instability through self-healing protocol state machines, and leveraging agentic AI workflows (**Claude Code, Google Antigravity, Gemini**) with strict architectural guardrails to deliver production systems across C/C++, Python, Bash, and TypeScript.
+**Senior Embedded Systems and Industrial IoT (IIoT) Engineer** with 7+ years of experience architecting fault-tolerant edge software, industrial cellular/network topologies, closed-loop sensor-to-actuator control systems, and enterprise digitization platforms deployed across **20+ countries spanning 6 continents** (12 years total industrial R&D and automation tenure). Specializes in bridging physical plant hardware with cloud infrastructure across industrial fieldbuses and cellular backhaul gateways, masking field-hardware instability through self-healing protocol state machines, and leveraging agentic AI workflows (**Claude Code, Google Antigravity, Gemini**) with strict architectural guardrails to deliver production systems across C/C++, Python, Bash, and TypeScript.
 
 ---
 
@@ -15,7 +15,7 @@ Memphis, TN | 901-220-1510 | me@alexanderbernal.dev | linkedin.com/in/bernaale |
 | Category | Skills |
 | :--- | :--- |
 | **Systems & Languages** | Systems Architecture, Python, C, C++, Bash, TypeScript, JavaScript, SQL |
-| **Embedded Linux & Edge Ops** | Embedded Linux (Ubuntu, User-Space Daemons, System & Network Configuration), Azure IoT, Docker, Remote Fleet Upgrades & Watchdog Recovery |
+| **Embedded Linux, Networking & Edge Ops** | Embedded Linux (Ubuntu, User-Space Daemons), Cellular Gateways (Cradlepoint, Teltonika, MultiTech, Milesight), Embedded Cellular Modems & Wi-Fi, DHCP Servers, NAT / Port Forwarding & Subnet Routing, Azure IoT, Docker, Remote Fleet Upgrades |
 | **Industrial I/O & Fieldbus** | Closed-Loop Actuator/Pump Control, Self-Healing Protocol State Machines, OPC UA, Modbus (TCP/IP & RTU), MQTT, Analog & Digital I/O, PLCs & Ladder Logic |
 | **AI & Agentic Engineering** | Claude Code, Google Antigravity (`agy`), Gemini, Context Architecture (`CLAUDE.md` / `AGENTS.md`), Automated Verification & Cross-Language Refactoring |
 | **Full-Stack & Digitization** | Rule-Based Decision Engines, React / Next.js, Tailwind CSS, Firebase / Firestore, GitHub Actions (CI/CD), Azure DevOps, Git |
@@ -27,7 +27,7 @@ Memphis, TN | 901-220-1510 | me@alexanderbernal.dev | linkedin.com/in/bernaale |
 ### **Buckman** — *Memphis, TN*
 
 #### **Digital Innovation Engineer** | *March 2022 – Present*
-* **Global IIoT & Closed-Loop Architecture:** Lead the end-to-end systems architecture, Embedded Linux software design, and firmware integration for smart automated chemical dosing systems—orchestrating closed-loop sensor-to-actuator control from concept through global commercial deployment across **20+ countries spanning 6 continents**.
+* **Global IIoT & Closed-Loop Architecture:** Lead the end-to-end systems architecture, Embedded Linux software design, and field network integration for smart automated chemical dosing systems—orchestrating closed-loop sensor-to-actuator control from concept through global commercial deployment across **20+ countries spanning 6 continents**.
 * **Self-Healing Fieldbus & Hardware Fault Tolerance:** Engineered fault-tolerant **Modbus (TCP/IP & RTU)**, **OPC UA**, and **MQTT** communication state machines with automated session recovery and state reconciliation to mask unannounced 20–40 minute hardware resets on legacy third-party pump controllers—guaranteeing continuous closed-loop operation with zero customer-visible disruption.
 * **Enterprise SME Knowledge Digitization:** Architected a guided technical configuration and decision-support platform that codifies Subject Matter Expert (SME) domain heuristics into a deterministic recommendation engine—automating equipment and chemistry selection to standardize global commercial proposals.
 * **AI-Augmented Systems Engineering:** Pioneered agentic development workflows (**Claude Code**, **Google Antigravity**, declarative `CLAUDE.md` / `AGENTS.md` context guardrails, and automated diagnostic tooling) to translate system architecture into verified **C/C++**, **Python**, and **TypeScript** implementations while accelerating protocol debugging and cross-OS refactoring.
@@ -35,7 +35,7 @@ Memphis, TN | 901-220-1510 | me@alexanderbernal.dev | linkedin.com/in/bernaale |
 
 #### **Associate Digital Innovation Engineer** | *June 2019 – March 2022*
 * **Multi-Protocol Sensor & Actuator Integration:** Developed production edge software and **Python/Bash/C++** daemons to integrate multi-vendor industrial sensors, variable-rate dosing pumps, and **PLCs** across **OPC UA**, **Modbus (TCP/IP & RTU)**, and **analog/digital I/O** networks, routing real-time telemetry to **Azure IoT** via **MQTT**.
-* **Automated Provisioning & Hardware Bring-Up:** Built Linux shell and Python automation frameworks to streamline industrial PC provisioning, network configuration, and hardware-in-the-loop validation, significantly reducing manual commissioning time for global deployments.
+* **Industrial Edge Networking & Cellular Backhaul:** Designed and configured multi-device field networks behind dedicated cellular gateways (**Cradlepoint, Teltonika, MultiTech, Milesight**) as well as onboard **embedded cellular modems** and **Wi-Fi** interfaces on headless Linux SBCs—configuring **DHCP servers**, **NAT / port-forwarding rules**, and automated Linux provisioning scripts to streamline global hardware bring-up and remote diagnostics.
 
 #### **Regulatory Specialist (Automation & Data Engineering)** | *September 2016 – May 2019*
 * **Compliance Automation Pipeline:** Designed and deployed an automated **Python** and **XML** data aggregation pipeline to compile, validate, and submit federal EPA Pesticide Production Reports, saving **hundreds of engineering hours annually**.

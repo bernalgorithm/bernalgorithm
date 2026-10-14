@@ -5,7 +5,7 @@ import { PrintResumeButton } from '@/components/PrintResumeButton';
 export const metadata: Metadata = {
   title: 'Resume | Alexander Bernal — Embedded Systems & AI-Augmented Engineer',
   description:
-    'Resume of Alexander Bernal: Senior Embedded Systems, Industrial IoT (IIoT), and AI-Augmented Software Engineer.',
+    'Resume of Alexander Bernal: Senior Embedded Systems, Industrial IoT (IIoT), Edge Networking, and AI-Augmented Software Engineer.',
 };
 
 const SKILL_GROUPS = [
@@ -24,14 +24,15 @@ const SKILL_GROUPS = [
     ],
   },
   {
-    category: 'Embedded Linux & Edge Ops',
+    category: 'Embedded Linux, Networking & Edge Ops',
     accent: 'text-cyan-400',
     skills: [
       'Embedded Linux (Ubuntu / User-Space Daemons)',
-      'System & Network Configuration',
-      'Azure IoT',
-      'Docker',
-      'Remote Fleet Upgrades & Watchdog Recovery',
+      'Cellular Gateways (Cradlepoint, Teltonika, MultiTech, Milesight)',
+      'Embedded Cellular Modems & Wi-Fi',
+      'DHCP Servers & NAT / Port Forwarding',
+      'Azure IoT & Docker',
+      'Remote Fleet Upgrades',
     ],
   },
   {
@@ -70,7 +71,7 @@ const EXPERIENCE = [
     bullets: [
       {
         lead: 'Global IIoT & Closed-Loop Architecture',
-        text: 'Lead the end-to-end systems architecture, Embedded Linux software design, and firmware integration for smart automated chemical dosing systems—orchestrating closed-loop sensor-to-actuator control from concept through global commercial deployment across 20+ countries spanning 6 continents.',
+        text: 'Lead the end-to-end systems architecture, Embedded Linux software design, and field network integration for smart automated chemical dosing systems—orchestrating closed-loop sensor-to-actuator control from concept through global commercial deployment across 20+ countries spanning 6 continents.',
       },
       {
         lead: 'Self-Healing Fieldbus & Hardware Fault Tolerance',
@@ -99,8 +100,8 @@ const EXPERIENCE = [
         text: 'Developed production edge software and Python/Bash/C++ daemons to integrate multi-vendor industrial sensors, variable-rate dosing pumps, and PLCs across OPC UA, Modbus (TCP/IP & RTU), and analog/digital I/O networks, routing real-time telemetry to Azure IoT via MQTT.',
       },
       {
-        lead: 'Automated Provisioning & Hardware Bring-Up',
-        text: 'Built Linux shell and Python automation frameworks to streamline industrial PC provisioning, network configuration, and hardware-in-the-loop validation, significantly reducing manual commissioning time for global deployments.',
+        lead: 'Industrial Edge Networking & Cellular Backhaul',
+        text: 'Designed and configured multi-device field networks behind dedicated cellular gateways (Cradlepoint, Teltonika, MultiTech, Milesight) as well as onboard embedded cellular modems and Wi-Fi interfaces on headless Linux SBCs—configuring DHCP servers, NAT / port-forwarding rules, and automated Linux provisioning scripts to streamline global hardware bring-up and remote diagnostics.',
       },
     ],
   },
@@ -209,16 +210,17 @@ export default function ResumePage() {
           </h2>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
             Senior Embedded Systems and Industrial IoT (IIoT) Engineer with 7+ years of
-            experience architecting fault-tolerant edge software, closed-loop
-            sensor-to-actuator control systems, and enterprise digitization platforms
-            deployed across{' '}
+            experience architecting fault-tolerant edge software, industrial
+            cellular/network topologies, closed-loop sensor-to-actuator control systems,
+            and enterprise digitization platforms deployed across{' '}
             <span className="text-white font-semibold">
               20+ countries spanning 6 continents
             </span>{' '}
             (12 years total industrial R&amp;D and automation tenure). Specializes in
-            bridging physical hardware with cloud infrastructure, masking field-hardware
-            instability through self-healing protocol state machines, and leveraging
-            agentic AI workflows (
+            bridging physical plant hardware with cloud infrastructure across industrial
+            fieldbuses and cellular backhaul gateways, masking field-hardware instability
+            through self-healing protocol state machines, and leveraging agentic AI
+            workflows (
             <span className="text-white font-semibold">
               Claude Code, Google Antigravity, Gemini
             </span>

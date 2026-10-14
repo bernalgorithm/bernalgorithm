@@ -5,12 +5,12 @@ import { getSortedPostsData } from '@/lib/posts';
 const ENGINEERING_DOMAINS = [
   {
     id: 'SYS_01',
-    title: 'Embedded Linux & Fleet Architecture',
+    title: 'Embedded Linux, Networking & Fleet Ops',
     subtitle: 'Global Edge Systems (20+ Countries)',
     accent: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10',
     description:
-      'Architecting production Embedded Linux systems and edge software across 6 continents, including remote in-field LTS OS migrations and lightweight native cloud SDK runtimes.',
-    skills: ['Embedded Linux (Ubuntu)', 'Python & Bash', 'C / C++', 'Azure IoT', 'Remote Fleet Upgrades', 'Watchdog Recovery'],
+      'Architecting production Embedded Linux systems, cellular gateway topologies (Cradlepoint, Teltonika, MultiTech, Milesight), and remote LTS OS upgrades across 6 continents.',
+    skills: ['Embedded Linux (Ubuntu)', 'Cellular Gateways & Modems', 'DHCP & NAT / Port Forwarding', 'Python & Bash', 'C / C++', 'Azure IoT'],
   },
   {
     id: 'SYS_02',
