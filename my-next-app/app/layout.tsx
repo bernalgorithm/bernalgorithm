@@ -14,9 +14,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bernalgorithm | Embedded Firmware & Full-Stack Engineering Lab",
+  title: "Alexander Bernal | Cyber-Physical Systems, IoT, Automation & Full-Stack Engineer",
   description:
-    "Personal engineering portfolio and lab notebook bridging bare-metal IoT/embedded firmware discipline with modern web architecture.",
+    "Engineering portfolio, interactive technical demos, and architecture blog of Alexander Bernal—specializing in Embedded Linux fleets, IoT, closed-loop automation, data center telemetry, and full-stack software.",
+  openGraph: {
+    title: "Alexander Bernal | Cyber-Physical Systems, IoT, Automation & Full-Stack Engineer",
+    description:
+      "Portfolio, interactive 60 FPS simulators, and systems architecture case studies across IoT, automation, distributed Linux fleets, and full-stack web.",
+    type: "website",
+    locale: "en_US",
+    siteName: "Alexander Bernal — Engineering Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Alexander Bernal | Systems, IoT, Automation & Full-Stack Portfolio",
+    description:
+      "Interactive 60 FPS simulators, fault-tolerant state machines, and systems engineering case studies.",
+  },
 };
 
 export default function RootLayout({
@@ -27,54 +41,56 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col text-slate-100 selection:bg-emerald-500/30 selection:text-emerald-200">
-        {/* Sticky Top Hardware Telemetry Bar */}
-        <header className="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-4">
+      <body className="min-h-full flex flex-col bg-slate-50 text-slate-900 selection:bg-blue-100 selection:text-blue-900 print:bg-white print:text-slate-900">
+        {/* Clean, High-Contrast Top Navigation Bar */}
+        <header className="sticky top-0 z-50 backdrop-blur-md bg-white/95 border-b border-slate-200 shadow-xs print:hidden">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
             <Link
               href="/"
-              className="flex items-center gap-2.5 font-mono text-sm font-black tracking-wider text-white hover:text-emerald-400 transition"
+              className="flex items-center gap-2.5 text-base font-bold tracking-tight text-slate-900 hover:text-blue-600 transition shrink-0"
             >
-              <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
-              <span>BERNALGORITHM</span>
-              <span className="text-slate-600 font-normal hidden sm:inline">{'//'}</span>
-              <span className="text-xs font-normal text-emerald-400/90 hidden sm:inline">
-                FW_WEB_LAB
+              <span className="inline-block w-2.5 h-2.5 rounded-full bg-blue-600" />
+              <span>Alexander Bernal</span>
+              <span className="text-xs text-slate-500 font-normal hidden md:inline border-l border-slate-200 pl-2.5">
+                Systems, IoT &amp; Automation Engineer
               </span>
             </Link>
 
-            <nav className="flex items-center gap-1 sm:gap-5 font-mono text-xs text-slate-300">
+            <nav
+              aria-label="Main Navigation"
+              className="flex items-center gap-1 sm:gap-2 text-sm font-medium text-slate-600"
+            >
               <Link
-                href="/#workbench"
-                className="px-2.5 py-1.5 rounded-lg hover:bg-slate-900 hover:text-emerald-400 transition"
+                href="/"
+                className="px-3 py-1.5 rounded-lg hover:text-slate-900 hover:bg-slate-100 transition whitespace-nowrap"
               >
-                01.Workbench
+                About
               </Link>
               <Link
-                href="/#architecture"
-                className="px-2.5 py-1.5 rounded-lg hover:bg-slate-900 hover:text-cyan-400 transition"
+                href="/demos"
+                className="px-3 py-1.5 rounded-lg hover:text-slate-900 hover:bg-slate-100 transition whitespace-nowrap"
               >
-                02.Domains
+                Interactive Demos
               </Link>
               <Link
-                href="/#notebook"
-                className="px-2.5 py-1.5 rounded-lg hover:bg-slate-900 hover:text-amber-400 transition"
+                href="/blog"
+                className="px-3 py-1.5 rounded-lg hover:text-slate-900 hover:bg-slate-100 transition whitespace-nowrap"
               >
-                03.Notebook
+                Blog
               </Link>
               <Link
                 href="/resume"
-                className="px-2.5 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/20 font-bold transition"
+                className="px-3 py-1.5 rounded-lg hover:text-slate-900 hover:bg-slate-100 transition whitespace-nowrap"
               >
-                04.Resume
+                Resume
               </Link>
               <a
                 href="https://github.com/bernalgorithm"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-1 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 hover:border-emerald-500/50 hover:text-emerald-300 transition"
+                className="hidden sm:inline-flex ml-1 px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 hover:border-slate-300 hover:text-slate-900 transition whitespace-nowrap"
               >
                 GitHub &nearr;
               </a>
@@ -84,19 +100,41 @@ export default function RootLayout({
 
         <div className="flex-1">{children}</div>
 
-        {/* Technical Telemetry Footer */}
-        <footer className="border-t border-slate-900 bg-slate-950/90 mt-20">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-slate-500">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-500/70" />
-              <span>BERNALGORITHM // EMBEDDED &amp; WEB SYSTEMS LAB</span>
+        {/* Clean Light Footer */}
+        <footer className="bg-white border-t border-slate-200 print:hidden">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-600">
+            <div className="flex items-center gap-2 font-medium text-slate-800">
+              <span className="w-2 h-2 rounded-full bg-blue-600" />
+              <span>Alexander Bernal &mdash; IoT, Robotics, Edge Infrastructure &amp; Full-Stack</span>
             </div>
-            <div className="flex flex-wrap items-center gap-4">
-              <span>TARGET: STATIC_EXPORT</span>
-              <span>&bull;</span>
-              <span>PIPELINE: NEXT_RSC + MDX</span>
-              <span>&bull;</span>
-              <span>NODE: v20.12.0</span>
+
+            <div className="flex flex-wrap items-center justify-center gap-5 text-slate-600">
+              <Link href="/" className="hover:text-blue-600 transition">
+                About
+              </Link>
+              <Link href="/demos" className="hover:text-blue-600 transition">
+                Interactive Demos
+              </Link>
+              <Link href="/blog" className="hover:text-blue-600 transition">
+                Blog
+              </Link>
+              <Link href="/resume" className="hover:text-blue-600 transition">
+                Resume
+              </Link>
+              <a
+                href="mailto:me@alexanderbernal.dev"
+                className="hover:text-blue-600 transition"
+              >
+                me@alexanderbernal.dev
+              </a>
+              <a
+                href="https://www.linkedin.com/in/bernaale/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-600 transition"
+              >
+                LinkedIn &nearr;
+              </a>
             </div>
           </div>
         </footer>

@@ -1,91 +1,148 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { RoboticArmIkLab } from '@/components/RoboticArmIkLab';
+import { PidControlLab } from '@/components/PidControlLab';
 import { SiliconBreakthroughGame } from '@/components/SiliconBreakthroughGame';
 import { PcbBirdGame } from '@/components/PcbBirdGame';
 
-type ActiveModule = 'breakthrough' | 'pcbbird';
+type ActiveModule = 'roboticarm' | 'pidlab' | 'breakthrough' | 'pcbbird';
 
 export function HardwareWorkbench() {
-  const [activeModule, setActiveModule] = useState<ActiveModule>('breakthrough');
+  const [activeModule, setActiveModule] = useState<ActiveModule>('roboticarm');
+
+  useEffect(() => {
+    const syncFromUrl = () => {
+      const params = new URLSearchParams(window.location.search);
+      const sim = params.get('sim');
+      if (sim === 'roboticarm' || sim === 'pidlab' || sim === 'breakthrough' || sim === 'pcbbird') {
+        setActiveModule(sim);
+      }
+    };
+    queueMicrotask(syncFromUrl);
+    window.addEventListener('popstate', syncFromUrl);
+    return () => window.removeEventListener('popstate', syncFromUrl);
+  }, []);
 
   return (
-    <div className="rounded-2xl border border-slate-800 bg-slate-950/90 shadow-2xl overflow-hidden">
-      {/* Workbench Module Selector Bar */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 px-4 sm:px-6 py-4 bg-slate-900/90 border-b border-slate-800">
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="w-2.5 h-2.5 rounded-full bg-cyan-400/60" />
-            <span className="w-2.5 h-2.5 rounded-full bg-amber-400/60" />
-          </div>
-          <div className="h-4 w-px bg-slate-800" />
-          <span className="font-mono text-xs font-bold tracking-widest uppercase text-slate-300">
-            INTERACTIVE HARDWARE WORKBENCH // 60FPS CANVAS ISR
-          </span>
+    <div className="rounded-2xl border border-slate-200 bg-white shadow-xs overflow-hidden">
+      {/* Clean Light Module Selector Bar */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 px-4 sm:px-6 py-3.5 bg-slate-50 border-b border-slate-200">
+        <div className="flex items-center gap-2 text-sm font-semibold text-slate-800">
+          <span className="w-2.5 h-2.5 rounded-full bg-blue-600" />
+          <span>Interactive Engineering Simulators</span>
         </div>
 
-        {/* Module Switcher Tabs */}
-        <div className="flex flex-wrap items-center gap-2" role="tablist" aria-label="Hardware Arcade Modules">
+        {/* Segmented Control Switcher */}
+        <div
+          className="inline-flex flex-wrap items-center gap-1.5 p-1 rounded-xl bg-slate-200/75 border border-slate-200"
+          role="tablist"
+          aria-label="Interactive Engineering Modules"
+        >
+          <button
+            role="tab"
+            aria-selected={activeModule === 'roboticarm'}
+            onClick={() => setActiveModule('roboticarm')}
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer ${
+              activeModule === 'roboticarm'
+                ? 'bg-white text-blue-700 shadow-xs border border-slate-200/80'
+                : 'text-slate-600 hover:text-slate-900 border border-transparent'
+            }`}
+          >
+            1. 3D Robotic Arm IK (4-DOF)
+          </button>
+
+          <button
+            role="tab"
+            aria-selected={activeModule === 'pidlab'}
+            onClick={() => setActiveModule('pidlab')}
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer ${
+              activeModule === 'pidlab'
+                ? 'bg-white text-blue-700 shadow-xs border border-slate-200/80'
+                : 'text-slate-600 hover:text-slate-900 border border-transparent'
+            }`}
+          >
+            2. Closed-Loop PID Lab
+          </button>
+
           <button
             role="tab"
             aria-selected={activeModule === 'breakthrough'}
             onClick={() => setActiveModule('breakthrough')}
-            className={`px-3.5 py-2 rounded-xl font-mono text-xs font-bold transition flex items-center gap-2 cursor-pointer border ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer ${
               activeModule === 'breakthrough'
-                ? 'bg-emerald-500/15 text-emerald-300 border-emerald-500/50 shadow-sm'
-                : 'bg-slate-950/60 text-slate-400 border-slate-800 hover:text-slate-200 hover:border-slate-700'
+                ? 'bg-white text-blue-700 shadow-xs border border-slate-200/80'
+                : 'text-slate-600 hover:text-slate-900 border border-transparent'
             }`}
           >
-            <span className="text-emerald-400">01</span>
-            <span>SILICON BREAKTHROUGH</span>
-            <span className="hidden sm:inline-block text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300">
-              BREAKOUT
-            </span>
+            3. Silicon Breakthrough
           </button>
 
           <button
             role="tab"
             aria-selected={activeModule === 'pcbbird'}
             onClick={() => setActiveModule('pcbbird')}
-            className={`px-3.5 py-2 rounded-xl font-mono text-xs font-bold transition flex items-center gap-2 cursor-pointer border ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer ${
               activeModule === 'pcbbird'
-                ? 'bg-cyan-500/15 text-cyan-300 border-cyan-500/50 shadow-sm'
-                : 'bg-slate-950/60 text-slate-400 border-slate-800 hover:text-slate-200 hover:border-slate-700'
+                ? 'bg-white text-blue-700 shadow-xs border border-slate-200/80'
+                : 'text-slate-600 hover:text-slate-900 border border-transparent'
             }`}
           >
-            <span className="text-cyan-400">02</span>
-            <span>PCB BIRD RUNNER</span>
-            <span className="hidden sm:inline-block text-[10px] px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300">
-              SNAKE DRC
-            </span>
+            4. Silicon Viral Worm
           </button>
         </div>
       </div>
 
-      {/* Active Telemetry Context Strip */}
-      <div className="px-4 sm:px-6 py-2.5 bg-slate-950 border-b border-slate-900 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-slate-400">
-        {activeModule === 'breakthrough' ? (
+      {/* Context Description Banner */}
+      <div className="px-4 sm:px-6 py-3 border-b border-slate-200 bg-white flex flex-wrap items-center justify-between gap-2 text-xs text-slate-600">
+        {activeModule === 'roboticarm' && (
           <>
-            <div>
-              <span className="text-emerald-400 font-semibold">MODULE 01:</span> Boundary-scan JTAG Breakout — reflect signal pulses to desolder SMD passives &amp; 3-HP security fuses.
-            </div>
+            <span>
+              <strong>4-DOF 3D Spatial Manipulator &amp; Damped Least Squares IK:</strong> Move your mouse over the canvas to position the arm across the horizontal <strong>(X, Z) plane</strong>, spin the <strong>Mouse Scroll Wheel</strong> to control <strong>Up/Down Height (Y)</strong>, or Shift+Drag to orbit the camera.
+            </span>
+            <Link
+              href="/posts/robotic-arm-inverse-kinematics"
+              className="text-blue-600 hover:text-blue-800 font-semibold transition shrink-0"
+            >
+              Read Companion Engineering Article &rarr;
+            </Link>
+          </>
+        )}
+        {activeModule === 'pidlab' && (
+          <>
+            <span>
+              <strong>Discrete-Time Closed-Loop PID Simulator:</strong> Drag the oscilloscope setpoint line, adjust Kp/Ki/Kd gains, inject 30% load surges, or click Autotune.
+            </span>
+            <Link
+              href="/posts/closed-loop-pid-control-lab"
+              className="text-blue-600 hover:text-blue-800 font-semibold transition shrink-0"
+            >
+              Read Companion Engineering Article &rarr;
+            </Link>
+          </>
+        )}
+        {activeModule === 'breakthrough' && (
+          <>
+            <span>
+              <strong>Boundary-Scan Breakout:</strong> Reflect signal pulses to clear SMD passives and security fuses on a 60 FPS canvas.
+            </span>
             <Link
               href="/posts/silicon-breakthrough"
-              className="text-emerald-400 hover:text-emerald-300 underline underline-offset-4 font-semibold shrink-0"
+              className="text-blue-600 hover:text-blue-800 font-semibold transition shrink-0"
             >
               Read Architecture Note &rarr;
             </Link>
           </>
-        ) : (
+        )}
+        {activeModule === 'pcbbird' && (
           <>
-            <div>
-              <span className="text-cyan-400 font-semibold">MODULE 02:</span> FR4 Trace Runner — pilot an avian logic probe across copper traces while avoiding soldered IC packages.
-            </div>
+            <span>
+              <strong>Silicon Viral Worm (Zero-Day Injector):</strong> Pilot a polymorphic digital worm across 4-layer FR4 copper traces to patch vulnerability bugs while evading soldered IC packages.
+            </span>
             <Link
               href="/posts/pcb-bird-runner"
-              className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4 font-semibold shrink-0"
+              className="text-blue-600 hover:text-blue-800 font-semibold transition shrink-0"
             >
               Read Architecture Note &rarr;
             </Link>
@@ -93,9 +150,12 @@ export function HardwareWorkbench() {
         )}
       </div>
 
-      {/* Active Game Viewport (Only mounts active canvas to isolate keyboard listeners & 60fps loop) */}
-      <div className="p-3 sm:p-5 bg-slate-950">
-        {activeModule === 'breakthrough' ? <SiliconBreakthroughGame /> : <PcbBirdGame />}
+      {/* Active Simulator Viewport */}
+      <div className="p-4 sm:p-6 bg-white">
+        {activeModule === 'roboticarm' && <RoboticArmIkLab />}
+        {activeModule === 'pidlab' && <PidControlLab />}
+        {activeModule === 'breakthrough' && <SiliconBreakthroughGame />}
+        {activeModule === 'pcbbird' && <PcbBirdGame />}
       </div>
     </div>
   );

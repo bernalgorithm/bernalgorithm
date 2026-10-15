@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #060b11;
-  --foreground: #e2e8f0;
+  --background: #f8fafc;
+  --foreground: #0f172a;
 }
 
 @theme inline {
@@ -20,9 +20,49 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
-  background-image:
-    radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.08), transparent 55%),
-    linear-gradient(to right, rgba(30, 41, 59, 0.32) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(30, 41, 59, 0.32) 1px, transparent 1px);
-  background-size: 100% 100%, 36px 36px, 36px 36px;
 }
+
+/* Studio-lit celestial backdrop for Band 01 (paired with SpacetimeBackground) */
+.bg-studio-grid {
+  background-color: #f8fafc;
+}
+
+/* Deep obsidian cosmic observatory stage for Band 02 (paired with SpacetimeBackground) */
+.bg-obsidian-stage {
+  background-color: #060913;
+}
+
+/* Warm solar-amber cosmic editorial surface for Band 03 (paired with SpacetimeBackground) */
+.bg-editorial-paper {
+  background-color: #faf7f2;
+}
+
+/* Multi-layered physical card elevation with subtle specular top edge */
+.card-tactile {
+  background-color: #ffffff;
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 10px 24px -6px rgba(15, 23, 42, 0.07),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+  transition:
+    transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 200ms ease;
+}
+
+.card-tactile:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 4px 10px -2px rgba(15, 23, 42, 0.06),
+    0 18px 34px -8px rgba(15, 23, 42, 0.11),
+    inset 0 1px 0 0 rgba(255, 255, 255, 1);
+}
+
+/* Recessed hardware-instrument well for KPI telemetry readouts */
+.instrument-well {
+  background: linear-gradient(180deg, #eef2f6 0%, #f8fafc 100%);
+  box-shadow:
+    inset 0 2px 5px rgba(15, 23, 42, 0.07),
+    0 1px 0 rgba(255, 255, 255, 0.95);
+}
+

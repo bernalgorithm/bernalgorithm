@@ -11,8 +11,14 @@ export interface PostData {
   date: string;
   description?: string;
   tags?: string[];
+  readingTimeMinutes: number;
   content: string;
   [key: string]: unknown;
+}
+
+function estimateReadingTime(text: string): number {
+  const words = text.trim().split(/\s+/).length;
+  return Math.max(1, Math.round(words / 200));
 }
 
 export function getSortedPostsData(): PostData[] {
@@ -29,6 +35,7 @@ export function getSortedPostsData(): PostData[] {
         slug,
         title: matterResult.data.title || slug,
         date: matterResult.data.date || '',
+        readingTimeMinutes: estimateReadingTime(matterResult.content),
         content: matterResult.content,
         ...matterResult.data,
       };
@@ -49,6 +56,7 @@ export function getPostBySlug(slug: string): PostData | null {
     slug,
     title: matterResult.data.title || slug,
     date: matterResult.data.date || '',
+    readingTimeMinutes: estimateReadingTime(matterResult.content),
     content: matterResult.content,
     ...matterResult.data,
   };

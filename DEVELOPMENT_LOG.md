@@ -35,3 +35,13 @@ This is a living log of my progress making my personal website.
   - Programmatically updated the OpenXML `.docx` document (`Alexander_Bernal_Resume_Styled.docx` and `public/Alexander_Bernal_Resume.docx`) to preserve native Word styling while keeping `RESUME.md` in version control.
   - Built a dedicated `/resume` route (`app/resume/page.tsx`) with print-to-PDF support and aligned the homepage competency matrix (`app/page.tsx`) with real-world industrial and agentic engineering skills.
 - **Takeaway**: Maintaining a single source of truth across version-controlled Markdown, downloadable `.docx`, and static-exported Next.js routes ensures recruiters and hiring managers see a unified, high-signal narrative across ATS parsers and the live web portfolio.
+
+## [2026-10-15] - Interactive 60Hz PID Control Lab, Stack Topology Explorer & Portfolio Polish
+- **Problem**: Wanted to demonstrate real closed-loop control theory (rather than a mock hardware simulacrum) with interactive user perturbations, tunable $K_p, K_i, K_d$ parameters, and an Autotune/Reset capability, while aligning the Lab Notebook, Resume print stylesheet, and homepage UX with senior IIoT and Embedded Systems roles.
+- **Decision**:
+  - Engineered `PidControlLab.tsx`, a 60 FPS discrete-time closed-loop PID controller coupled to a 2nd-order physical fluid dosing reactor and multi-channel Digital Storage Oscilloscope (DSO). Implemented conditional integral anti-windup clamping, derivative-on-measurement EMA filtering, direct canvas setpoint dragging, physical load surge/spike injection, regime presets (*Underdamped Ringing*, *P-Only Load Droop*), and one-click *Autotune* & *Reset Stable* controls.
+  - Integrated `PidControlLab` as Module 01 in `HardwareWorkbench.tsx` and authored `content/closed-loop-pid-control-lab.md` and `content/self-healing-fieldbus-state-machines.md`, while upgrading `content/hello-world.md` into a full System Manifesto.
+  - Built `SystemTopologyExplorer.tsx` (interactive 4-layer Sensor $\rightarrow$ Fieldbus $\rightarrow$ Linux Edge $\rightarrow$ Cloud inspector), `LabNotebookList.tsx` (client-side tag filtering + reading time badges), and `CopyCodeBlock.tsx` (one-click code copy in MDX).
+  - Hardened print-to-PDF contrast utilities across `app/layout.tsx` and `app/resume/page.tsx` and added quantifiable Hero Telemetry Metrics (`20+ Countries`, `~50% Footprint`, `0 Disruption`, `12+ Years`).
+- **Takeaway**: Pairing genuine mathematical simulations (discrete-time PID + second-order physics) with production post-mortems gives technical interviewers immediate, interactive proof of both embedded control fundamentals and modern React/TypeScript execution.
+

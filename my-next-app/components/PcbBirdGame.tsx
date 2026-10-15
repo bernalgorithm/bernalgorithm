@@ -241,19 +241,20 @@ export function PcbBirdGame() {
   });
 
   // Game Core References (High performance 60FPS loop)
+  // Row y=7 is a completely open horizontal corridor with 21 clear cells ahead
   const birdRef = useRef<Point[]>([
-    { x: 9, y: 11 },
-    { x: 8, y: 11 },
-    { x: 7, y: 11 },
-    { x: 6, y: 11 },
-    { x: 5, y: 11 },
+    { x: 6, y: 7 },
+    { x: 5, y: 7 },
+    { x: 4, y: 7 },
+    { x: 3, y: 7 },
+    { x: 2, y: 7 },
   ]);
   const prevBirdRef = useRef<Point[]>([
-    { x: 9, y: 11 },
-    { x: 8, y: 11 },
-    { x: 7, y: 11 },
-    { x: 6, y: 11 },
-    { x: 5, y: 11 },
+    { x: 6, y: 7 },
+    { x: 5, y: 7 },
+    { x: 4, y: 7 },
+    { x: 3, y: 7 },
+    { x: 2, y: 7 },
   ]);
 
   const dirRef = useRef<Direction>('RIGHT');
@@ -369,12 +370,13 @@ export function PcbBirdGame() {
   }, []);
 
   const resetGame = useCallback(() => {
+    // Spawn on row y=7 (obstacle-free across the entire board width)
     const startPos = [
-      { x: 9, y: 11 },
-      { x: 8, y: 11 },
-      { x: 7, y: 11 },
-      { x: 6, y: 11 },
-      { x: 5, y: 11 },
+      { x: 6, y: 7 },
+      { x: 5, y: 7 },
+      { x: 4, y: 7 },
+      { x: 3, y: 7 },
+      { x: 2, y: 7 },
     ];
     birdRef.current = [...startPos];
     prevBirdRef.current = [...startPos];
@@ -383,21 +385,31 @@ export function PcbBirdGame() {
     bugsRef.current = [];
     sparksRef.current = [];
     floatTextsRef.current = [];
-    shieldRef.current = 0;
+    // Give 3 seconds (~22 ticks) of initial Rootkit Stealth Cloak so the user can acclimate safely
+    shieldRef.current = 22;
     comboRef.current = 1;
 
     setScore(0);
     setCombo(1);
-    setShieldTime(0);
+    setShieldTime(22);
     setBugsFixed(0);
     setClockMhz(120);
     setGameOver(false);
     setIsPaused(false);
     setGameStarted(true);
     lastTickTimeRef.current = performance.now();
-    tickDurationRef.current = 130;
+    tickDurationRef.current = 140;
 
-    spawnBug('logic');
+    // Place the first vulnerability packet directly ahead in the open y=7 corridor
+    bugsRef.current.push({
+      x: 15,
+      y: 7,
+      type: 'logic',
+      points: 100,
+      color: '#f43f5e',
+      glow: '#fb7185',
+      animOffset: 0,
+    });
     spawnBug('jitter');
     synth.playPowerUp();
   }, [spawnBug]);
@@ -482,21 +494,24 @@ export function PcbBirdGame() {
 
       // Wall Collision (Edge of PCB)
       if (nx < 0 || nx >= COLS || ny < 0 || ny >= ROWS) {
-        handleFault('SUBSTRATE OVERRUN', 'The elongated bird severed trace continuity beyond the PCB edge!');
+        handleFault(
+          'BUS BOUNDARY OVERFLOW',
+          'The viral worm crawled off the FR4 substrate edge and lost carrier signal!'
+        );
         return;
       }
 
-      // Soldered IC Collision (Unless Shielded!)
+      // Soldered IC Collision (Unless Rootkit Shielded!)
       const hitObstacle = isCellObstacle(nx, ny);
       if (hitObstacle) {
         if (shieldRef.current > 0) {
-          // Shield active: Phase through chip!
+          // Shield active: Tunnel through chip!
           triggerSparks(nx, ny, '#38bdf8', 6);
-          addFloatingText(nx, ny, 'PHASED OVER IC', '#38bdf8');
+          addFloatingText(nx, ny, 'TUNNELED IC', '#38bdf8');
         } else {
           handleFault(
-            'DIELECTRIC BREAKDOWN',
-            'Fatal short-circuit with live soldered IC pins! High-voltage surge vaporized the avian debugger.'
+            'HARDWARE WATCHDOG TRAP',
+            'Direct collision with live soldered IC pins! High-voltage Vcc surge purged the viral worm.'
           );
           return;
         }
@@ -504,7 +519,10 @@ export function PcbBirdGame() {
 
       // Self Collision
       if (birdRef.current.some((seg) => seg.x === nx && seg.y === ny)) {
-        handleFault('PARASITIC FEEDBACK LOOP', 'The bird coiled into its own neck traces, causing catastrophic signal loopback.');
+        handleFault(
+          'RECURSIVE STACK OVERFLOW',
+          'The viral worm bit into its own encrypted payload segments, causing a fatal cyclic deadlock.'
+        );
         return;
       }
 
@@ -871,174 +889,201 @@ export function PcbBirdGame() {
       }
 
       // ==========================================
-      // 5. THE ELONGATED BIRD (KINEMATICS & PLUMAGE)
+      // 5. THE DIGITAL VIRAL WORM (POLYMORPHIC PAYLOAD)
       // ==========================================
-      const bird = birdRef.current;
-      const prevBird = prevBirdRef.current;
+      const worm = birdRef.current;
+      const prevWorm = prevBirdRef.current;
 
-      if (bird.length > 0) {
-        // Compute interpolated visual points for 60FPS fluid gliding
+      if (worm.length > 0) {
+        // Compute interpolated visual points for 60FPS fluid slithering
         const visualPoints: Point[] = [];
-        for (let i = 0; i < bird.length; i++) {
-          const curr = bird[i];
-          const prev = prevBird[i] || curr;
-          const vx = prev.x * CELL_SIZE + (curr.x - prev.x) * CELL_SIZE * tickProgress + CELL_SIZE / 2;
-          const vy = prev.y * CELL_SIZE + (curr.y - prev.y) * CELL_SIZE * tickProgress + CELL_SIZE / 2;
+        for (let i = 0; i < worm.length; i++) {
+          const curr = worm[i];
+          const prev = prevWorm[i] || curr;
+          const vx =
+            prev.x * CELL_SIZE + (curr.x - prev.x) * CELL_SIZE * tickProgress + CELL_SIZE / 2;
+          const vy =
+            prev.y * CELL_SIZE + (curr.y - prev.y) * CELL_SIZE * tickProgress + CELL_SIZE / 2;
 
-          // Undulating spine wave (subtle serpentine sway)
-          const wavePhase = (now / 150) - i * 0.45;
-          const waveAmp = Math.min(2.5, i * 0.2);
+          // Undulating peristaltic cyber-worm wave
+          const wavePhase = now / 120 - i * 0.65;
+          const waveAmp = i === 0 ? 0.8 : Math.min(3.2, 0.9 + i * 0.22);
           const swayX = Math.cos(wavePhase) * waveAmp;
           const swayY = Math.sin(wavePhase) * waveAmp;
 
           visualPoints.push({ x: vx + swayX, y: vy + swayY });
         }
 
-        // Draw Ground Shield Barrier (if active)
-        if (shieldRef.current > 0) {
-          ctx.strokeStyle = '#38bdf8';
-          ctx.shadowColor = '#38bdf8';
-          ctx.shadowBlur = 14;
-          ctx.lineWidth = 3;
-          ctx.beginPath();
-          for (let i = 0; i < visualPoints.length; i++) {
-            const pt = visualPoints[i];
-            if (i === 0) ctx.moveTo(pt.x, pt.y);
-            else ctx.lineTo(pt.x, pt.y);
-          }
-          ctx.stroke();
-          ctx.shadowBlur = 0;
+        // Draw Glowing Fiber-Optic Neural Data Spine connecting all worm segments
+        ctx.strokeStyle = shieldRef.current > 0 ? '#38bdf8' : '#10b981';
+        ctx.shadowColor = shieldRef.current > 0 ? '#38bdf8' : '#10b981';
+        ctx.shadowBlur = shieldRef.current > 0 ? 16 : 8;
+        ctx.lineWidth = shieldRef.current > 0 ? 5 : 3.5;
+        ctx.beginPath();
+        for (let i = 0; i < visualPoints.length; i++) {
+          const pt = visualPoints[i];
+          if (i === 0) ctx.moveTo(pt.x, pt.y);
+          else ctx.lineTo(pt.x, pt.y);
         }
+        ctx.stroke();
+        ctx.shadowBlur = 0;
 
-        // Draw Feathery Body Segments (from tail to head)
+        const hexGlyphs = ['0', '1', 'F', 'A', 'C', 'E', '7', '9'];
+
+        // Draw Segmented Cyber-Worm Payload Nodes (from tail to head)
         for (let i = visualPoints.length - 1; i >= 1; i--) {
           const pt = visualPoints[i];
-          const radius = Math.max(7, (CELL_SIZE / 2) - 1.5);
+          const prevPt = visualPoints[i - 1];
+          const segAngle = Math.atan2(prevPt.y - pt.y, prevPt.x - pt.x);
+          const perpAngle = segAngle + Math.PI / 2;
 
-          // Iridescent plumage gradient (Kingfisher / Cyber Hummingbird palette)
+          const taper = i === visualPoints.length - 1 ? 0.72 : i === visualPoints.length - 2 ? 0.86 : 1.0;
+          const radius = Math.max(6.5, ((CELL_SIZE / 2) - 1.5) * taper);
+
+          // Animated lateral cybernetic logic-probe cilia / legs
+          const legSweep = Math.sin(now / 90 - i * 0.9) * 3.5;
+          const legLen = radius + 4.5;
+          ctx.strokeStyle = shieldRef.current > 0 ? '#38bdf8' : '#34d399';
+          ctx.lineWidth = 1.4;
+          ctx.beginPath();
+          // Left micro-probe leg
+          ctx.moveTo(pt.x, pt.y);
+          ctx.lineTo(
+            pt.x + Math.cos(perpAngle) * legLen + Math.cos(segAngle) * legSweep,
+            pt.y + Math.sin(perpAngle) * legLen + Math.sin(segAngle) * legSweep
+          );
+          // Right micro-probe leg
+          ctx.moveTo(pt.x, pt.y);
+          ctx.lineTo(
+            pt.x - Math.cos(perpAngle) * legLen - Math.cos(segAngle) * legSweep,
+            pt.y - Math.sin(perpAngle) * legLen - Math.sin(segAngle) * legSweep
+          );
+          ctx.stroke();
+
+          // Segment Armored Carapace Ring (Matrix Emerald -> Viral Magenta/Cyan gradient)
           const ratio = i / visualPoints.length;
-          const r = Math.floor(14 + ratio * 55);
-          const g = Math.floor(165 - ratio * 45);
-          const b = Math.floor(233 - ratio * 70);
+          const isPulseSeg = Math.floor(now / 90 + i) % 5 === 0;
+          ctx.fillStyle = shieldRef.current > 0
+            ? '#0c4a6e'
+            : isPulseSeg
+            ? '#065f46'
+            : `rgb(${Math.floor(15 + ratio * 30)}, ${Math.floor(40 - ratio * 15)}, ${Math.floor(55 + ratio * 35)})`;
+          ctx.strokeStyle = shieldRef.current > 0
+            ? '#7dd3fc'
+            : isPulseSeg
+            ? '#34d399'
+            : '#10b981';
+          ctx.lineWidth = 1.8;
 
-          ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
           ctx.beginPath();
           ctx.arc(pt.x, pt.y, radius, 0, Math.PI * 2);
           ctx.fill();
-
-          // Outer Plumage Ring
-          ctx.strokeStyle = '#38bdf8';
-          ctx.lineWidth = 1.5;
           ctx.stroke();
 
-          // Winglet Nubs on first 4 segments
-          if (i <= 4) {
-            const wingFlap = Math.sin((now / 80) + i) * 3;
-            ctx.fillStyle = '#0284c7';
-            ctx.beginPath();
-            ctx.ellipse(pt.x - 10, pt.y, 4, 2 + Math.abs(wingFlap), 0, 0, Math.PI * 2);
-            ctx.ellipse(pt.x + 10, pt.y, 4, 2 + Math.abs(wingFlap), 0, 0, Math.PI * 2);
-            ctx.fill();
-          }
+          // Live flickering binary/hex payload bit inside each worm segment
+          const glyphIdx = (Math.floor(now / 180) + i * 3) % hexGlyphs.length;
+          ctx.fillStyle = isPulseSeg ? '#a7f3d0' : '#34d399';
+          ctx.font = 'bold 8px monospace';
+          ctx.textAlign = 'center';
+          ctx.fillText(hexGlyphs[glyphIdx], pt.x, pt.y + 3);
 
-          // Tail Feather Fan on very last segment
+          // Tail Packet Stinger on the final segment
           if (i === visualPoints.length - 1) {
-            ctx.fillStyle = '#fbbf24'; // Golden Tail Feathers
-            for (let a = -0.5; a <= 0.5; a += 0.5) {
-              ctx.beginPath();
-              ctx.ellipse(pt.x - Math.sin(a) * 8, pt.y + 10, 3, 7, a, 0, Math.PI * 2);
-              ctx.fill();
-            }
+            const tailStingX = pt.x - Math.cos(segAngle) * (radius + 7);
+            const tailStingY = pt.y - Math.sin(segAngle) * (radius + 7);
+            ctx.strokeStyle = '#f43f5e';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(pt.x, pt.y);
+            ctx.lineTo(tailStingX, tailStingY);
+            ctx.stroke();
           }
         }
 
-        // Draw The Bird's Head (Segment 0)
+        // Draw The Viral Worm's Head (Zero-Day Injector & Cyber Mandibles)
         const headPt = visualPoints[0];
         const hRad = CELL_SIZE / 2;
         const dir = dirRef.current;
 
-        // Head Base
-        ctx.fillStyle = '#0284c7';
+        let headAngle = 0;
+        if (dir === 'RIGHT') headAngle = 0;
+        else if (dir === 'LEFT') headAngle = Math.PI;
+        else if (dir === 'UP') headAngle = -Math.PI / 2;
+        else if (dir === 'DOWN') headAngle = Math.PI / 2;
+
+        // Is the worm close to a bug? Open cyber-mandibles and project target-lock laser!
+        const nearestBug = bugsRef.current.find(
+          (bg) => Math.hypot(bg.x - worm[0].x, bg.y - worm[0].y) <= 3.5
+        );
+        const pincerSpread = nearestBug ? 0.58 : 0.32;
+
+        if (nearestBug) {
+          const bugPx = nearestBug.x * CELL_SIZE + CELL_SIZE / 2;
+          const bugPy = nearestBug.y * CELL_SIZE + CELL_SIZE / 2;
+          ctx.strokeStyle = 'rgba(244, 63, 94, 0.55)';
+          ctx.lineWidth = 1.2;
+          ctx.setLineDash([3, 3]);
+          ctx.beginPath();
+          ctx.moveTo(headPt.x, headPt.y);
+          ctx.lineTo(bugPx, bugPy);
+          ctx.stroke();
+          ctx.setLineDash([]);
+        }
+
+        // Draw Twin Cyber-Mandibles / Injector Pincers
+        ctx.strokeStyle = '#f43f5e';
+        ctx.lineWidth = 2.8;
+        ctx.lineCap = 'round';
+        [-1, 1].forEach((side) => {
+          const baseAngle = headAngle + side * 0.45;
+          const tipAngle = headAngle + side * pincerSpread;
+          const mBaseX = headPt.x + Math.cos(baseAngle) * (hRad - 1);
+          const mBaseY = headPt.y + Math.sin(baseAngle) * (hRad - 1);
+          const mMidX = headPt.x + Math.cos(tipAngle) * (hRad + 7);
+          const mMidY = headPt.y + Math.sin(tipAngle) * (hRad + 7);
+          const mTipX = headPt.x + Math.cos(headAngle + side * 0.15) * (hRad + 12);
+          const mTipY = headPt.y + Math.sin(headAngle + side * 0.15) * (hRad + 12);
+
+          ctx.beginPath();
+          ctx.moveTo(mBaseX, mBaseY);
+          ctx.lineTo(mMidX, mMidY);
+          ctx.lineTo(mTipX, mTipY);
+          ctx.stroke();
+        });
+
+        // Armored Worm Head Carapace
+        ctx.fillStyle = shieldRef.current > 0 ? '#0284c7' : '#064e3b';
+        ctx.strokeStyle = shieldRef.current > 0 ? '#7dd3fc' : '#34d399';
+        ctx.lineWidth = 2.2;
         ctx.beginPath();
         ctx.arc(headPt.x, headPt.y, hRad, 0, Math.PI * 2);
         ctx.fill();
-        ctx.strokeStyle = '#7dd3fc';
-        ctx.lineWidth = 2;
         ctx.stroke();
 
-        // Bird Crest / Crown Feathers
-        ctx.fillStyle = '#f59e0b';
-        ctx.beginPath();
-        ctx.arc(headPt.x, headPt.y - hRad + 2, 4.5, 0, Math.PI * 2);
-        ctx.fill();
+        // Twin Glowing Cyber-Optic Eyes (Crimson / Neon Visor)
+        const eyeForward = 4.5;
+        const eyeSpread = 5.2;
+        const perpHead = headAngle + Math.PI / 2;
+        [-1, 1].forEach((side) => {
+          const ex =
+            headPt.x + Math.cos(headAngle) * eyeForward + Math.cos(perpHead) * side * eyeSpread;
+          const ey =
+            headPt.y + Math.sin(headAngle) * eyeForward + Math.sin(perpHead) * side * eyeSpread;
 
-        // Dynamic Beak pointing in movement direction
-        let bTipX = headPt.x;
-        let bTipY = headPt.y;
-        let b1x = headPt.x, b1y = headPt.y, b2x = headPt.x, b2y = headPt.y;
+          ctx.fillStyle = '#f43f5e';
+          ctx.shadowColor = '#f43f5e';
+          ctx.shadowBlur = 6;
+          ctx.beginPath();
+          ctx.arc(ex, ey, 2.6, 0, Math.PI * 2);
+          ctx.fill();
 
-        // Is bird close to a bug? Open beak in anticipation!
-        const nearestBug = bugsRef.current.find(
-          (bg) => Math.hypot(bg.x - bird[0].x, bg.y - bird[0].y) <= 2.5
-        );
-        const beakGap = nearestBug ? 7 : 4;
-
-        if (dir === 'RIGHT') {
-          bTipX = headPt.x + hRad + 11;
-          bTipY = headPt.y;
-          b1x = headPt.x + hRad - 2; b1y = headPt.y - beakGap;
-          b2x = headPt.x + hRad - 2; b2y = headPt.y + beakGap;
-        } else if (dir === 'LEFT') {
-          bTipX = headPt.x - hRad - 11;
-          bTipY = headPt.y;
-          b1x = headPt.x - hRad + 2; b1y = headPt.y - beakGap;
-          b2x = headPt.x - hRad + 2; b2y = headPt.y + beakGap;
-        } else if (dir === 'UP') {
-          bTipX = headPt.x;
-          bTipY = headPt.y - hRad - 11;
-          b1x = headPt.x - beakGap; b1y = headPt.y - hRad + 2;
-          b2x = headPt.x + beakGap; b2y = headPt.y - hRad + 2;
-        } else if (dir === 'DOWN') {
-          bTipX = headPt.x;
-          bTipY = headPt.y + hRad + 11;
-          b1x = headPt.x - beakGap; b1y = headPt.y + hRad - 2;
-          b2x = headPt.x + beakGap; b2y = headPt.y + hRad - 2;
-        }
-
-        ctx.fillStyle = '#f59e0b';
-        ctx.beginPath();
-        ctx.moveTo(b1x, b1y);
-        ctx.lineTo(bTipX, bTipY);
-        ctx.lineTo(b2x, b2y);
-        ctx.closePath();
-        ctx.fill();
-
-        // Quirky Googly Eyes with Pupil tracking movement
-        let eyeX = headPt.x;
-        let eyeY = headPt.y - 2;
-        if (dir === 'RIGHT') eyeX += 3;
-        if (dir === 'LEFT') eyeX -= 3;
-        if (dir === 'UP') eyeY -= 3;
-        if (dir === 'DOWN') eyeY += 3;
-
-        // Sclera (White)
-        ctx.fillStyle = '#ffffff';
-        ctx.beginPath();
-        ctx.arc(eyeX, eyeY, 4.5, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Pupil tracking forward
-        ctx.fillStyle = '#0f172a';
-        let pupilX = eyeX;
-        let pupilY = eyeY;
-        if (dir === 'RIGHT') pupilX += 1.8;
-        if (dir === 'LEFT') pupilX -= 1.8;
-        if (dir === 'UP') pupilY -= 1.8;
-        if (dir === 'DOWN') pupilY += 1.8;
-
-        ctx.beginPath();
-        ctx.arc(pupilX, pupilY, 2.2, 0, Math.PI * 2);
-        ctx.fill();
+          ctx.fillStyle = '#fecdd3';
+          ctx.beginPath();
+          ctx.arc(ex, ey, 1.1, 0, Math.PI * 2);
+          ctx.fill();
+        });
+        ctx.shadowBlur = 0;
+        ctx.textAlign = 'left';
       }
 
       // ==========================================
@@ -1079,37 +1124,37 @@ export function PcbBirdGame() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center my-8 p-6 bg-slate-950 border-2 border-emerald-500 rounded-3xl shadow-2xl text-slate-100 max-w-4xl mx-auto font-mono">
+    <div className="flex flex-col items-center my-4 p-6 bg-slate-950 border-2 border-emerald-500/50 rounded-3xl shadow-2xl text-slate-100 max-w-4xl mx-auto font-mono">
       {/* Upper Cockpit HUD */}
       <div className="w-full flex flex-wrap items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-800">
         <div>
           <div className="flex items-center gap-2">
-            <span className="text-2xl animate-pulse">🐦⚡</span>
-            <h3 className="text-2xl font-black tracking-wider text-emerald-400">
-              PCB BIRD // HARDWARE DEBUGGER
+            <span className="inline-block w-3 h-3 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
+            <h3 className="text-xl sm:text-2xl font-black tracking-wider text-emerald-400">
+              SILICON WORM // ZERO-DAY INJECTOR
             </h3>
           </div>
           <p className="text-xs text-slate-400 mt-1">
-            FR4 Multilayer Substrate &bull; Target: STM32H743ZI &bull; Hot IC Avoidance
+            Polymorphic Payload Worm &bull; Target: STM32H743ZI &bull; Safe Spawn Corridor Active
           </p>
         </div>
 
         {/* Realtime Metrics */}
         <div className="flex items-center gap-3 bg-slate-900 border border-slate-800 px-4 py-2 rounded-xl text-xs">
           <div>
-            <span className="text-slate-500 block text-[10px]">CLOCK FREQ</span>
+            <span className="text-slate-500 block text-[10px]">BUS CLOCK</span>
             <span className="font-bold text-amber-400 text-sm">{clockMhz} MHz</span>
           </div>
           <div className="h-6 w-px bg-slate-800" />
           <div>
-            <span className="text-slate-500 block text-[10px]">TRACE MULT</span>
+            <span className="text-slate-500 block text-[10px]">PAYLOAD MULT</span>
             <span className={`font-bold text-sm ${combo > 1 ? 'text-rose-400 animate-bounce' : 'text-slate-300'}`}>
               x{combo}.0
             </span>
           </div>
           <div className="h-6 w-px bg-slate-800" />
           <div>
-            <span className="text-slate-500 block text-[10px]">BUGS FIXED</span>
+            <span className="text-slate-500 block text-[10px]">EXPLOITS</span>
             <span className="font-bold text-emerald-400 text-sm">{bugsFixed}</span>
           </div>
           <div className="h-6 w-px bg-slate-800" />
@@ -1120,15 +1165,17 @@ export function PcbBirdGame() {
         </div>
       </div>
 
-      {/* Ground Shield Status Indicator */}
+      {/* Rootkit Stealth Shield Status Indicator */}
       {shieldTime > 0 && (
         <div className="w-full mb-3 px-4 py-2 bg-cyan-950/80 border border-cyan-500 rounded-lg flex items-center justify-between text-xs animate-pulse text-cyan-300">
-          <span className="font-bold">⚡ GROUND PLANE SHIELD ACTIVE — PASSING SAFELY OVER ICS!</span>
+          <span className="font-bold">
+            ⚡ ROOTKIT STEALTH CLOAK ACTIVE — TUNNELING SAFELY THROUGH SOLDERED ICS!
+          </span>
           <span className="font-mono font-black">{Math.ceil(shieldTime / 7)}s</span>
         </div>
       )}
 
-      {/* High-Definition Canvas Canvas */}
+      {/* High-Definition Canvas */}
       <div className="relative border-4 border-emerald-900/80 rounded-2xl overflow-hidden bg-black shadow-2xl">
         <canvas
           ref={canvasRef}
@@ -1145,9 +1192,9 @@ export function PcbBirdGame() {
           <div className="absolute inset-0 bg-slate-950/85 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center">
             {gameOver ? (
               <div className="space-y-4 max-w-lg">
-                <div className="text-5xl animate-bounce">💥⚡</div>
+                <div className="text-4xl font-black text-rose-500">[ ! FAULT ! ]</div>
                 <h4 className="text-3xl font-black text-rose-500 tracking-widest uppercase">
-                  {deathReport.title || 'SYSTEM HALT'}
+                  {deathReport.title || 'PAYLOAD TERMINATED'}
                 </h4>
                 <p className="text-xs text-rose-200 bg-rose-950/60 p-3 rounded-lg border border-rose-800/80 leading-relaxed">
                   {deathReport.desc}
@@ -1168,7 +1215,7 @@ export function PcbBirdGame() {
                   onClick={resetGame}
                   className="px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl tracking-wider transition shadow-lg hover:shadow-emerald-500/30 cursor-pointer text-sm"
                 >
-                  REBOOT CORE (Spacebar)
+                  RE-INJECT VIRAL WORM (Spacebar)
                 </button>
               </div>
             ) : isPaused ? (
@@ -1184,29 +1231,33 @@ export function PcbBirdGame() {
               </div>
             ) : (
               <div className="space-y-5 max-w-md">
-                <div className="text-6xl animate-pulse">🐦</div>
+                <div className="inline-block px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold">
+                  POLYMORPHIC PAYLOAD SIMULATOR
+                </div>
                 <h4 className="text-3xl font-black text-emerald-400 tracking-wider">
-                  PCB BIRD RUNNER
+                  SILICON VIRAL WORM
                 </h4>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  You are an elongated avian debugger exploring a live 4-layer FR4 PCB. Slither across the green solder mask to devour software glitches and clock moths!
+                  You are a self-replicating digital worm slithering across a live 4-layer FR4 PCB.
+                  Devour unpatched logic glitches and memory leaks to grow your hex payload—and use
+                  your initial 3-second Rootkit Cloak to acclimate safely!
                 </p>
                 <div className="text-left text-[11px] bg-slate-900/90 p-3 rounded-lg border border-slate-800 space-y-1.5 text-slate-300">
                   <div className="flex items-center gap-2">
-                    <span className="text-rose-400 font-bold">🔴 Logic Bug:</span> +100 Pts
+                    <span className="text-rose-400 font-bold">🔴 Logic Glitch:</span> +100 Pts (Appends hex segment)
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-amber-400 font-bold">🟡 Clock Jitter Moth:</span> +250 Pts (Speed boost)
+                    <span className="text-amber-400 font-bold">🟡 Clock Jitter Bug:</span> +250 Pts (Bus clock boost)
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-cyan-400 font-bold">🔵 Memory Leak Bug:</span> +400 Pts & Ground Shield (Walk over chips!)
+                    <span className="text-cyan-400 font-bold">🔵 Buffer Overflow Leak:</span> +400 Pts &amp; Rootkit Cloak (Tunnel through ICs!)
                   </div>
                 </div>
                 <button
                   onClick={resetGame}
                   className="px-8 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl tracking-wider transition shadow-lg hover:shadow-emerald-500/30 cursor-pointer text-base"
                 >
-                  POWER UP (Spacebar)
+                  DEPLOY VIRAL WORM (Spacebar)
                 </button>
               </div>
             )}
@@ -1217,7 +1268,10 @@ export function PcbBirdGame() {
       {/* Control Console & Audio Toggle */}
       <div className="w-full mt-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
         <div className="space-y-1">
-          <p><span className="text-emerald-400 font-bold">Steer:</span> Arrow Keys or WASD &bull; <span className="text-emerald-400 font-bold">Pause:</span> Spacebar</p>
+          <p>
+            <span className="text-emerald-400 font-bold">Steer Worm:</span> Arrow Keys or WASD &bull;{' '}
+            <span className="text-emerald-400 font-bold">Pause:</span> Spacebar
+          </p>
           <p>
             <span className="text-slate-500">Audio:</span>{' '}
             <button
