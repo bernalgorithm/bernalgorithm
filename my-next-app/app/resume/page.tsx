@@ -3,86 +3,93 @@ import Link from 'next/link';
 import { PrintResumeButton } from '@/components/PrintResumeButton';
 
 export const metadata: Metadata = {
-  title: 'Resume | Alexander Bernal — Cyber-Physical Systems, IoT, Robotics & Full-Stack Engineer',
+  title: 'Resume | Alexander Bernal — Senior Embedded Systems, IoT & Full-Stack Software Engineer',
   description:
-    'Resume of Alexander Bernal: Senior Cyber-Physical Systems, Embedded Linux, IoT, Robotics/Closed-Loop Control, and AI-Augmented Full-Stack Software Engineer.',
+    'Resume of Alexander Bernal: Senior Embedded Systems, IoT, Linux, and Full-Stack Software Engineer.',
 };
 
 const SKILL_GROUPS = [
   {
-    category: 'Systems Architecture & Languages',
-    skills:
-      'Cyber-Physical & Distributed Systems, Python, C, C++, Bash, TypeScript, JavaScript, SQL',
+    category: 'Languages & Frameworks',
+    skills: 'Python, C, C++, TypeScript, JavaScript, Bash, SQL, React, Next.js, Tailwind CSS',
   },
   {
-    category: 'Linux Fleets, Networking & Edge Infrastructure',
+    category: 'Embedded Linux, IoT & Edge Infrastructure',
     skills:
-      'Embedded Linux (Ubuntu / User-Space Daemons), Out-of-Band Cellular & LoRa Gateways (Cradlepoint, Teltonika, MultiTech, Milesight), DHCP, NAT / Port Forwarding & Subnet Routing, LoRa / LoRaWAN, Azure IoT, Docker, Remote OTA Fleet Upgrades',
+      'Embedded Linux (Ubuntu, background services/daemons), Azure IoT, Docker, Remote Over-the-Air (OTA) Fleet Upgrades, Headless Single-Board Computers (SBCs)',
   },
   {
-    category: 'Robotics Kinematics, Closed-Loop Control & Telemetry',
+    category: 'Field Networking & Connectivity',
     skills:
-      'Jacobian Inverse Kinematics & Trajectory Planning, Closed-Loop Actuator / PID Control, Self-Healing Protocol State Machines, OPC UA, Modbus (TCP/IP & RTU — BMS/Cooling/Industrial), MQTT, 4–20mA Analog & Digital I/O, PLCs & Hardware Interlocks',
+      'Cellular & LoRaWAN Gateways (Cradlepoint, Teltonika, MultiTech, Milesight), Embedded Modems & Wi-Fi, TCP/IP, DHCP, NAT / Port Forwarding, Subnet Routing',
   },
   {
-    category: 'Full-Stack, Cloud & Agentic AI Engineering',
+    category: 'Hardware Integration & Control Protocols',
     skills:
-      'React, Next.js & TypeScript, Rule-Based Decision Engines, Offline-First Cloud Sync (Firebase), Claude Code & Google Antigravity (agy), GitHub Copilot & Gemini, Context Architecture (CLAUDE.md / AGENTS.md), GitHub Actions (CI/CD)',
+      'Automated Closed-Loop Control (PID), Modbus (TCP/IP & RTU), OPC UA, MQTT, 4–20mA Analog & Digital I/O, PLCs, Multi-Vendor Sensor & Pump/Actuator Integration',
+  },
+  {
+    category: 'Cloud, Full-Stack & Engineering Workflow',
+    skills:
+      'Rule-Based Configuration & Decision Engines, Firebase / Firestore, GitHub Actions (CI/CD), Azure DevOps, Git, AI-Augmented Development (Claude Code, GitHub Copilot, Gemini)',
   },
 ];
 
 const EXPERIENCE = [
   {
     title: 'Digital Innovation Engineer',
+    subtitle: 'Senior Embedded Systems, IoT & Full-Stack Engineer',
     period: 'March 2022 – Present',
     bullets: [
       {
-        lead: 'Global Cyber-Physical & Closed-Loop Architecture',
-        text: 'Lead the end-to-end systems architecture, Embedded Linux software design, and network integration for automated cyber-physical control systems—orchestrating real-time closed-loop sensor-to-actuator regulation from concept through global commercial deployment across 20+ countries spanning 6 continents.',
+        lead: 'Global IoT & Automated Control Architecture',
+        text: 'Lead end-to-end software architecture, Embedded Linux development, and network integration for automated industrial control systems—taking products from initial prototype to commercial deployment across 20+ countries on 6 continents.',
       },
       {
-        lead: 'Self-Healing Telemetry & Hardware Fault Tolerance',
-        text: 'Engineered fault-tolerant Modbus (TCP/IP & RTU), OPC UA, and MQTT communication state machines with automated session recovery and volatile register reconciliation to mask unannounced 20–40 minute hardware resets on third-party controllers—guaranteeing continuous closed-loop operation with zero customer-visible downtime.',
+        lead: 'Self-Healing Device Reliability (Zero-Downtime Operations)',
+        text: 'Eliminated customer-visible downtime from third-party hardware freezes (which previously caused 20–40 minute outages) by engineering fault-tolerant communication state machines (Modbus TCP/RTU, OPC UA, MQTT) that automatically detect dropouts, quarantine bad sensor reads, and restore live device state upon reboot.',
       },
       {
-        lead: 'Enterprise SME Knowledge Digitization',
-        text: 'Architected a guided technical configuration and decision-support platform that codifies Subject Matter Expert (SME) domain heuristics into a deterministic recommendation engine—automating complex system and hardware selection across global commercial operations.',
+        lead: 'Lightweight Edge Modernization (~50% Resource Reduction)',
+        text: 'Cut edge device memory and storage usage by ~50% by replacing heavy Docker container runtimes with lightweight native C/C++ cloud services, and ported core software to support remote Embedded Linux OS upgrades across live field fleets without requiring on-site technician visits.',
       },
       {
-        lead: 'AI-Augmented Systems Engineering',
-        text: 'Pioneered AI-assisted and agentic development workflows (GitHub Copilot, Claude Code, Google Antigravity, declarative CLAUDE.md / AGENTS.md context guardrails, and automated diagnostic tooling) to translate system architecture into verified C/C++, Python, and TypeScript implementations while accelerating protocol debugging and cross-OS refactoring.',
+        lead: 'Global Product Configuration Platform',
+        text: 'Architected a web-based configuration and recommendation platform that translates complex engineering sizing rules from senior specialists into an automated, step-by-step tool—standardizing commercial system proposals worldwide and reducing manual configuration errors.',
       },
       {
-        lead: 'Linux Fleet Modernization & Runtime Optimization',
-        text: 'Ported and compiled core C/C++ edge software to support remote in-field Embedded Linux LTS distribution upgrades, while replacing heavy containerized edge runtimes with lightweight native cloud SDK daemons (cutting deployment memory/flash footprint by ~50%).',
+        lead: 'AI-Accelerated Software Delivery',
+        text: 'Established structured AI-assisted engineering workflows (Claude Code, GitHub Copilot, Gemini) paired with automated test verification and architectural guardrails to accelerate C/C++, Python, and TypeScript feature delivery, protocol debugging, and cross-platform refactoring.',
       },
     ],
   },
   {
     title: 'Associate Digital Innovation Engineer',
+    subtitle: 'Embedded Linux & IoT Software Engineer',
     period: 'June 2019 – March 2022',
     bullets: [
       {
-        lead: 'Multi-Protocol Sensor & Actuator Integration',
-        text: 'Developed production edge software and Python/Bash/C++ daemons to integrate multi-vendor sensors, variable-rate actuators/pumps, and PLCs across OPC UA, Modbus (TCP/IP & RTU), LoRa, and analog/digital I/O networks, routing real-time telemetry to Azure IoT via MQTT.',
+        lead: 'Hardware-to-Cloud Telemetry Integration',
+        text: 'Developed production Python, C++, and Bash background services on Linux edge devices to connect multi-vendor sensors, variable-rate pumps/actuators, and PLCs (OPC UA, Modbus, LoRa, Analog/Digital I/O), streaming real-time operational data to Azure IoT via MQTT.',
       },
       {
-        lead: 'Edge Networking, Out-of-Band Cellular & LoRa Backhaul',
-        text: 'Designed and configured multi-device field networks across dedicated cellular and LoRa gateways (Cradlepoint, Teltonika, MultiTech, Milesight) as well as onboard embedded cellular modems and Wi-Fi interfaces on headless Linux SBCs—configuring DHCP servers, NAT / port-forwarding rules, and automated Linux provisioning scripts to streamline global hardware bring-up and remote diagnostics.',
+        lead: 'Field Network Architecture & Automated Provisioning',
+        text: 'Designed secure local and cellular/LoRa field networks across industrial routers (Cradlepoint, Teltonika, MultiTech, Milesight) and headless Linux devices—configuring DHCP, NAT/port forwarding, and automated provisioning scripts to cut hardware setup time and enable remote diagnostics in hard-to-reach facilities.',
       },
     ],
   },
   {
-    title: 'Regulatory Specialist (Automation & Data Engineering)',
+    title: 'Regulatory Specialist',
+    subtitle: 'Automation & Data Engineering',
     period: 'September 2016 – May 2019',
     bullets: [
       {
-        lead: 'Compliance Automation Pipeline',
-        text: 'Designed and deployed an automated Python and XML data aggregation pipeline to compile, validate, and submit federal EPA Pesticide Production Reports, saving hundreds of engineering hours annually.',
+        lead: 'Federal Reporting Automation',
+        text: 'Designed and deployed an automated Python and XML data pipeline to aggregate, validate, and generate federal EPA production reports—saving hundreds of engineering hours annually and eliminating manual spreadsheet errors.',
       },
       {
-        lead: 'Automated Document Verification',
-        text: 'Engineered custom Python parsing and diffing tooling to audit EPA-registered labels, eliminating manual review bottlenecks and mitigating regulatory compliance risk.',
+        lead: 'Automated Compliance Auditing',
+        text: 'Built custom Python document-parsing and diffing tools to audit registered product labels against regulatory standards, removing manual review bottlenecks while reducing compliance risk.',
       },
     ],
   },
@@ -91,8 +98,8 @@ const EXPERIENCE = [
     period: 'September 2014 – September 2016',
     bullets: [
       {
-        lead: 'Laboratory & Computer Vision Automation',
-        text: 'Self-initiated and deployed standalone Python (Tkinter) desktop applications and Java (ImageJ) computer-vision scripts to automate sample area/oil-level analysis and data entry, returning hundreds of laboratory hours per month to the R&D team.',
+        lead: 'Lab Software & Computer Vision Automation',
+        text: 'Self-initiated and built standalone Python (Tkinter) desktop apps and Java (ImageJ) computer-vision scripts to automate image-based sample analysis and data entry—returning hundreds of hours per month to the R&D team and sparking transition into full-time software engineering.',
       },
     ],
   },
@@ -131,7 +138,7 @@ export default function ResumePage() {
               Alexander Bernal
             </h1>
             <p className="text-sm sm:text-base font-semibold text-neutral-900">
-              Senior Cyber-Physical Systems, Embedded Linux, IoT &amp; Full-Stack Engineer
+              Senior Embedded Systems, IoT &amp; Full-Stack Software Engineer
             </p>
             <div className="text-xs sm:text-sm text-neutral-900 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 pt-0.5">
               <span>Memphis, TN</span>
@@ -171,29 +178,23 @@ export default function ResumePage() {
               Professional Summary
             </h2>
             <p className="text-xs sm:text-[13.5px] text-neutral-950 leading-relaxed text-justify">
-              Senior Cyber-Physical Systems, Embedded Linux, and IoT Engineer with 7+ years of
-              experience architecting fault-tolerant edge software, distributed Linux fleets,
-              closed-loop sensor-to-actuator control systems, and full-stack digitization
-              platforms deployed across <strong>20+ countries spanning 6 continents</strong> (12
-              years total R&amp;D, automation, and software tenure). Proven track record bridging
-              physical hardware—sensors, variable-rate actuators, and facility/industrial
-              fieldbuses (Modbus, OPC UA, MQTT)—with cloud infrastructure and modern web
-              platforms, directly applicable to{' '}
-              <strong>
-                connected IoT ecosystems, robotics &amp; autonomous systems, and mission-critical
-                data center / facility automation
-              </strong>
-              . Leverages AI-augmented workflows (
-              <strong>Claude Code, Google Antigravity, GitHub Copilot, Gemini</strong>) with
-              strict architectural guardrails to deliver production systems across C/C++, Python,
-              Bash, and TypeScript.
+              <strong>Senior Embedded Systems, IoT &amp; Full-Stack Software Engineer</strong> with{' '}
+              <strong>7+ years</strong> of experience designing and shipping production software
+              that connects physical hardware to the cloud—backed by <strong>12 years</strong> of
+              total engineering, automation, and R&amp;D tenure. Proven track record leading
+              end-to-end architecture for Linux-based edge devices, automated sensor-to-actuator
+              control systems, and full-stack web platforms deployed across{' '}
+              <strong>20+ countries on 6 continents</strong>. Known for building self-healing
+              software that keeps mission-critical field equipment running reliably over unstable
+              networks, and for combining <strong>C/C++, Python, and TypeScript</strong> with
+              modern AI-assisted development workflows to deliver high-reliability systems fast.
             </p>
           </section>
 
           {/* Technical Skills — Traditional Inline Black-Ink List */}
           <section className="space-y-1.5">
             <h2 className="text-xs sm:text-sm font-bold tracking-wider text-black uppercase border-b border-black pb-1">
-              Technical Skills &amp; Protocols
+              Technical Skills
             </h2>
             <ul className="space-y-1 text-xs sm:text-[13.5px] text-neutral-950 leading-snug pt-0.5">
               {SKILL_GROUPS.map((group) => (
@@ -212,7 +213,7 @@ export default function ResumePage() {
                 Professional Experience
               </h2>
               <span className="text-xs sm:text-[13px] font-bold text-black">
-                Buckman &mdash; Memphis, TN (2014 – Present)
+                Buckman &mdash; Memphis, TN (2014 – Present | 3 Promotions)
               </span>
             </div>
 
@@ -222,6 +223,12 @@ export default function ResumePage() {
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <h3 className="text-sm sm:text-[15px] font-bold text-black">
                       {role.title}
+                      {role.subtitle && (
+                        <span className="font-normal italic text-neutral-800 text-xs sm:text-[13.5px]">
+                          {' '}
+                          ({role.subtitle})
+                        </span>
+                      )}
                     </h3>
                     <span className="text-xs sm:text-[13px] font-semibold italic text-neutral-900">
                       {role.period}
@@ -240,53 +247,50 @@ export default function ResumePage() {
             </div>
           </section>
 
-          {/* Selected Engineering Projects */}
+          {/* Selected Software & Engineering Projects */}
           <section className="space-y-2">
             <h2 className="text-xs sm:text-sm font-bold tracking-wider text-black uppercase border-b border-black pb-1">
-              Selected Engineering Simulators &amp; Architecture Case Studies
+              Selected Software &amp; Engineering Projects
             </h2>
             <ul className="list-disc pl-5 space-y-1.5 text-xs sm:text-[13.5px] text-neutral-950 leading-relaxed pt-0.5">
               <li>
                 <strong className="font-bold text-black">
-                  4-DOF 3D Robotic Arm Inverse Kinematics &amp; Trajectory Planner:
+                  Interactive Control Systems &amp; Robotics Simulators (
+                  <a
+                    href="https://bernalgorithm.github.io/bernalgorithm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-neutral-500 hover:text-black"
+                  >
+                    bernalgorithm.github.io/bernalgorithm
+                  </a>
+                  ):
                 </strong>{' '}
-                Engineered a 60Hz 4-DOF 3D spatial manipulator simulator solved via Damped Least
-                Squares (Levenberg-Marquardt) Jacobian inverse kinematics, 2nd-order servo
-                compliance dynamics, and quintic minimum-jerk trajectory generation.{' '}
+                Built a <strong>Next.js / TypeScript</strong> engineering portfolio featuring
+                real-time 60 FPS browser simulations—including a{' '}
+                <strong>3D 4-DOF Robotic Arm Inverse Kinematics Planner</strong>{' '}
                 <Link
                   href="/posts/robotic-arm-inverse-kinematics"
                   className="underline decoration-neutral-500 hover:text-black print:hidden"
                 >
-                  [Read Case Study]
-                </Link>
-              </li>
-              <li>
-                <strong className="font-bold text-black">
-                  Closed-Loop PID Control Lab &amp; Digital Storage Oscilloscope:
-                </strong>{' '}
-                Engineered a real-time 60 FPS discrete-time PID control simulator regulating a
-                2nd-order thermal/flow plant with conditional anti-windup clamping, derivative
-                filtering, and critical-damping Autotune.{' '}
+                  [Case Study]
+                </Link>{' '}
+                and a <strong>Closed-Loop PID Process Control Lab</strong> with interactive
+                disturbance testing and digital oscilloscope telemetry{' '}
                 <Link
                   href="/posts/closed-loop-pid-control-lab"
                   className="underline decoration-neutral-500 hover:text-black print:hidden"
                 >
-                  [Read Case Study]
+                  [Case Study]
                 </Link>
-              </li>
-              <li>
-                <strong className="font-bold text-black">
-                  Self-Healing Fieldbus State Machines &amp; Offline-First Cloud Sync:
-                </strong>{' '}
-                Documented production patterns for masking 20–40 minute hardware resets via
-                bounded Last-Known-Good quarantine and volatile register reconciliation, alongside
-                collision-resistant multi-tenant cloud state synchronization.{' '}
+                —plus technical case studies on fault-tolerant IoT architecture{' '}
                 <Link
                   href="/posts/self-healing-fieldbus-state-machines"
                   className="underline decoration-neutral-500 hover:text-black print:hidden"
                 >
-                  [Read Case Study]
-                </Link>
+                  [Case Study]
+                </Link>{' '}
+                and offline-first cloud sync.
               </li>
             </ul>
           </section>
@@ -306,8 +310,10 @@ export default function ResumePage() {
                   <span className="font-semibold italic text-neutral-900">2017 – 2019</span>
                 </div>
                 <p className="text-neutral-900 leading-relaxed mt-0.5">
-                  Served as a university tutor and grader for Computer Science coursework, guiding
-                  students through object-oriented programming implementations and debugging in C++.
+                  Completed degree while working full-time; served as a{' '}
+                  <strong>University Computer Science Tutor &amp; Grader</strong>, mentoring
+                  students in <strong>C++</strong> object-oriented programming, data structures,
+                  and debugging.
                 </p>
               </div>
 
@@ -323,9 +329,9 @@ export default function ResumePage() {
                   <span className="font-semibold italic text-neutral-900">2008 – 2014</span>
                 </div>
                 <p className="text-neutral-900 leading-relaxed mt-0.5">
-                  Awarded National Science Foundation (NSF) computational chemistry funding;
-                  utilized Linux supercomputing clusters to model energetic profiles of
-                  metallo-organic molecules.
+                  <strong>NSF Computational Research:</strong> Awarded National Science Foundation
+                  (NSF) funding to model and analyze molecular energy profiles on high-performance{' '}
+                  <strong>Linux supercomputing clusters</strong>.
                 </p>
               </div>
             </div>
