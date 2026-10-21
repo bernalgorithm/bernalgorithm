@@ -5,7 +5,7 @@ import { PrintResumeButton } from '@/components/PrintResumeButton';
 export const metadata: Metadata = {
   title: 'Resume | Alexander Bernal — Senior Embedded Systems, IoT & Full-Stack Software Engineer',
   description:
-    'Resume of Alexander Bernal: Senior Embedded Systems, IoT, Linux, and Full-Stack Software Engineer.',
+    'Resume of Alexander Bernal: Senior Embedded Systems, IoT/OT, Linux, and Full-Stack Software Engineer.',
 };
 
 const SKILL_GROUPS = [
@@ -19,12 +19,12 @@ const SKILL_GROUPS = [
       'Embedded Linux (Ubuntu, background services/daemons), Azure IoT, Docker, Remote Over-the-Air (OTA) Fleet Upgrades, Headless Single-Board Computers (SBCs)',
   },
   {
-    category: 'Field Networking & Connectivity',
+    category: 'Field Networking, Segmentation & Connectivity',
     skills:
-      'Cellular & LoRaWAN Gateways (Cradlepoint, Teltonika, MultiTech, Milesight), Embedded Modems & Wi-Fi, TCP/IP, DHCP, NAT / Port Forwarding, Subnet Routing',
+      'Cellular & LoRaWAN Gateways (Cradlepoint, Teltonika, MultiTech, Milesight), Embedded Modems & Wi-Fi, TCP/IP, Subnet Routing & Network Segmentation, DHCP, NAT / Port Forwarding',
   },
   {
-    category: 'Hardware Integration & Control Protocols',
+    category: 'Industrial Control Systems (ICS/OT) & Hardware Protocols',
     skills:
       'Automated Closed-Loop Control (PID), Modbus (TCP/IP & RTU), OPC UA, MQTT, 4–20mA Analog & Digital I/O, PLCs, Multi-Vendor Sensor & Pump/Actuator Integration',
   },
@@ -42,12 +42,12 @@ const EXPERIENCE = [
     period: 'March 2022 – Present',
     bullets: [
       {
-        lead: 'Global IoT & Automated Control Architecture',
-        text: 'Lead end-to-end software architecture, Embedded Linux development, and network integration for automated industrial control systems—taking products from initial prototype to commercial deployment across 20+ countries on 6 continents.',
+        lead: 'Global IoT, ICS/OT & Automated Control Architecture',
+        text: 'Lead end-to-end software architecture, Embedded Linux development, and network integration for automated industrial control systems across critical water treatment, chemical, and process manufacturing facilities—taking products from initial prototype to commercial deployment across 20+ countries on 6 continents.',
       },
       {
-        lead: 'Self-Healing Device Reliability (Zero-Downtime Operations)',
-        text: 'Eliminated customer-visible downtime from third-party hardware freezes (which previously caused 20–40 minute outages) by engineering fault-tolerant communication state machines (Modbus TCP/RTU, OPC UA, MQTT) that automatically detect dropouts, quarantine bad sensor reads, and restore live device state upon reboot.',
+        lead: 'Self-Healing Device Reliability & Operational Continuity',
+        text: 'Eliminated customer-visible downtime from third-party hardware freezes (which previously caused 20–40 minute outages) by engineering fault-tolerant communication state machines (Modbus TCP/RTU, OPC UA, MQTT) that automatically detect dropouts, quarantine bad sensor reads, and restore live device state upon reboot to ensure continuous operational resilience.',
       },
       {
         lead: 'Lightweight Edge Modernization (~50% Resource Reduction)',
@@ -69,12 +69,12 @@ const EXPERIENCE = [
     period: 'June 2019 – March 2022',
     bullets: [
       {
-        lead: 'Hardware-to-Cloud Telemetry Integration',
-        text: 'Developed production Python, C++, and Bash background services on Linux edge devices to connect multi-vendor sensors, variable-rate pumps/actuators, and PLCs (OPC UA, Modbus, LoRa, Analog/Digital I/O), streaming real-time operational data to Azure IoT via MQTT.',
+        lead: 'Secure Hardware-to-Cloud Telemetry Integration',
+        text: 'Developed production Python, C++, and Bash background services on Linux edge devices to connect multi-vendor sensors, variable-rate pumps/actuators, and PLCs (OPC UA, Modbus, LoRa, Analog/Digital I/O), streaming real-time operational telemetry to Azure IoT via MQTT.',
       },
       {
-        lead: 'Field Network Architecture & Automated Provisioning',
-        text: 'Designed secure local and cellular/LoRa field networks across industrial routers (Cradlepoint, Teltonika, MultiTech, Milesight) and headless Linux devices—configuring DHCP, NAT/port forwarding, and automated provisioning scripts to cut hardware setup time and enable remote diagnostics in hard-to-reach facilities.',
+        lead: 'Field Network Segmentation & Automated Provisioning',
+        text: 'Designed segmented local and cellular/LoRa field networks across industrial routers (Cradlepoint, Teltonika, MultiTech, Milesight) and headless Linux devices—configuring subnet routing, DHCP, NAT/port forwarding, and automated provisioning scripts to cut hardware setup time and enable secure remote diagnostics in industrial facilities.',
       },
     ],
   },
@@ -84,12 +84,12 @@ const EXPERIENCE = [
     period: 'September 2016 – May 2019',
     bullets: [
       {
-        lead: 'Federal Reporting Automation',
-        text: 'Designed and deployed an automated Python and XML data pipeline to aggregate, validate, and generate federal EPA production reports—saving hundreds of engineering hours annually and eliminating manual spreadsheet errors.',
+        lead: 'Federal U.S. EPA Reporting Automation',
+        text: 'Designed and deployed an automated Python and XML data pipeline to aggregate, validate, and generate federal U.S. Environmental Protection Agency (EPA) production reports—saving hundreds of engineering hours annually and eliminating manual spreadsheet errors.',
       },
       {
-        lead: 'Automated Compliance Auditing',
-        text: 'Built custom Python document-parsing and diffing tools to audit registered product labels against regulatory standards, removing manual review bottlenecks while reducing compliance risk.',
+        lead: 'Automated Regulatory Compliance Auditing',
+        text: 'Built custom Python document-parsing and diffing tools to audit registered product labels against federal regulatory standards, removing manual review bottlenecks while reducing compliance risk.',
       },
     ],
   },
@@ -182,12 +182,13 @@ export default function ResumePage() {
               <strong>7+ years</strong> of experience designing and shipping production software
               that connects physical hardware to the cloud—backed by <strong>12 years</strong> of
               total engineering, automation, and R&amp;D tenure. Proven track record leading
-              end-to-end architecture for Linux-based edge devices, automated sensor-to-actuator
-              control systems, and full-stack web platforms deployed across{' '}
-              <strong>20+ countries on 6 continents</strong>. Known for building self-healing
-              software that keeps mission-critical field equipment running reliably over unstable
-              networks, and for combining <strong>C/C++, Python, and TypeScript</strong> with
-              modern AI-assisted development workflows (
+              end-to-end architecture for Linux-based edge devices,{' '}
+              <strong>Operational Technology (OT) / automated control systems</strong>, and
+              full-stack web platforms deployed across{' '}
+              <strong>20+ countries on 6 continents</strong>. Known for building self-healing,
+              resilient software that keeps mission-critical field equipment running reliably over
+              unstable networks, and for combining <strong>C/C++, Python, and TypeScript</strong>{' '}
+              with modern AI-assisted development workflows (
               <strong>Claude Code, Google Antigravity, GitHub Copilot, Gemini</strong>) to deliver
               high-reliability systems fast.
             </p>
@@ -285,7 +286,7 @@ export default function ResumePage() {
                 >
                   [Case Study]
                 </Link>
-                —plus technical case studies on fault-tolerant IoT architecture{' '}
+                —plus technical case studies on fault-tolerant IoT/OT architecture{' '}
                 <Link
                   href="/posts/self-healing-fieldbus-state-machines"
                   className="underline decoration-neutral-500 hover:text-black print:hidden"
@@ -331,8 +332,9 @@ export default function ResumePage() {
                   <span className="font-semibold italic text-neutral-900">2008 – 2014</span>
                 </div>
                 <p className="text-neutral-900 leading-relaxed mt-0.5">
-                  <strong>NSF Computational Research:</strong> Awarded National Science Foundation
-                  (NSF) funding to model and analyze molecular energy profiles on high-performance{' '}
+                  <strong>NSF Computational Research:</strong> Awarded federal{' '}
+                  <strong>National Science Foundation (NSF)</strong> research funding to model and
+                  analyze molecular energy profiles on high-performance{' '}
                   <strong>Linux supercomputing clusters</strong>.
                 </p>
               </div>

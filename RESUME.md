@@ -4,15 +4,15 @@
 ---
 
 ## PROFESSIONAL SUMMARY
-**Senior Embedded Systems, IoT & Full-Stack Software Engineer** with **7+ years** of experience designing and shipping production software that connects physical hardware to the cloud—backed by **12 years** of total engineering, automation, and R&D tenure. Proven track record leading end-to-end architecture for Linux-based edge devices, automated sensor-to-actuator control systems, and full-stack web platforms deployed across **20+ countries on 6 continents**. Known for building self-healing software that keeps mission-critical field equipment running reliably over unstable networks, and for combining **C/C++, Python, and TypeScript** with modern AI-assisted development workflows (**Claude Code, Google Antigravity, GitHub Copilot, Gemini**) to deliver high-reliability systems fast.
+**Senior Embedded Systems, IoT & Full-Stack Software Engineer** with **7+ years** of experience designing and shipping production software that connects physical hardware to the cloud—backed by **12 years** of total engineering, automation, and R&D tenure. Proven track record leading end-to-end architecture for Linux-based edge devices, **Operational Technology (OT) / automated control systems**, and full-stack web platforms deployed across **20+ countries on 6 continents**. Known for building self-healing, resilient software that keeps mission-critical field equipment running reliably over unstable networks, and for combining **C/C++, Python, and TypeScript** with modern AI-assisted development workflows (**Claude Code, Google Antigravity, GitHub Copilot, Gemini**) to deliver high-reliability systems fast.
 
 ---
 
 ## TECHNICAL SKILLS
 * **Languages & Frameworks:** Python, C, C++, TypeScript, JavaScript, Bash, SQL, React, Next.js, Tailwind CSS
 * **Embedded Linux, IoT & Edge Infrastructure:** Embedded Linux (Ubuntu, background services/daemons), Azure IoT, Docker, Remote Over-the-Air (OTA) Fleet Upgrades, Headless Single-Board Computers (SBCs)
-* **Field Networking & Connectivity:** Cellular & LoRaWAN Gateways (Cradlepoint, Teltonika, MultiTech, Milesight), Embedded Modems & Wi-Fi, TCP/IP, DHCP, NAT / Port Forwarding, Subnet Routing
-* **Hardware Integration & Control Protocols:** Automated Closed-Loop Control (PID), Modbus (TCP/IP & RTU), OPC UA, MQTT, 4–20mA Analog & Digital I/O, PLCs, Multi-Vendor Sensor & Pump/Actuator Integration
+* **Field Networking, Segmentation & Connectivity:** Cellular & LoRaWAN Gateways (Cradlepoint, Teltonika, MultiTech, Milesight), Embedded Modems & Wi-Fi, TCP/IP, Subnet Routing & Network Segmentation, DHCP, NAT / Port Forwarding
+* **Industrial Control Systems (ICS/OT) & Hardware Protocols:** Automated Closed-Loop Control (PID), Modbus (TCP/IP & RTU), OPC UA, MQTT, 4–20mA Analog & Digital I/O, PLCs, Multi-Vendor Sensor & Pump/Actuator Integration
 * **Cloud, Full-Stack & Engineering Workflow:** Rule-Based Configuration & Decision Engines, Firebase / Firestore, GitHub Actions (CI/CD), Azure DevOps, Git, AI-Augmented Development (Claude Code, Google Antigravity, GitHub Copilot, Gemini)
 
 ---
@@ -22,19 +22,19 @@
 ### **Buckman** — *Memphis, TN* *(2014 – Present | 3 Promotions Across R&D, Data Automation & IoT Engineering)*
 
 #### **Digital Innovation Engineer** *(Senior Embedded Systems, IoT & Full-Stack Engineer)* | *March 2022 – Present*
-* **Global IoT & Automated Control Architecture:** Lead end-to-end software architecture, Embedded Linux development, and network integration for automated industrial control systems—taking products from initial prototype to commercial deployment across **20+ countries on 6 continents**.
-* **Self-Healing Device Reliability (Zero-Downtime Operations):** Eliminated customer-visible downtime from third-party hardware freezes (which previously caused 20–40 minute outages) by engineering fault-tolerant communication state machines (**Modbus TCP/RTU, OPC UA, MQTT**) that automatically detect dropouts, quarantine bad sensor reads, and restore live device state upon reboot.
+* **Global IoT, ICS/OT & Automated Control Architecture:** Lead end-to-end software architecture, Embedded Linux development, and network integration for automated industrial control systems across critical water treatment, chemical, and process manufacturing facilities—taking products from initial prototype to commercial deployment across **20+ countries on 6 continents**.
+* **Self-Healing Device Reliability & Operational Continuity:** Eliminated customer-visible downtime from third-party hardware freezes (which previously caused 20–40 minute outages) by engineering fault-tolerant communication state machines (**Modbus TCP/RTU, OPC UA, MQTT**) that automatically detect dropouts, quarantine bad sensor reads, and restore live device state upon reboot to ensure continuous operational resilience.
 * **Lightweight Edge Modernization (~50% Resource Reduction):** Cut edge device memory and storage usage by **~50%** by replacing heavy Docker container runtimes with lightweight native **C/C++** cloud services, and ported core software to support remote **Embedded Linux OS upgrades** across live field fleets without requiring on-site technician visits.
 * **Global Product Configuration Platform:** Architected a web-based configuration and recommendation platform that translates complex engineering sizing rules from senior specialists into an automated, step-by-step tool—standardizing commercial system proposals worldwide and reducing manual configuration errors.
 * **AI-Accelerated Software Delivery:** Established structured AI-assisted and agentic engineering workflows (**Claude Code, Google Antigravity, GitHub Copilot, Gemini**) paired with automated test verification and architectural guardrails to accelerate **C/C++, Python, and TypeScript** feature delivery, protocol debugging, and cross-platform refactoring.
 
 #### **Associate Digital Innovation Engineer** *(Embedded Linux & IoT Software Engineer)* | *June 2019 – March 2022*
-* **Hardware-to-Cloud Telemetry Integration:** Developed production **Python, C++, and Bash** background services on Linux edge devices to connect multi-vendor sensors, variable-rate pumps/actuators, and PLCs (**OPC UA, Modbus, LoRa, Analog/Digital I/O**), streaming real-time operational data to **Azure IoT** via **MQTT**.
-* **Field Network Architecture & Automated Provisioning:** Designed secure local and cellular/LoRa field networks across industrial routers (**Cradlepoint, Teltonika, MultiTech, Milesight**) and headless Linux devices—configuring **DHCP, NAT/port forwarding**, and automated provisioning scripts to cut hardware setup time and enable remote diagnostics in hard-to-reach facilities.
+* **Secure Hardware-to-Cloud Telemetry Integration:** Developed production **Python, C++, and Bash** background services on Linux edge devices to connect multi-vendor sensors, variable-rate pumps/actuators, and PLCs (**OPC UA, Modbus, LoRa, Analog/Digital I/O**), streaming real-time operational telemetry to **Azure IoT** via **MQTT**.
+* **Field Network Segmentation & Automated Provisioning:** Designed segmented local and cellular/LoRa field networks across industrial routers (**Cradlepoint, Teltonika, MultiTech, Milesight**) and headless Linux devices—configuring **subnet routing, DHCP, NAT/port forwarding**, and automated provisioning scripts to cut hardware setup time and enable secure remote diagnostics in industrial facilities.
 
 #### **Regulatory Specialist** *(Automation & Data Engineering)* | *September 2016 – May 2019*
-* **Federal Reporting Automation:** Designed and deployed an automated **Python and XML** data pipeline to aggregate, validate, and generate federal EPA production reports—saving **hundreds of engineering hours annually** and eliminating manual spreadsheet errors.
-* **Automated Compliance Auditing:** Built custom **Python** document-parsing and diffing tools to audit registered product labels against regulatory standards, removing manual review bottlenecks while reducing compliance risk.
+* **Federal U.S. EPA Reporting Automation:** Designed and deployed an automated **Python and XML** data pipeline to aggregate, validate, and generate federal **U.S. Environmental Protection Agency (EPA)** production reports—saving **hundreds of engineering hours annually** and eliminating manual spreadsheet errors.
+* **Automated Regulatory Compliance Auditing:** Built custom **Python** document-parsing and diffing tools to audit registered product labels against federal regulatory standards, removing manual review bottlenecks while reducing compliance risk.
 
 #### **Technical Services Chemist & Product Development Intern** | *September 2014 – September 2016*
 * **Lab Software & Computer Vision Automation:** Self-initiated and built standalone **Python (Tkinter)** desktop apps and **Java (ImageJ)** computer-vision scripts to automate image-based sample analysis and data entry—returning **hundreds of hours per month** to the R&D team and sparking transition into full-time software engineering.
@@ -42,7 +42,7 @@
 ---
 
 ## SELECTED SOFTWARE & ENGINEERING PROJECTS
-* **Interactive Control Systems & Robotics Simulators ([bernalgorithm.github.io/bernalgorithm](https://bernalgorithm.github.io/bernalgorithm)):** Built a **Next.js / TypeScript** engineering portfolio featuring real-time 60 FPS browser simulations—including a **3D 4-DOF Robotic Arm Inverse Kinematics Planner** and a **Closed-Loop PID Process Control Lab** with interactive disturbance testing and digital oscilloscope telemetry—plus technical case studies on fault-tolerant IoT architecture and offline-first cloud sync.
+* **Interactive Control Systems & Robotics Simulators ([bernalgorithm.github.io/bernalgorithm](https://bernalgorithm.github.io/bernalgorithm)):** Built a **Next.js / TypeScript** engineering portfolio featuring real-time 60 FPS browser simulations—including a **3D 4-DOF Robotic Arm Inverse Kinematics Planner** and a **Closed-Loop PID Process Control Lab** with interactive disturbance testing and digital oscilloscope telemetry—plus technical case studies on fault-tolerant IoT/OT architecture and offline-first cloud sync.
 
 ---
 
@@ -52,4 +52,4 @@
 * Completed degree while working full-time; served as a **University Computer Science Tutor & Grader**, mentoring students in **C++** object-oriented programming, data structures, and debugging.
 
 **University of Memphis** — *B.S., Chemistry (ACS Certified) & B.S., Biology* | *2008 – 2014*
-* **NSF Computational Research:** Awarded National Science Foundation (NSF) funding to model and analyze molecular energy profiles on high-performance **Linux supercomputing clusters**.
+* **NSF Computational Research:** Awarded federal **National Science Foundation (NSF)** research funding to model and analyze molecular energy profiles on high-performance **Linux supercomputing clusters**.
