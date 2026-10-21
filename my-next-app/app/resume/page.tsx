@@ -31,7 +31,7 @@ const SKILL_GROUPS = [
   {
     category: 'Cloud, Full-Stack & Engineering Workflow',
     skills:
-      'Rule-Based Configuration & Decision Engines, Firebase / Firestore, GitHub Actions (CI/CD), Azure DevOps, Git, AI-Augmented Development (Claude Code, GitHub Copilot, Gemini)',
+      'Rule-Based Configuration & Decision Engines, Firebase / Firestore, GitHub Actions (CI/CD), Azure DevOps, Git, AI-Augmented Development (Claude Code, Google Antigravity, GitHub Copilot, Gemini)',
   },
 ];
 
@@ -59,7 +59,7 @@ const EXPERIENCE = [
       },
       {
         lead: 'AI-Accelerated Software Delivery',
-        text: 'Established structured AI-assisted engineering workflows (Claude Code, GitHub Copilot, Gemini) paired with automated test verification and architectural guardrails to accelerate C/C++, Python, and TypeScript feature delivery, protocol debugging, and cross-platform refactoring.',
+        text: 'Established structured AI-assisted and agentic engineering workflows (Claude Code, Google Antigravity, GitHub Copilot, Gemini) paired with automated test verification and architectural guardrails to accelerate C/C++, Python, and TypeScript feature delivery, protocol debugging, and cross-platform refactoring.',
       },
     ],
   },
@@ -187,7 +187,9 @@ export default function ResumePage() {
               <strong>20+ countries on 6 continents</strong>. Known for building self-healing
               software that keeps mission-critical field equipment running reliably over unstable
               networks, and for combining <strong>C/C++, Python, and TypeScript</strong> with
-              modern AI-assisted development workflows to deliver high-reliability systems fast.
+              modern AI-assisted development workflows (
+              <strong>Claude Code, Google Antigravity, GitHub Copilot, Gemini</strong>) to deliver
+              high-reliability systems fast.
             </p>
           </section>
 

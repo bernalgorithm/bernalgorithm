@@ -4,7 +4,7 @@
 ---
 
 ## PROFESSIONAL SUMMARY
-**Senior Embedded Systems, IoT & Full-Stack Software Engineer** with **7+ years** of experience designing and shipping production software that connects physical hardware to the cloud—backed by **12 years** of total engineering, automation, and R&D tenure. Proven track record leading end-to-end architecture for Linux-based edge devices, automated sensor-to-actuator control systems, and full-stack web platforms deployed across **20+ countries on 6 continents**. Known for building self-healing software that keeps mission-critical field equipment running reliably over unstable networks, and for combining **C/C++, Python, and TypeScript** with modern AI-assisted development workflows to deliver high-reliability systems fast.
+**Senior Embedded Systems, IoT & Full-Stack Software Engineer** with **7+ years** of experience designing and shipping production software that connects physical hardware to the cloud—backed by **12 years** of total engineering, automation, and R&D tenure. Proven track record leading end-to-end architecture for Linux-based edge devices, automated sensor-to-actuator control systems, and full-stack web platforms deployed across **20+ countries on 6 continents**. Known for building self-healing software that keeps mission-critical field equipment running reliably over unstable networks, and for combining **C/C++, Python, and TypeScript** with modern AI-assisted development workflows (**Claude Code, Google Antigravity, GitHub Copilot, Gemini**) to deliver high-reliability systems fast.
 
 ---
 
@@ -13,7 +13,7 @@
 * **Embedded Linux, IoT & Edge Infrastructure:** Embedded Linux (Ubuntu, background services/daemons), Azure IoT, Docker, Remote Over-the-Air (OTA) Fleet Upgrades, Headless Single-Board Computers (SBCs)
 * **Field Networking & Connectivity:** Cellular & LoRaWAN Gateways (Cradlepoint, Teltonika, MultiTech, Milesight), Embedded Modems & Wi-Fi, TCP/IP, DHCP, NAT / Port Forwarding, Subnet Routing
 * **Hardware Integration & Control Protocols:** Automated Closed-Loop Control (PID), Modbus (TCP/IP & RTU), OPC UA, MQTT, 4–20mA Analog & Digital I/O, PLCs, Multi-Vendor Sensor & Pump/Actuator Integration
-* **Cloud, Full-Stack & Engineering Workflow:** Rule-Based Configuration & Decision Engines, Firebase / Firestore, GitHub Actions (CI/CD), Azure DevOps, Git, AI-Augmented Development (Claude Code, GitHub Copilot, Gemini)
+* **Cloud, Full-Stack & Engineering Workflow:** Rule-Based Configuration & Decision Engines, Firebase / Firestore, GitHub Actions (CI/CD), Azure DevOps, Git, AI-Augmented Development (Claude Code, Google Antigravity, GitHub Copilot, Gemini)
 
 ---
 
@@ -26,7 +26,7 @@
 * **Self-Healing Device Reliability (Zero-Downtime Operations):** Eliminated customer-visible downtime from third-party hardware freezes (which previously caused 20–40 minute outages) by engineering fault-tolerant communication state machines (**Modbus TCP/RTU, OPC UA, MQTT**) that automatically detect dropouts, quarantine bad sensor reads, and restore live device state upon reboot.
 * **Lightweight Edge Modernization (~50% Resource Reduction):** Cut edge device memory and storage usage by **~50%** by replacing heavy Docker container runtimes with lightweight native **C/C++** cloud services, and ported core software to support remote **Embedded Linux OS upgrades** across live field fleets without requiring on-site technician visits.
 * **Global Product Configuration Platform:** Architected a web-based configuration and recommendation platform that translates complex engineering sizing rules from senior specialists into an automated, step-by-step tool—standardizing commercial system proposals worldwide and reducing manual configuration errors.
-* **AI-Accelerated Software Delivery:** Established structured AI-assisted engineering workflows (**Claude Code, GitHub Copilot, Gemini**) paired with automated test verification and architectural guardrails to accelerate **C/C++, Python, and TypeScript** feature delivery, protocol debugging, and cross-platform refactoring.
+* **AI-Accelerated Software Delivery:** Established structured AI-assisted and agentic engineering workflows (**Claude Code, Google Antigravity, GitHub Copilot, Gemini**) paired with automated test verification and architectural guardrails to accelerate **C/C++, Python, and TypeScript** feature delivery, protocol debugging, and cross-platform refactoring.
 
 #### **Associate Digital Innovation Engineer** *(Embedded Linux & IoT Software Engineer)* | *June 2019 – March 2022*
 * **Hardware-to-Cloud Telemetry Integration:** Developed production **Python, C++, and Bash** background services on Linux edge devices to connect multi-vendor sensors, variable-rate pumps/actuators, and PLCs (**OPC UA, Modbus, LoRa, Analog/Digital I/O**), streaming real-time operational data to **Azure IoT** via **MQTT**.
