@@ -5,9 +5,11 @@ description: 'Why embedded systems constraints—deterministic state machines, m
 tags: ['Systems Architecture', 'Embedded', 'Full-Stack', 'Manifesto']
 ---
 
-Welcome to **Bernalgorithm**, my engineering portfolio and living lab notebook.
+Welcome to **Bernalgorithm**, my personal engineering blog and independent hobby sandbox.
 
-Over the past 12 years—spanning industrial R&D automation, Embedded Linux fleet engineering across 20+ countries, and full-stack digitization platforms—I have found that the best mental models in software engineering cross domain boundaries.
+*Disclaimer: All interactive simulators, games, code samples, and articles on this site are independent personal hobby projects and conceptual explorations built in my free time, and are unrelated to my employer.*
+
+Over the past 12 years—spanning R&D automation, Embedded Linux fleet engineering, and full-stack software—I have found that the best mental models in software engineering cross domain boundaries.
 
 ---
 

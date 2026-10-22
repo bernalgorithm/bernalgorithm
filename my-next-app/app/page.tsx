@@ -25,7 +25,7 @@ const IMPACT_METRICS = [
   {
     id: 'KPI 04',
     metric: '12+ Years R&D',
-    label: 'From C/C++, robotics & PID control to TypeScript & AI',
+    label: 'From C/C++, Embedded Linux & IoT to TypeScript & AI',
     accentBar: 'bg-amber-500',
   },
 ];
@@ -34,7 +34,7 @@ const ENGINEERING_DOMAINS = [
   {
     id: '01',
     title: 'Distributed Linux Fleets & Edge Infrastructure',
-    subtitle: 'IoT • Data Centers • Remote Ops',
+    subtitle: 'IoT • Edge Linux • Remote Ops',
     accentBar: 'bg-blue-600',
     badgeClass: 'bg-blue-50 text-blue-700 border-blue-200',
     description:
@@ -49,17 +49,17 @@ const ENGINEERING_DOMAINS = [
   },
   {
     id: '02',
-    title: 'Robotics Kinematics, Closed-Loop Control & Telemetry',
-    subtitle: 'Robotics • Automation • BMS/Cooling',
+    title: 'Closed-Loop Control Systems & Industrial Telemetry',
+    subtitle: 'ICS/OT • Automation • Fieldbus',
     accentBar: 'bg-emerald-600',
     badgeClass: 'bg-emerald-50 text-emerald-800 border-emerald-200',
     description:
-      'Multi-axis inverse kinematics, closed-loop PID sensor-to-actuator regulation, and self-healing state machines across robotics, facility thermal/power loops, and PLCs.',
+      'Closed-loop PID sensor-to-actuator regulation, multi-vendor PLC and sensor integration, and self-healing communication state machines across industrial facilities.',
     skills: [
-      'Jacobian Inverse Kinematics',
       'Closed-Loop PID Control',
       'Modbus (TCP/IP & RTU)',
       'OPC UA & MQTT',
+      '4–20mA Analog & Digital I/O',
       'Self-Healing State Machines',
     ],
   },
@@ -127,7 +127,7 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50/90 border border-blue-200/90 text-xs font-semibold text-blue-800 shadow-2xs">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
                 <span>
-                  Systems Engineer &bull; IoT &bull; Robotics &bull; Data Center Infrastructure &bull; Full-Stack
+                  Embedded Systems &bull; IoT / OT &bull; Control Systems &bull; Edge Linux &bull; Full-Stack
                 </span>
               </div>
 
@@ -138,9 +138,9 @@ export default function Home() {
                 <p className="text-base sm:text-lg text-slate-700 leading-relaxed border-l-2 border-blue-600/30 pl-4">
                   With 12+ years across R&amp;D, automation, and software engineering, I architect and ship{' '}
                   <strong className="text-slate-900 font-semibold">
-                    fault-tolerant cyber-physical systems, global Embedded Linux fleets (20+ countries), and real-time closed-loop control software
+                    fault-tolerant Embedded Linux fleets, automated sensor-to-actuator control systems, and full-stack web platforms across 20+ countries
                   </strong>
-                  &mdash;bridging physical sensors, robotics kinematics, and facility telemetry (Modbus, OPC UA, MQTT) with cloud platforms and AI-augmented engineering.
+                  &mdash;bridging physical sensors, actuators, and industrial telemetry (Modbus, OPC UA, MQTT) with cloud infrastructure and AI-augmented engineering.
                 </p>
               </div>
 
@@ -303,10 +303,10 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div className="space-y-1.5 max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
-                Interactive Technical Demos
+                Interactive Hobby Simulators &amp; Demos
               </h2>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Real-time 60 FPS simulations running directly in your browser. Click any live 3D preview below to launch the interactive workbench.
+                Independent 60 FPS browser simulations and arcade experiments built for fun to explore control theory, 3D kinematics math, and real-time physics. All demos are personal hobby projects unrelated to my employer.
               </p>
             </div>
 
@@ -339,7 +339,7 @@ export default function Home() {
                 Section 03 // Engineering Blog
               </span>
               <span className="hidden sm:inline">
-                Technical Case Studies, Robotics Math &amp; Architecture Articles
+                Independent Technical Notes, Hobby Projects &amp; Architecture Explorations
               </span>
             </div>
             <Link
@@ -353,10 +353,10 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div className="space-y-1.5 max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
-                Engineering Blog &amp; Case Studies
+                Engineering Blog &amp; Hobby Lab Notes
               </h2>
               <p className="text-sm text-slate-700 leading-relaxed">
-                Articles detailing the mathematics, state machines, and architectural trade-offs behind my production systems.
+                Independent articles and personal project write-ups exploring control theory, 3D kinematics math, state machines, and web architecture from a hobbyist perspective.
               </p>
             </div>
 

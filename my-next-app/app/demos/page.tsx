@@ -12,9 +12,9 @@ const DEMO_OVERVIEW = [
   {
     id: 'Simulator 1',
     title: '4-DOF 3D Spatial Robotic Arm Inverse Kinematics Lab',
-    type: '3D Robotics • Scroll-Wheel Z-Axis',
+    type: 'Hobby Math Exploration • 3D IK',
     description:
-      'A 60Hz 4-DOF 3D spatial manipulator solved via Damped Least Squares (Levenberg-Marquardt) Jacobian inverse kinematics, 2nd-order servo compliance dynamics, and mouse scroll-wheel Z-depth manipulation.',
+      'Built out of personal interest in robotics mathematics: a 60Hz 4-DOF 3D spatial manipulator solved via Damped Least Squares (Levenberg-Marquardt) Jacobian inverse kinematics and 2nd-order servo compliance.',
     postHref: '/posts/robotic-arm-inverse-kinematics',
     postLabel: 'Read 3D Jacobian IK & Trajectory Math Article',
   },
@@ -23,7 +23,7 @@ const DEMO_OVERVIEW = [
     title: 'Closed-Loop PID Control Simulator',
     type: 'Control Theory • 60Hz DSO',
     description:
-      'A 60Hz discrete-time Proportional-Integral-Derivative (PID) loop regulating a 2nd-order physical thermal/flow plant. Adjust Kp, Ki, and Kd gains, drag the setpoint on the oscilloscope, inject load surges, or trigger Autotune.',
+      'An independent educational simulator modeling a 60Hz discrete-time Proportional-Integral-Derivative (PID) loop regulating a 2nd-order thermal/flow plant. Adjust Kp, Ki, and Kd gains, drag the setpoint, or trigger Autotune.',
     postHref: '/posts/closed-loop-pid-control-lab',
     postLabel: 'Read PID Math & Anti-Windup Article',
   },
@@ -63,14 +63,14 @@ export default function DemosPage() {
         </div>
 
         <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-          Interactive Technical Demos
+          Interactive Hobby Simulators &amp; Demos
         </h1>
 
         <p className="text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
-          Self-contained 60 FPS browser simulations built in{' '}
+          Independent, self-contained 60 FPS browser simulations built for fun in{' '}
           <strong className="text-sky-300 font-semibold">TypeScript, React, and HTML5 Canvas</strong>{' '}
-          to demonstrate 4-DOF 3D robotic arm inverse kinematics, discrete-time PID control theory,
-          and deterministic state machines.
+          to explore personal interests in 3D inverse kinematics math, discrete-time PID control theory,
+          and arcade state machines. All simulations are personal hobby projects unrelated to my employer.
         </p>
       </header>
 

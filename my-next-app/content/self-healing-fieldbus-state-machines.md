@@ -1,103 +1,105 @@
 ---
-title: 'Masking 40-Minute Hardware Resets: Self-Healing Fieldbus State Machines'
+title: 'Self-Healing Protocol State Machines: A Conceptual Pattern for Slow Device Resets'
 date: '2026-10-14'
-description: 'How to architect fault-tolerant Modbus TCP/RTU and OPC UA communication state machines on Embedded Linux to mask unannounced legacy controller reboots without disrupting closed-loop control.'
-tags: ['IIoT', 'Embedded Linux', 'Modbus', 'OPC UA', 'State Machines']
+description: 'An independent architectural exploration of how Finite State Machines (FSMs), bounded quarantine windows, and state reconciliation can mask slow hardware reboots in distributed telemetry systems.'
+tags: ['State Machines', 'Distributed Systems', 'Architecture', 'Control Theory']
 ---
 
-In greenfield laboratory environments, industrial sensors and actuators respond within deterministic millisecond windows. In real-world brownfield plants—spanning paper mills, water treatment facilities, and chemical refineries across 20+ countries—edge software must survive electrically noisy RS-485 trunks, intermittent cellular backhauls, and legacy third-party controllers with undocumented firmware quirks.
+*Note: This article is an independent, generalized architectural exploration written from a personal perspective. All examples and TypeScript pseudocode are conceptual and are not tied to any specific employer or proprietary system.*
 
-One of the most memorable systems challenges I encountered in production was a legacy third-party pump controller that performed **unannounced 20-to-40 minute internal watchdog resets** under heavy network polling. Left unmasked, every reset triggered downstream telemetry alarms, dropped closed-loop chemical dosing to zero, and required manual operator intervention.
+In textbook distributed systems examples, network peers and hardware peripherals respond within deterministic millisecond windows. In real-world asynchronous environments, however, software often has to communicate over noisy links with slow-booting microcontrollers or third-party appliances that may occasionally undergo lengthy internal watchdog resets.
 
-Here is the architectural blueprint for how we engineered **self-healing protocol state machines** on Embedded Linux to mask those hardware resets with zero customer-visible disruption.
+If a naive polling client treats every multi-minute device reboot as an immediate fatal fault—or forgets that a remote device resets its volatile RAM registers upon reboot—a routine hardware hiccup can cascade into unnecessary downstream alerts and lost control state.
 
----
-
-## 1. Why Naive Polling Loops Fail in Brownfield IIoT
-
-A typical request/response polling loop treats any socket timeout or Modbus exception code as a hard fault:
-
-1. **Immediate Alarm Cascading**: Raising an upstream cloud fault after 3 missed polls floods operators with nuisance alerts during routine controller reboots.
-2. **Volatile Register Amnesia**: Many legacy industrial controllers clear their RAM-backed setpoint registers back to factory defaults (`0.0%`) upon reboot, waiting passively until an external master re-writes the active configuration.
-3. **Connection Storming**: Hammering a rebooting microcontroller's TCP stack or UART transceiver at 10 Hz during its bootloader initialization can livelock its network interface card (NIC) and extend the outage indefinitely.
+Here is a conceptual architectural pattern showing how a **self-healing protocol Finite State Machine (FSM)** can gracefully mask slow device resets and reconcile volatile state upon reconnection.
 
 ---
 
-## 2. The 5-Stage Self-Healing Protocol State Machine
+## 1. Why Naive Polling Loops Struggle with Slow Reboots
 
-Instead of coupling the upper-layer closed-loop control algorithm directly to raw socket reads, we decoupled physical I/O behind a deterministic, per-device **Session & State Reconciliation Finite State Machine (FSM)**:
+A basic request/response polling loop typically treats any socket timeout or protocol exception code as an immediate hard fault:
+
+1. **Immediate Alarm Cascading**: Raising an upstream fault after a few missed polls floods dashboards with nuisance alerts during routine device reboots.
+2. **Volatile Register Amnesia**: Many simple embedded controllers clear their RAM-backed target registers back to defaults (`0.0%`) upon reboot, waiting passively until a host re-writes the active configuration.
+3. **Connection Storming**: Hammering a rebooting microcontroller's TCP stack or serial transceiver at 10 Hz during bootloader initialization can overwhelm its network interface and extend the outage.
+
+---
+
+## 2. A 5-Stage Self-Healing Protocol State Machine
+
+Instead of coupling an upper-layer control algorithm directly to raw socket reads, we can decouple device I/O behind a deterministic, per-device **Session & State Reconciliation Finite State Machine (FSM)**:
 
 ```text
-[NOMINAL_CLOSED_LOOP]
+[NOMINAL_ACTIVE]
         │ (3x CRC / Timeout Fault)
         ▼
-[DEGRADED_FAST_RETRY] ──(Recovered < 15s)──► [NOMINAL_CLOSED_LOOP]
+[DEGRADED_FAST_RETRY] ──(Recovered < 15s)──► [NOMINAL_ACTIVE]
         │ (Persistent Drop > 15s)
         ▼
 [QUARANTINE_HOLD_LKG] (Mask downstream fault; hold Last-Known-Good telemetry)
         │ (Exponential Backoff Probe: 5s → 15s → 30s)
         ▼
-[TRANSPORT_HANDSHAKE] (TCP SYN / OPC UA SecureChannel / Modbus Unit ID Ping)
+[TRANSPORT_HANDSHAKE] (TCP SYN / Session Ping)
         │ (Link Up: Verify Uptime Counter / Boot Flag)
         ▼
-[STATE_RECONCILIATION] (Re-hydrate volatile Setpoint & Watchdog registers)
+[STATE_RECONCILIATION] (Re-hydrate volatile Setpoint & Mode registers)
         │ (Read-Back Verified === Target State)
         ▼
-[NOMINAL_CLOSED_LOOP] (Bumpless transfer back to active PID loop)
+[NOMINAL_ACTIVE] (Bumpless transfer back to active loop)
 ```
 
 ### Key Architectural Mechanisms
 
 #### A. Bounded Last-Known-Good (LKG) Quarantine Window
-When a known-legacy controller drops offline, the state machine transitions into `QUARANTINE_HOLD_LKG`:
-* Rather than immediately zeroing out sensor readings or tripping plant interlocks, the edge daemon caches the **Last-Known-Good (LKG)** process state and marks internal telemetry metadata with `quality: HELD_DURING_CONTROLLER_RESET`.
-* A hardware-specific **Grace Timer** (calibrated to 45 minutes for controllers with known 20–40 minute reset cycles) suppresses external customer alarms unless the device fails to recover within the bounded window or an independent physical high-limit switch trips.
+When a slow-rebooting device drops offline, the state machine transitions into `QUARANTINE_HOLD_LKG`:
+* Rather than immediately zeroing out readings, the service caches the **Last-Known-Good (LKG)** state and tags internal telemetry metadata with `quality: HELD_DURING_DEVICE_RESET`.
+* A bounded **Grace Timer** suppresses nuisance downstream alerts unless the device fails to recover within its expected reboot window or an independent physical safety limit is reached.
 
 #### B. Jittered Exponential Backoff Probing
-While quarantined, the daemon tears down stale file descriptors (`close(fd)`) and probes the controller using jittered backoff (`5s`, `15s`, `30s`). This gives the remote device's RTOS and network stack breathing room to complete flash integrity checks and initialize its Modbus TCP / OPC UA listener cleanly.
+While quarantined, the service closes stale sockets and probes the remote endpoint using jittered backoff (`5s`, `15s`, `30s`). This gives the remote device's network stack breathing room to complete startup checks and initialize its listener cleanly.
 
 #### C. Bumpless State Reconciliation on Reconnect
-The moment a probe succeeds, **we do not immediately resume normal read polling**. Instead, the FSM enters `STATE_RECONCILIATION`:
+The moment a probe succeeds, **the service does not immediately resume normal read polling**. Instead, the FSM enters `STATE_RECONCILIATION`:
 
 ```ts
 interface ReconcileContext {
-  targetDoseRatePct: number;
+  targetOutputPct: number;
   controlModeRegister: 'REMOTE_AUTO' | 'LOCAL_MANUAL';
   lastVerifiedBootCount: number;
 }
 
-async function reconcileControllerState(
-  client: FieldbusClient,
+async function reconcileDeviceState(
+  client: ProtocolClient,
   ctx: ReconcileContext
 ): Promise<boolean> {
   // 1. Read diagnostic boot counter / status word to detect volatile RAM reset
-  const status = await client.readHoldingRegisters(0x0100, 2);
-  const WasReset = status[0] !== ctx.lastVerifiedBootCount || status[1] === 0;
+  const status = await client.readRegisters(0x0100, 2);
+  const wasReset = status[0] !== ctx.lastVerifiedBootCount || status[1] === 0;
 
-  if (WasReset) {
-    // 2. Re-assert REMOTE_AUTO mode and last active closed-loop output before releasing lock
-    await client.writeSingleRegister(0x0200, encodeMode(ctx.controlModeRegister));
-    await client.writeSingleRegister(0x0201, encodeDoseRate(ctx.targetDoseRatePct));
+  if (wasReset) {
+    // 2. Re-assert REMOTE_AUTO mode and last active output before releasing lock
+    await client.writeRegister(0x0200, encodeMode(ctx.controlModeRegister));
+    await client.writeRegister(0x0201, encodeOutput(ctx.targetOutputPct));
 
     // 3. Read-back verification to guarantee register commitment
-    const verify = await client.readHoldingRegisters(0x0200, 2);
-    if (verify[1] !== encodeDoseRate(ctx.targetDoseRatePct)) {
+    const verify = await client.readRegisters(0x0200, 2);
+    if (verify[1] !== encodeOutput(ctx.targetOutputPct)) {
       return false; // Retry reconciliation on next tick
     }
   }
 
-  return true; // Ready for bumpless transfer back to NOMINAL_CLOSED_LOOP
+  return true; // Ready for bumpless transfer back to NOMINAL_ACTIVE
 }
 ```
 
-By verifying whether the remote controller lost its volatile RAM state and atomically re-hydrating its mode and actuator registers *before* handing control back to the PID loop, the physical dosing process resumes with **bumpless transfer** and zero operator intervention.
+By checking whether the remote device lost its volatile RAM state and atomically re-hydrating its mode and output registers *before* handing control back to the main loop, the system resumes operation with **bumpless transfer**.
 
 ---
 
-## 3. Takeaways for Distributed Systems Engineers
+## 3. General Takeaways for Distributed Systems
 
-Whether you are communicating with an industrial PLC over RS-485 Modbus RTU or synchronizing offline-first web clients over spotty mobile connections, the core resilience pattern is identical:
+Whether communicating with a local hardware peripheral or synchronizing offline-first web clients over spotty mobile connections, the core resilience principles are the same:
 
-1. **Never trust the transport layer to be stateless**: Assume remote peers will reboot and lose volatile state mid-session.
-2. **Separate transport health from application state**: Use explicit state machines with bounded quarantine windows so transient hardware quirks do not cascade into user-facing failures.
-3. **Always reconcile state before resuming control**: Treat every reconnection as a cold-start handshake that requires read-back verification before unlocking active control loops.
+1. **Never assume remote peers keep volatile state**: Assume remote endpoints can reboot and lose in-memory state mid-session.
+2. **Separate transport health from application state**: Use explicit state machines with bounded quarantine windows so transient device restarts do not cascade into user-facing failures.
+3. **Reconcile state before resuming normal operation**: Treat every reconnection as a cold-start handshake that requires read-back verification before unlocking active loops.

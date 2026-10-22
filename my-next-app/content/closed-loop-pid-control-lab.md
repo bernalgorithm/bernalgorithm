@@ -5,9 +5,9 @@ description: 'An interactive 60Hz discrete-time PID controller and digital stora
 tags: ['Control Theory', 'PID', 'Closed-Loop', 'Embedded', 'Interactive']
 ---
 
-In industrial automation—whether regulating chemical dosing concentration, maintaining vessel pressure, or driving variable-frequency pump actuators—a **Proportional-Integral-Derivative (PID)** loop is the foundational workhorse of closed-loop control.
+In automated control systems—whether regulating temperature, maintaining vessel pressure, or driving variable-rate actuators—a **Proportional-Integral-Derivative (PID)** loop is the foundational workhorse of closed-loop feedback control.
 
-Below is an interactive, real-time **60 Hz Discrete-Time PID Control Laboratory** coupled to a second-order physical fluid reactor with head-pressure drain, actuator slew lag, and saturation boundaries.
+Below is an independent, educational **60 Hz Discrete-Time PID Control Simulator** I built as a hobby project, coupled to a simulated second-order fluid tank with head-pressure drain, actuator slew lag, and saturation boundaries.
 
 ## Interactive Closed-Loop Workbench
 

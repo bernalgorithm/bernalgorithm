@@ -1,9 +1,11 @@
 ---
-title: '3D Robotic Arm Inverse Kinematics: 4-DOF Jacobian DLS & Servo Compliance'
+title: '3D Robotic Arm Inverse Kinematics: A Hobby Exploration of Jacobian DLS'
 date: '2026-10-15'
-description: 'Designing a real-time 4-DOF 3D spatial robotic manipulator in TypeScript: 3x4 analytical Jacobian derivation, Damped Least Squares (Levenberg-Marquardt) singularity handling, scroll-wheel Z-depth manipulation, and 2nd-order servo compliance.'
-tags: ['Robotics', 'Inverse Kinematics', 'Control Theory', 'TypeScript', 'Interactive']
+description: 'An independent hobby project exploring 3D spatial kinematics in TypeScript: 3x4 analytical Jacobian derivation, Damped Least Squares (Levenberg-Marquardt) singularity handling, scroll-wheel Z-depth manipulation, and 2nd-order servo compliance.'
+tags: ['Hobby Exploration', 'Inverse Kinematics', 'Control Theory', 'TypeScript', 'Interactive']
 ---
+
+*Note: While my professional background is in Embedded Linux, IoT, and process control rather than robotics, I have a strong personal interest in robotics and spatial mathematics. I built this interactive 3D simulator as an independent hobby project to explore multi-axis inverse kinematics and servo dynamics from first principles.*
 
 In robotics and mechatronics, translating a desired 3D Cartesian target `(x_d, y_d, z_d)` into smooth, coordinated motor commands across a rotating turntable base and multiple pitch joints `(θ1, θ2, θ3, θ4)` requires solving the **Inverse Kinematics (IK)** problem in real time while modeling physical rotor inertia, joint compliance, and kinematic singularities.
 

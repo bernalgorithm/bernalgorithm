@@ -258,7 +258,7 @@ export default function ResumePage() {
             <ul className="list-disc pl-5 space-y-1.5 text-xs sm:text-[13.5px] text-neutral-950 leading-relaxed pt-0.5">
               <li>
                 <strong className="font-bold text-black">
-                  Interactive Control Systems &amp; Robotics Simulators (
+                  Personal Engineering Sandbox &amp; Hobby Simulators (
                   <a
                     href="https://bernalgorithm.github.io/bernalgorithm"
                     target="_blank"
@@ -269,29 +269,28 @@ export default function ResumePage() {
                   </a>
                   ):
                 </strong>{' '}
-                Built a <strong>Next.js / TypeScript</strong> engineering portfolio featuring
-                real-time 60 FPS browser simulations—including a{' '}
-                <strong>3D 4-DOF Robotic Arm Inverse Kinematics Planner</strong>{' '}
-                <Link
-                  href="/posts/robotic-arm-inverse-kinematics"
-                  className="underline decoration-neutral-500 hover:text-black print:hidden"
-                >
-                  [Case Study]
-                </Link>{' '}
-                and a <strong>Closed-Loop PID Process Control Lab</strong> with interactive
-                disturbance testing and digital oscilloscope telemetry{' '}
+                Built an independent <strong>Next.js / TypeScript</strong> portfolio and hobby lab
+                featuring real-time 60 FPS browser simulations—including a{' '}
+                <strong>Closed-Loop PID Process Control Simulator</strong>{' '}
                 <Link
                   href="/posts/closed-loop-pid-control-lab"
                   className="underline decoration-neutral-500 hover:text-black print:hidden"
                 >
-                  [Case Study]
+                  [Article]
+                </Link>{' '}
+                and a personal math exploration of <strong>3D 4-DOF Inverse Kinematics</strong>{' '}
+                <Link
+                  href="/posts/robotic-arm-inverse-kinematics"
+                  className="underline decoration-neutral-500 hover:text-black print:hidden"
+                >
+                  [Article]
                 </Link>
-                —plus technical case studies on fault-tolerant IoT/OT architecture{' '}
+                —plus independent write-ups on state-machine design{' '}
                 <Link
                   href="/posts/self-healing-fieldbus-state-machines"
                   className="underline decoration-neutral-500 hover:text-black print:hidden"
                 >
-                  [Case Study]
+                  [Article]
                 </Link>{' '}
                 and offline-first cloud sync.
               </li>

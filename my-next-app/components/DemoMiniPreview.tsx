@@ -24,10 +24,10 @@ const DEMO_CARDS: DemoCardConfig[] = [
     numberLabel: 'SIM 01',
     title: '4-DOF 3D Robotic Arm IK Lab',
     subtitle: 'Mouse Plane (X, Z) • Scroll Height (Y)',
-    badge: '3D Robotics • Jacobian DLS',
+    badge: 'Hobby Math • Jacobian DLS',
     accentColor: 'from-orange-500/20 to-blue-500/20 border-orange-400/40',
     description:
-      'Industrial 4-DOF 3D manipulator solved at 60Hz via Damped Least Squares inverse kinematics and 2nd-order servo compliance.',
+      'Personal hobby exploration into 3D kinematics math: a 4-DOF manipulator solved at 60Hz via Damped Least Squares inverse kinematics.',
     demoHref: '/demos?sim=roboticarm',
     noteHref: '/posts/robotic-arm-inverse-kinematics',
     noteLabel: '3D IK Math Article',

@@ -105,7 +105,7 @@ export default function RootLayout({
           <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-600">
             <div className="flex items-center gap-2 font-medium text-slate-800">
               <span className="w-2 h-2 rounded-full bg-blue-600" />
-              <span>Alexander Bernal &mdash; IoT, Robotics, Edge Infrastructure &amp; Full-Stack</span>
+              <span>Alexander Bernal &mdash; Embedded Systems, IoT, Control Systems &amp; Full-Stack</span>
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-5 text-slate-600">

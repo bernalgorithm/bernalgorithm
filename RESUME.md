@@ -42,7 +42,7 @@
 ---
 
 ## SELECTED SOFTWARE & ENGINEERING PROJECTS
-* **Interactive Control Systems & Robotics Simulators ([bernalgorithm.github.io/bernalgorithm](https://bernalgorithm.github.io/bernalgorithm)):** Built a **Next.js / TypeScript** engineering portfolio featuring real-time 60 FPS browser simulations—including a **3D 4-DOF Robotic Arm Inverse Kinematics Planner** and a **Closed-Loop PID Process Control Lab** with interactive disturbance testing and digital oscilloscope telemetry—plus technical case studies on fault-tolerant IoT/OT architecture and offline-first cloud sync.
+* **Personal Engineering Sandbox & Hobby Simulators ([bernalgorithm.github.io/bernalgorithm](https://bernalgorithm.github.io/bernalgorithm)):** Built an independent **Next.js / TypeScript** portfolio and hobby lab featuring real-time 60 FPS browser simulations—including a **Closed-Loop PID Process Control Simulator** and a personal math exploration of **3D 4-DOF Inverse Kinematics**—plus independent articles on state-machine design and offline-first cloud sync.
 
 ---
 
