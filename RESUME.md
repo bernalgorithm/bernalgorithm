@@ -10,7 +10,7 @@
 
 ## TECHNICAL SKILLS
 * **Languages & Frameworks:** Python, C, C++, TypeScript, JavaScript, Bash, SQL, React, Next.js, Tailwind CSS
-* **Embedded Linux, IoT & Edge Infrastructure:** Embedded Linux (Ubuntu, background services/daemons), Azure IoT, Docker, Remote Over-the-Air (OTA) Fleet Upgrades, Headless Single-Board Computers (SBCs)
+* **Embedded Linux, IoT & Edge Infrastructure:** Embedded Linux (multi-distro environments, systemd/background daemons), Azure IoT, Docker, Remote Over-the-Air (OTA) Fleet Upgrades, Headless Single-Board Computers (SBCs)
 * **Field Networking, Segmentation & Connectivity:** Cellular & LoRaWAN Gateways (Cradlepoint, Teltonika, MultiTech, Milesight), Embedded Modems & Wi-Fi, TCP/IP, Subnet Routing & Network Segmentation, DHCP, NAT / Port Forwarding
 * **Industrial Control Systems (ICS/OT) & Hardware Protocols:** Automated Closed-Loop Control (PID), Modbus (TCP/IP & RTU), OPC UA, MQTT, 4–20mA Analog & Digital I/O, PLCs, Multi-Vendor Sensor & Pump/Actuator Integration
 * **Cloud, Full-Stack & Engineering Workflow:** Rule-Based Configuration & Decision Engines, Firebase / Firestore, GitHub Actions (CI/CD), Azure DevOps, Git, AI-Augmented Development (Claude Code, Google Antigravity, GitHub Copilot, Gemini)

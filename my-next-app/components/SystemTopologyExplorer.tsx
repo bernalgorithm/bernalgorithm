@@ -71,9 +71,9 @@ const TOPOLOGY_LAYERS: TopologyLayer[] = [
     id: 'layer-edge',
     code: 'Layer 3 • Linux Fleet & Networking',
     name: 'Embedded Linux Daemons & Out-of-Band Networking',
-    tagline: 'Headless Ubuntu Fleet • Native C++/Python Daemons • Routing',
+    tagline: 'Headless Linux Fleet • Native C++/Python Daemons • Routing',
     protocols: [
-      'Embedded Linux (Ubuntu LTS)',
+      'Embedded Linux (Multi-Distro)',
       'C / C++ & Python Daemons',
       'DHCP, NAT & Subnet Routing',
       'Cradlepoint / Teltonika / MultiTech / Milesight',

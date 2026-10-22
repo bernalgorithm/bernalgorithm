@@ -16,7 +16,7 @@ const SKILL_GROUPS = [
   {
     category: 'Embedded Linux, IoT & Edge Infrastructure',
     skills:
-      'Embedded Linux (Ubuntu, background services/daemons), Azure IoT, Docker, Remote Over-the-Air (OTA) Fleet Upgrades, Headless Single-Board Computers (SBCs)',
+      'Embedded Linux (multi-distro environments, systemd/background daemons), Azure IoT, Docker, Remote Over-the-Air (OTA) Fleet Upgrades, Headless Single-Board Computers (SBCs)',
   },
   {
     category: 'Field Networking, Segmentation & Connectivity',

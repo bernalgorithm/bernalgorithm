@@ -40,7 +40,7 @@ const ENGINEERING_DOMAINS = [
     description:
       'Headless Linux systems, native C/C++ and Python daemons, remote OTA upgrades, and resilient network topologies (DHCP, NAT, out-of-band cellular & LoRa backhaul).',
     skills: [
-      'Embedded Linux (Ubuntu)',
+      'Embedded Linux (Multi-Distro)',
       'C / C++ & Python',
       'DHCP, NAT & Routing',
       'Cellular & LoRaWAN',
