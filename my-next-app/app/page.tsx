@@ -165,7 +165,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="card-tactile px-4 py-2 rounded-xl text-slate-700 border border-slate-200/90 font-medium hover:border-blue-300 hover:text-blue-700"
                 >
-                  LinkedIn &nearr;
+                  LinkedIn ↗
                 </a>
               </div>
             </div>

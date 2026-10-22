@@ -92,7 +92,7 @@ export default function RootLayout({
                 rel="noopener noreferrer"
                 className="hidden sm:inline-flex ml-1 px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 hover:border-slate-300 hover:text-slate-900 transition whitespace-nowrap"
               >
-                GitHub &nearr;
+                GitHub ↗
               </a>
             </nav>
           </div>
@@ -133,7 +133,7 @@ export default function RootLayout({
                 rel="noopener noreferrer"
                 className="hover:text-blue-600 transition"
               >
-                LinkedIn &nearr;
+                LinkedIn ↗
               </a>
             </div>
           </div>
