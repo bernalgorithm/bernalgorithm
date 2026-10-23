@@ -65,10 +65,10 @@ export default function RootLayout({
               className="flex items-center gap-1 sm:gap-2 text-sm font-medium text-zinc-600"
             >
               <Link
-                href="/#story"
+                href="/#experience"
                 className="px-3 py-1.5 rounded-lg hover:text-zinc-900 hover:bg-stone-200/60 transition whitespace-nowrap hidden sm:inline-block"
               >
-                My Story
+                Experience
               </Link>
               <Link
                 href="/demos"
