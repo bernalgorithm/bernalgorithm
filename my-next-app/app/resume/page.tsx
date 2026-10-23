@@ -47,7 +47,7 @@ const EXPERIENCE = [
       },
       {
         lead: 'Self-Healing Device Reliability & Operational Continuity',
-        text: 'Eliminated customer-visible downtime from third-party hardware freezes (which previously caused 20–40 minute outages) by engineering fault-tolerant communication state machines (Modbus TCP/RTU, OPC UA, MQTT) that automatically detect dropouts, quarantine bad sensor reads, and restore live device state upon reboot to ensure continuous operational resilience.',
+        text: 'Mitigated service disruptions from third-party hardware freezes (which previously required manual intervention after 20–40 minute controller resets) by engineering fault-tolerant communication state machines (Modbus TCP/RTU, OPC UA, MQTT) that automatically detect dropouts, quarantine bad sensor reads, and restore live device state upon reboot.',
       },
       {
         lead: 'Lightweight Edge Modernization (~50% Resource Reduction)',

@@ -18,8 +18,8 @@ const IMPACT_METRICS = [
   },
   {
     id: 'KPI 03',
-    metric: 'Zero-Downtime',
-    label: 'Self-healing state machines across industrial fieldbuses',
+    metric: 'Self-Healing',
+    label: 'Automated state recovery across industrial fieldbuses',
     accentBar: 'bg-indigo-600',
   },
   {

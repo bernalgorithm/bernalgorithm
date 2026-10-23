@@ -58,7 +58,7 @@ const TOPOLOGY_LAYERS: TopologyLayer[] = [
     summary:
       'Deterministic communication state machines that isolate upper-layer control and telemetry from hardware resets, bus contention, and brownfield controller quirks—using the same protocols that power data center BMS/cooling, robotics buses, and industrial plants.',
     engineeringDetails: [
-      'Masks unannounced 20–40 minute third-party controller watchdog resets with zero customer-visible disruption.',
+      'Mitigates unannounced 20–40 minute third-party controller watchdog resets via automated session and register recovery.',
       'Holds bounded Last-Known-Good (LKG) state while probing offline nodes with jittered exponential backoff.',
       'Performs automatic volatile RAM register reconciliation and read-back verification before bumpless transfer.',
     ],
