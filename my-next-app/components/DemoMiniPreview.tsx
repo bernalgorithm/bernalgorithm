@@ -20,56 +20,56 @@ interface DemoCardConfig {
 
 const DEMO_CARDS: DemoCardConfig[] = [
   {
-    id: 'roboticarm',
-    numberLabel: 'SIM 01',
-    title: '4-DOF 3D Robotic Arm IK Lab',
-    subtitle: 'Mouse Plane (X, Z) • Scroll Height (Y)',
-    badge: 'Hobby Math • Jacobian DLS',
-    accentColor: 'from-orange-500/20 to-blue-500/20 border-orange-400/40',
-    description:
-      'Personal hobby exploration into 3D kinematics math: a 4-DOF manipulator solved at 60Hz via Damped Least Squares inverse kinematics.',
-    demoHref: '/demos?sim=roboticarm',
-    noteHref: '/posts/robotic-arm-inverse-kinematics',
-    noteLabel: '3D IK Math Article',
-  },
-  {
     id: 'pidlab',
-    numberLabel: 'SIM 02',
-    title: 'Closed-Loop PID Control Lab',
-    subtitle: 'Interactive 60Hz DSO • Load Surges',
-    badge: 'Control Theory • Anti-Windup',
+    numberLabel: 'Hobby Project 01',
+    title: 'Closed-Loop PID Control Simulator',
+    subtitle: 'Why I built it: To make feedback control loops visual and intuitive',
+    badge: 'Control Theory • 60Hz DSO',
     accentColor: 'from-emerald-500/20 to-cyan-500/20 border-emerald-400/40',
     description:
-      'Discrete-time PID controller regulating a 2nd-order thermal/flow plant with live Kp/Ki/Kd tuning and Ziegler-Nichols autotune.',
+      'In my day job, I work around automated control systems. I built this interactive fluid tank and digital oscilloscope so anyone can drag a setpoint, trigger a load surge, and visually feel how P, I, and D terms stabilize a physical process.',
     demoHref: '/demos?sim=pidlab',
     noteHref: '/posts/closed-loop-pid-control-lab',
-    noteLabel: 'PID Control Article',
+    noteLabel: 'PID Control Notes',
+  },
+  {
+    id: 'roboticarm',
+    numberLabel: 'Hobby Project 02',
+    title: '3D 4-DOF Inverse Kinematics Sandbox',
+    subtitle: 'Why I built it: Weekend curiosity about 3D spatial math',
+    badge: 'Math Exploration • Jacobian DLS',
+    accentColor: 'from-orange-500/20 to-blue-500/20 border-orange-400/40',
+    description:
+      'I don’t work with robotics professionally, but I’ve always been fascinated by how multi-jointed arms coordinate motion in 3D space—so I built this simulator from scratch to teach myself Jacobian inverse kinematics.',
+    demoHref: '/demos?sim=roboticarm',
+    noteHref: '/posts/robotic-arm-inverse-kinematics',
+    noteLabel: '3D Kinematics Notes',
   },
   {
     id: 'breakthrough',
-    numberLabel: 'SIM 03',
+    numberLabel: 'Hobby Project 03',
     title: 'Silicon Breakthrough',
-    subtitle: 'Boundary-Scan Physics • Web Audio',
-    badge: '60 FPS ISR Loop',
+    subtitle: 'Why I built it: Applying firmware render-loop discipline to a classic game',
+    badge: '60 FPS Canvas & Web Audio',
     accentColor: 'from-sky-500/20 to-indigo-500/20 border-sky-400/40',
     description:
-      'High-speed boundary-scan breakout separating 60Hz collision kinematics from React HUD state—mirroring bare-metal timer ISRs.',
+      'A circuit-board take on Breakout that separates 60Hz collision physics from React UI updates—the same way embedded firmware separates fast timer interrupts from slow display updates.',
     demoHref: '/demos?sim=breakthrough',
     noteHref: '/posts/silicon-breakthrough',
-    noteLabel: 'ISR Loop Note',
+    noteLabel: 'Architecture Notes',
   },
   {
     id: 'pcbbird',
-    numberLabel: 'SIM 04',
+    numberLabel: 'Hobby Project 04',
     title: 'Silicon Viral Worm',
-    subtitle: 'Zero-Day Injector • FR4 Trace Grid',
+    subtitle: 'Why I built it: Retro state-machine fun on a 4-layer PCB grid',
     badge: 'State Machine • Canvas 2D',
     accentColor: 'from-purple-500/20 to-emerald-500/20 border-purple-400/40',
     description:
-      'Pilot a polymorphic digital viral worm across 4-layer copper traces to patch hardware bugs and trigger rootkit stealth cloaks.',
+      'A playful HTML5 Canvas arcade experiment with procedural Web Audio sound synthesis—navigate across copper traces to patch bugs while avoiding soldered IC packages.',
     demoHref: '/demos?sim=pcbbird',
     noteHref: '/posts/pcb-bird-runner',
-    noteLabel: 'State Machine Note',
+    noteLabel: 'Design Notes',
   },
 ];
 
@@ -454,63 +454,63 @@ function MiniCanvasRenderer({ simId }: { simId: SimulatorId }) {
 
 export function DemoMiniPreviewGrid() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
       {DEMO_CARDS.map((card) => (
         <div
           key={card.id}
-          className="group relative rounded-2xl border border-slate-700/80 bg-slate-800/70 hover:bg-slate-800 hover:border-blue-400/70 transition-all duration-200 overflow-hidden flex flex-col justify-between shadow-lg"
+          className="card-editorial group relative rounded-2xl border border-stone-200/90 bg-white hover:border-blue-400 transition-all duration-200 overflow-hidden flex flex-col justify-between"
         >
           {/* Clickable Live 60 FPS Mini-3D Preview Viewport */}
           <div>
             <Link
               href={card.demoHref}
-              className="block relative overflow-hidden border-b border-slate-700/80 focus:outline-none"
+              className="block relative overflow-hidden border-b border-stone-200 focus:outline-none"
               aria-label={`Launch ${card.title}`}
             >
               <MiniCanvasRenderer simId={card.id} />
 
               {/* Top Overlay Pill Badges */}
               <div className="absolute top-2.5 left-3 right-3 flex items-center justify-between pointer-events-none">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-slate-900/90 text-sky-300 border border-slate-700">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-zinc-900/90 text-white border border-zinc-700">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  {card.numberLabel} &bull; LIVE 3D
+                  Live 60 FPS Preview
                 </span>
-                <span className="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-slate-900/85 text-slate-200 border border-slate-700">
+                <span className="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-zinc-900/85 text-zinc-200 border border-zinc-700">
                   {card.badge}
                 </span>
               </div>
 
               {/* Hover Interactive Launch Callout */}
               <div className="absolute bottom-2.5 right-3 pointer-events-none">
-                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-lg text-xs font-bold bg-blue-600/95 group-hover:bg-blue-500 text-white shadow-md transition">
-                  Click Preview to Launch &rarr;
+                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-lg text-xs font-semibold bg-white/95 group-hover:bg-blue-600 group-hover:text-white text-zinc-900 shadow-md transition">
+                  Try Interactive Demo &rarr;
                 </span>
               </div>
             </Link>
 
             {/* Simulator Description Body */}
             <div className="p-5 space-y-2">
-              <div className="text-xs font-mono text-sky-300/90">{card.subtitle}</div>
-              <h3 className="text-lg font-bold text-white group-hover:text-sky-300 transition">
+              <div className="text-xs font-medium text-blue-700">{card.subtitle}</div>
+              <h3 className="text-lg font-bold text-zinc-900 group-hover:text-blue-700 transition">
                 <Link href={card.demoHref}>{card.title}</Link>
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
                 {card.description}
               </p>
             </div>
           </div>
 
           {/* Bottom Action Footer */}
-          <div className="px-5 py-3 bg-slate-900/60 border-t border-slate-700/70 flex items-center justify-between text-xs font-semibold">
+          <div className="px-5 py-3 bg-stone-50/80 border-t border-stone-200/80 flex items-center justify-between text-xs font-semibold">
             <Link
               href={card.demoHref}
-              className="text-sky-400 hover:text-sky-300 transition inline-flex items-center gap-1"
+              className="text-blue-700 hover:text-blue-900 transition inline-flex items-center gap-1"
             >
-              Open Full Simulator &rarr;
+              Open Interactive Sandbox &rarr;
             </Link>
             <Link
               href={card.noteHref}
-              className="text-slate-400 hover:text-white transition"
+              className="text-zinc-500 hover:text-zinc-900 transition"
             >
               Read {card.noteLabel}
             </Link>
