@@ -45,3 +45,10 @@ body {
     0 4px 10px -2px rgba(24, 24, 27, 0.05),
     0 16px 28px -8px rgba(24, 24, 27, 0.09);
 }
+
+@media print {
+  @page {
+    size: letter;
+    margin: 0.45in;
+  }
+}

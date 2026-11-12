@@ -3,103 +3,106 @@ import Link from 'next/link';
 import { PrintResumeButton } from '@/components/PrintResumeButton';
 
 export const metadata: Metadata = {
-  title: 'Resume | Alexander Bernal — Senior Embedded Systems, IoT & Full-Stack Software Engineer',
+  title:
+    'Resume | Alexander Bernal — Senior Embedded Linux, Industrial IoT (IIoT) & Full-Stack Software Engineer',
   description:
-    'Resume of Alexander Bernal: Senior Embedded Systems, IoT/OT, Linux, and Full-Stack Software Engineer.',
+    'Resume of Alexander Bernal: Senior Embedded Linux, Industrial IoT (IIoT), ICS/OT Control Systems, and Full-Stack Software Engineer.',
 };
 
 const SKILL_GROUPS = [
   {
-    category: 'Languages & Frameworks',
-    skills: 'Python, C, C++, TypeScript, JavaScript, Bash, SQL, React, Next.js, Tailwind CSS',
+    category: 'Languages & Web Frameworks',
+    skills:
+      'C, C++ (Modern STL, OOP, Memory Management), Python, TypeScript, JavaScript (ES6+), Bash / Shell Scripting, SQL, React, Next.js, HTML5 Canvas, Tailwind CSS',
   },
   {
-    category: 'Embedded Linux, IoT & Edge Infrastructure',
+    category: 'Embedded Linux, Edge & IoT Infrastructure',
     skills:
-      'Embedded Linux (multi-distro environments, systemd/background daemons), Azure IoT, Docker, Remote Over-the-Air (OTA) Fleet Upgrades, Headless Single-Board Computers (SBCs)',
-  },
-  {
-    category: 'Field Networking, Segmentation & Connectivity',
-    skills:
-      'Cellular & LoRaWAN Gateways (Cradlepoint, Teltonika, MultiTech, Milesight), Embedded Modems & Wi-Fi, TCP/IP, Subnet Routing & Network Segmentation, DHCP, NAT / Port Forwarding',
+      'Embedded Linux (Multi-Distro, Headless Single-Board Computers / SBCs), systemd Background Daemons, POSIX Sockets & Serial I/O, Remote Over-the-Air (OTA) OS & Fleet Upgrades, Azure IoT Hub, Docker, Edge-to-Cloud Telemetry',
   },
   {
     category: 'Industrial Control Systems (ICS/OT) & Hardware Protocols',
     skills:
-      'Automated Closed-Loop Control (PID), Modbus (TCP/IP & RTU), OPC UA, MQTT, 4–20mA Analog & Digital I/O, PLCs, Multi-Vendor Sensor & Pump/Actuator Integration',
+      'Automated Closed-Loop PID Control, Modbus (TCP/IP & RS-485 RTU), OPC UA, MQTT, 4–20mA Analog Current Loops & Discrete Digital I/O, SCADA / PLC Integration, Multi-Vendor Sensors, Variable-Rate Pumps & Actuators, Finite State Machines (FSMs)',
+  },
+  {
+    category: 'Field Networking, Segmentation & Connectivity',
+    skills:
+      'Industrial Cellular & LoRaWAN Gateways (Cradlepoint, Teltonika, MultiTech, Milesight), Embedded Modems & Wi-Fi, IT/OT Network Segmentation, TCP/IP, LAN/WAN Subnet Routing, DHCP, NAT / Port Forwarding, SSH & Secure Remote Diagnostics',
   },
   {
     category: 'Cloud, Full-Stack & Engineering Workflow',
     skills:
-      'Rule-Based Configuration & Decision Engines, Firebase / Firestore, GitHub Actions (CI/CD), Azure DevOps, Git, AI-Augmented Development (Claude Code, Google Antigravity, GitHub Copilot, Gemini)',
+      'Rule-Based Configuration & Decision Engines, Firebase / Firestore, REST APIs, GitHub Actions (CI/CD), Azure DevOps, Git, Automated Verification & Protocol Simulation, AI-Augmented Engineering (Claude Code, Google Antigravity, GitHub Copilot, Gemini)',
   },
 ];
 
 const EXPERIENCE = [
   {
-    title: 'Digital Innovation Engineer',
-    subtitle: 'Senior Embedded Systems, IoT & Full-Stack Engineer',
+    title: 'Senior Embedded Systems, IoT & Full-Stack Engineer',
+    hrTitle: 'Digital Innovation Engineer — Buckman',
     period: 'March 2022 – Present',
     bullets: [
       {
-        lead: 'Global IoT, ICS/OT & Automated Control Architecture',
-        text: 'Lead end-to-end software architecture, Embedded Linux development, and network integration for automated industrial control systems across critical water treatment, chemical, and process manufacturing facilities—taking products from initial prototype to commercial deployment across 20+ countries on 6 continents.',
+        lead: 'Global Edge-to-Cloud, ICS/OT & Control Architecture',
+        text: 'Lead end-to-end software architecture, headless Embedded Linux development, and industrial network integration for automated closed-loop control systems across critical water treatment, chemical, and process manufacturing facilities—guiding hardware-integrated products from initial prototype to commercial deployment across 20+ countries on 6 continents.',
       },
       {
-        lead: 'Self-Healing Device Reliability & Operational Continuity',
-        text: 'Mitigated service disruptions from third-party hardware freezes (which previously required manual intervention after 20–40 minute controller resets) by engineering fault-tolerant communication state machines (Modbus TCP/RTU, OPC UA, MQTT) that automatically detect dropouts, quarantine bad sensor reads, and restore live device state upon reboot.',
+        lead: 'Self-Healing OT Protocol State Machines',
+        text: 'Eliminated manual on-site resets and nuisance alarm cascades caused by 20–40 minute third-party hardware watchdog freezes—engineering deterministic Modbus TCP/RTU, OPC UA, and MQTT finite state machines (FSMs) with bounded last-known-good telemetry quarantine, exponential backoff probing, and read-back verified register reconciliation for bumpless recovery.',
       },
       {
-        lead: 'Lightweight Edge Modernization (~50% Resource Reduction)',
-        text: 'Cut edge device memory and storage usage by ~50% by replacing heavy Docker container runtimes with lightweight native C/C++ cloud services, and ported core software to support remote Embedded Linux OS upgrades across live field fleets without requiring on-site technician visits.',
+        lead: 'Native C/C++ Edge Modernization (~50% Footprint Reduction)',
+        text: 'Cut edge device RAM and flash storage utilization by ~50% by re-architecting heavy Docker container runtimes into lightweight native C/C++ systemd daemons—extending hardware longevity on resource-constrained Linux SBCs and porting core services to support zero-touch remote Over-the-Air (OTA) Embedded Linux OS upgrades across live global fleets.',
       },
       {
-        lead: 'Global Product Configuration Platform',
-        text: 'Architected a web-based configuration and recommendation platform that translates complex engineering sizing rules from senior specialists into an automated, step-by-step tool—standardizing commercial system proposals worldwide and reducing manual configuration errors.',
+        lead: 'Full-Stack Commercial Configuration & Sizing Platform',
+        text: 'Architected a web-based configuration and recommendation platform (TypeScript, React) that codifies complex hydraulic, sensor, and chemical sizing rules from senior domain specialists into an automated step-by-step workflow—standardizing commercial system proposals worldwide and eliminating manual specification errors.',
       },
       {
-        lead: 'AI-Accelerated Software Delivery',
-        text: 'Established structured AI-assisted and agentic engineering workflows (Claude Code, Google Antigravity, GitHub Copilot, Gemini) paired with automated test verification and architectural guardrails to accelerate C/C++, Python, and TypeScript feature delivery, protocol debugging, and cross-platform refactoring.',
+        lead: 'Automated Verification & AI-Augmented Delivery',
+        text: 'Established structured, spec-driven engineering workflows combining automated test verification, protocol fault-handling validation, and architectural guardrails with agentic AI tooling to accelerate C/C++, Python, and TypeScript feature delivery, fieldbus debugging, and cross-platform refactoring without regressions.',
       },
     ],
   },
   {
-    title: 'Associate Digital Innovation Engineer',
-    subtitle: 'Embedded Linux & IoT Software Engineer',
+    title: 'Embedded Linux & IoT Software Engineer',
+    hrTitle: 'Associate Digital Innovation Engineer — Buckman',
     period: 'June 2019 – March 2022',
     bullets: [
       {
-        lead: 'Secure Hardware-to-Cloud Telemetry Integration',
-        text: 'Developed production Python, C++, and Bash background services on Linux edge devices to connect multi-vendor sensors, variable-rate pumps/actuators, and PLCs (OPC UA, Modbus, LoRa, Analog/Digital I/O), streaming real-time operational telemetry to Azure IoT via MQTT.',
+        lead: 'Hardware-to-Cloud Telemetry & Closed-Loop Integration',
+        text: 'Developed production Python, C++, and Bash background daemons on headless Linux edge devices to interface multi-vendor sensors, variable-rate dosing pumps/actuators, and PLCs (OPC UA, Modbus TCP/RS-485, LoRaWAN, 4–20mA Analog & Digital I/O), streaming real-time operational telemetry to Azure IoT Hub over MQTT.',
       },
       {
-        lead: 'Field Network Segmentation & Automated Provisioning',
-        text: 'Designed segmented local and cellular/LoRa field networks across industrial routers (Cradlepoint, Teltonika, MultiTech, Milesight) and headless Linux devices—configuring subnet routing, DHCP, NAT/port forwarding, and automated provisioning scripts to cut hardware setup time and enable secure remote diagnostics in industrial facilities.',
+        lead: 'IT/OT Field Network Segmentation & Automated Provisioning',
+        text: 'Architected segmented local and cellular/LoRaWAN field networks across industrial routers (Cradlepoint, Teltonika, MultiTech, Milesight) and headless Linux appliances—configuring LAN/WAN subnet routing, DHCP, NAT/port forwarding, and automated provisioning scripts to cut field commissioning time and enable secure SSH remote diagnostics.',
       },
     ],
   },
   {
-    title: 'Regulatory Specialist',
-    subtitle: 'Automation & Data Engineering',
+    title: 'Data & Compliance Automation Engineer',
+    hrTitle: 'Regulatory Specialist — Buckman',
     period: 'September 2016 – May 2019',
     bullets: [
       {
-        lead: 'Federal U.S. EPA Reporting Automation',
-        text: 'Designed and deployed an automated Python and XML data pipeline to aggregate, validate, and generate federal U.S. Environmental Protection Agency (EPA) production reports—saving hundreds of engineering hours annually and eliminating manual spreadsheet errors.',
+        lead: 'Federal U.S. EPA Data Pipeline Automation',
+        text: 'Designed and deployed an automated Python and XML ETL validation pipeline to aggregate, verify, and generate federal U.S. Environmental Protection Agency (EPA) chemical production reports—saving hundreds of engineering hours annually and eliminating manual spreadsheet errors.',
       },
       {
-        lead: 'Automated Regulatory Compliance Auditing',
-        text: 'Built custom Python document-parsing and diffing tools to audit registered product labels against federal regulatory standards, removing manual review bottlenecks while reducing compliance risk.',
+        lead: 'Automated Regulatory Document Auditing',
+        text: 'Built custom Python document-parsing and semantic-diffing tools to audit registered product labels against federal regulatory standards, removing manual review bottlenecks while reducing compliance risk.',
       },
     ],
   },
   {
-    title: 'Technical Services Chemist & Product Development Intern',
+    title: 'R&D Lab Automation Developer & Chemist',
+    hrTitle: 'Technical Services Chemist & Intern — Buckman',
     period: 'September 2014 – September 2016',
     bullets: [
       {
-        lead: 'Lab Software & Computer Vision Automation',
-        text: 'Self-initiated and built standalone Python (Tkinter) desktop apps and Java (ImageJ) computer-vision scripts to automate image-based sample analysis and data entry—returning hundreds of hours per month to the R&D team and sparking transition into full-time software engineering.',
+        lead: 'Computer Vision & Lab Desktop Automation',
+        text: 'Self-initiated and built standalone Python (Tkinter) desktop applications and Java (ImageJ) computer-vision pipelines to automate quantitative sample image analysis and data entry—returning hundreds of R&D hours per month and sparking transition into full-time software engineering.',
       },
     ],
   },
@@ -122,7 +125,7 @@ export default function ResumePage() {
             <PrintResumeButton />
             <a
               href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/Alexander_Bernal_Resume.docx`}
-              download="Alexander_Bernal_Resume.docx"
+              download="Alexander_Bernal_Senior_Software_Engineer.docx"
               className="px-4 py-2 rounded-lg bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 text-sm font-semibold transition shadow-2xs"
             >
               Download .DOCX &darr;
@@ -131,17 +134,17 @@ export default function ResumePage() {
         </div>
 
         {/* Traditional Physical Sheet of Paper with Black Ink */}
-        <article className="bg-white text-black border border-neutral-300 shadow-[0_12px_40px_rgba(0,0,0,0.14)] px-7 sm:px-14 py-10 sm:py-14 space-y-6 print:border-none print:shadow-none print:p-0">
+        <article className="bg-white text-black border border-neutral-300 shadow-[0_12px_40px_rgba(0,0,0,0.14)] px-7 sm:px-14 py-10 sm:py-14 space-y-5 print:border-none print:shadow-none print:p-0">
           {/* Traditional Centered Black-Ink Resume Header */}
-          <header className="border-b-2 border-black pb-4 text-center space-y-1.5">
+          <header className="border-b-2 border-black pb-3.5 text-center space-y-1 break-inside-avoid">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-black uppercase">
               Alexander Bernal
             </h1>
             <p className="text-sm sm:text-base font-semibold text-neutral-900">
-              Senior Embedded Systems, IoT &amp; Full-Stack Software Engineer
+              Senior Embedded Linux, Industrial IoT (IIoT) &amp; Full-Stack Software Engineer
             </p>
-            <div className="text-xs sm:text-sm text-neutral-900 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 pt-0.5">
-              <span>Memphis, TN</span>
+            <div className="text-xs sm:text-[13px] text-neutral-900 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 pt-0.5">
+              <span>Memphis, TN (Open to Remote)</span>
               <span>&bull;</span>
               <span>901-220-1510</span>
               <span>&bull;</span>
@@ -151,7 +154,8 @@ export default function ResumePage() {
               >
                 me@alexanderbernal.dev
               </a>
-              <span>&bull;</span>
+            </div>
+            <div className="text-xs sm:text-[13px] text-neutral-900 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
               <a
                 href="https://www.linkedin.com/in/bernaale/"
                 target="_blank"
@@ -169,34 +173,45 @@ export default function ResumePage() {
               >
                 github.com/bernalgorithm
               </a>
+              <span>&bull;</span>
+              <a
+                href="https://bernalgorithm.github.io/bernalgorithm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-neutral-500 hover:text-black"
+              >
+                bernalgorithm.github.io/bernalgorithm
+              </a>
             </div>
           </header>
 
           {/* Professional Summary */}
-          <section className="space-y-1.5">
-            <h2 className="text-xs sm:text-sm font-bold tracking-wider text-black uppercase border-b border-black pb-1">
+          <section className="space-y-1.5 break-inside-avoid">
+            <h2 className="text-xs sm:text-sm font-bold tracking-wider text-black uppercase border-b border-black pb-1 break-after-avoid">
               Professional Summary
             </h2>
-            <p className="text-xs sm:text-[13.5px] text-neutral-950 leading-relaxed text-justify">
-              <strong>Senior Embedded Systems, IoT &amp; Full-Stack Software Engineer</strong> with{' '}
-              <strong>7+ years</strong> of experience designing and shipping production software
-              that connects physical hardware to the cloud—backed by <strong>12 years</strong> of
-              total engineering, automation, and R&amp;D tenure. Proven track record leading
-              end-to-end architecture for Linux-based edge devices,{' '}
-              <strong>Operational Technology (OT) / automated control systems</strong>, and
-              full-stack web platforms deployed across{' '}
-              <strong>20+ countries on 6 continents</strong>. Known for building self-healing,
-              resilient software that keeps mission-critical field equipment running reliably over
-              unstable networks, and for combining <strong>C/C++, Python, and TypeScript</strong>{' '}
-              with modern AI-assisted development workflows (
-              <strong>Claude Code, Google Antigravity, GitHub Copilot, Gemini</strong>) to deliver
-              high-reliability systems fast.
+            <p className="text-xs sm:text-[13.5px] text-neutral-950 leading-relaxed text-left">
+              <strong>
+                Senior Embedded Systems, Industrial IoT (IIoT) &amp; Full-Stack Software Engineer
+              </strong>{' '}
+              with <strong>7+ years</strong> of production software engineering experience
+              connecting physical hardware to the cloud—backed by <strong>12 years</strong> of
+              progressive engineering, R&amp;D, and industrial automation tenure (
+              <strong>3 internal promotions</strong>). Proven technical lead owning end-to-end
+              architecture for headless <strong>Embedded Linux</strong> edge devices,{' '}
+              <strong>Operational Technology (OT) / Industrial Control Systems (ICS)</strong>,
+              segmented cellular/LoRaWAN field networks, and <strong>TypeScript/React</strong> web
+              platforms deployed across <strong>20+ countries on 6 continents</strong>. Specializes
+              in <strong>C, C++, Python, and TypeScript</strong> systems engineered for demanding
+              real-world environments—building deterministic, self-healing communication state
+              machines and low-footprint native daemons that keep mission-critical equipment running
+              autonomously over unstable networks.
             </p>
           </section>
 
           {/* Technical Skills — Traditional Inline Black-Ink List */}
-          <section className="space-y-1.5">
-            <h2 className="text-xs sm:text-sm font-bold tracking-wider text-black uppercase border-b border-black pb-1">
+          <section className="space-y-1.5 break-inside-avoid">
+            <h2 className="text-xs sm:text-sm font-bold tracking-wider text-black uppercase border-b border-black pb-1 break-after-avoid">
               Technical Skills
             </h2>
             <ul className="space-y-1 text-xs sm:text-[13.5px] text-neutral-950 leading-snug pt-0.5">
@@ -210,37 +225,42 @@ export default function ResumePage() {
           </section>
 
           {/* Professional Experience */}
-          <section className="space-y-4">
-            <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-black pb-1">
-              <h2 className="text-xs sm:text-sm font-bold tracking-wider text-black uppercase">
+          <section className="space-y-3.5">
+            <div className="space-y-1 break-after-avoid">
+              <h2 className="text-xs sm:text-sm font-bold tracking-wider text-black uppercase border-b border-black pb-1">
                 Professional Experience
               </h2>
-              <span className="text-xs sm:text-[13px] font-bold text-black">
-                Buckman &mdash; Memphis, TN (2014 – Present | 3 Promotions)
-              </span>
+              <div className="flex flex-wrap items-baseline justify-between gap-2 pt-0.5 border-b border-neutral-300 pb-1">
+                <div className="text-xs sm:text-[13.5px] font-bold text-black">
+                  BUCKMAN &mdash;{' '}
+                  <span className="font-semibold">
+                    Memphis, TN | 12-Year Progressive Tenure (3 Internal Promotions)
+                  </span>
+                </div>
+                <span className="text-xs sm:text-[13px] font-bold text-neutral-900">
+                  September 2014 – Present
+                </span>
+              </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3.5">
               {EXPERIENCE.map((role) => (
                 <div key={role.title} className="space-y-1">
-                  <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 className="text-sm sm:text-[15px] font-bold text-black">
-                      {role.title}
-                      {role.subtitle && (
-                        <span className="font-normal italic text-neutral-800 text-xs sm:text-[13.5px]">
-                          {' '}
-                          ({role.subtitle})
-                        </span>
-                      )}
+                  <div className="flex flex-wrap items-baseline justify-between gap-2 break-after-avoid">
+                    <h3 className="text-sm sm:text-[14.5px] font-bold text-black">
+                      {role.title}{' '}
+                      <span className="font-normal italic text-neutral-800 text-xs sm:text-[13px]">
+                        ({role.hrTitle})
+                      </span>
                     </h3>
-                    <span className="text-xs sm:text-[13px] font-semibold italic text-neutral-900">
+                    <span className="text-xs sm:text-[13px] font-semibold text-neutral-900 shrink-0">
                       {role.period}
                     </span>
                   </div>
 
                   <ul className="list-disc pl-5 space-y-1 text-xs sm:text-[13.5px] text-neutral-950 leading-relaxed">
                     {role.bullets.map((b) => (
-                      <li key={b.lead}>
+                      <li key={b.lead} className="break-inside-avoid">
                         <strong className="font-bold text-black">{b.lead}:</strong> {b.text}
                       </li>
                     ))}
@@ -250,15 +270,15 @@ export default function ResumePage() {
             </div>
           </section>
 
-          {/* Selected Software & Engineering Projects */}
-          <section className="space-y-2">
-            <h2 className="text-xs sm:text-sm font-bold tracking-wider text-black uppercase border-b border-black pb-1">
-              Selected Software &amp; Engineering Projects
+          {/* Engineering Projects */}
+          <section className="space-y-2 break-inside-avoid">
+            <h2 className="text-xs sm:text-sm font-bold tracking-wider text-black uppercase border-b border-black pb-1 break-after-avoid">
+              Engineering Projects
             </h2>
             <ul className="list-disc pl-5 space-y-1.5 text-xs sm:text-[13.5px] text-neutral-950 leading-relaxed pt-0.5">
-              <li>
+              <li className="break-inside-avoid">
                 <strong className="font-bold text-black">
-                  Personal Engineering Sandbox &amp; Hobby Simulators (
+                  Interactive Control Systems &amp; Simulation Lab (
                   <a
                     href="https://bernalgorithm.github.io/bernalgorithm"
                     target="_blank"
@@ -269,72 +289,97 @@ export default function ResumePage() {
                   </a>
                   ):
                 </strong>{' '}
-                Built an independent <strong>Next.js / TypeScript</strong> portfolio and hobby lab
-                featuring real-time 60 FPS browser simulations—including a{' '}
-                <strong>Closed-Loop PID Process Control Simulator</strong>{' '}
+                <Link
+                  href="/demos"
+                  className="underline decoration-neutral-500 hover:text-black font-semibold print:hidden"
+                >
+                  [Live Demos]
+                </Link>{' '}
+                Engineered an independent <strong>Next.js / TypeScript</strong> simulation workbench
+                featuring real-time 60 Hz browser simulations—including a discrete-time{' '}
+                <strong>
+                  Closed-Loop PID Process Control &amp; Digital Storage Oscilloscope Simulator
+                </strong>{' '}
+                (conditional integral anti-windup, EMA derivative filtering, load-surge injection){' '}
                 <Link
                   href="/posts/closed-loop-pid-control-lab"
                   className="underline decoration-neutral-500 hover:text-black print:hidden"
                 >
                   [Article]
                 </Link>{' '}
-                and a personal math exploration of <strong>3D 4-DOF Inverse Kinematics</strong>{' '}
+                and an independent mathematical exploration of{' '}
+                <strong>3D 4-DOF Inverse Kinematics (Jacobian Damped Least Squares)</strong>{' '}
                 <Link
                   href="/posts/robotic-arm-inverse-kinematics"
                   className="underline decoration-neutral-500 hover:text-black print:hidden"
                 >
                   [Article]
                 </Link>
-                —plus independent write-ups on state-machine design{' '}
+                —plus architecture articles on self-healing fieldbus state reconciliation{' '}
                 <Link
                   href="/posts/self-healing-fieldbus-state-machines"
                   className="underline decoration-neutral-500 hover:text-black print:hidden"
                 >
                   [Article]
-                </Link>{' '}
-                and offline-first cloud sync.
+                </Link>
+                .
+              </li>
+              <li className="break-inside-avoid">
+                <strong className="font-bold text-black">
+                  Offline-First Collaborative Cloud Sync Application:
+                </strong>{' '}
+                Architected a multi-tenant <strong>TypeScript, React, and Firebase/Firestore</strong>{' '}
+                Progressive Web App engineered for intermittent cellular connectivity—implementing
+                collision-resistant pairing codes, isolated Firestore subcollections, and optimistic
+                local-storage state reconciliation so concurrent client edits never clobber state{' '}
+                <Link
+                  href="/posts/serverless-grocery-sync-architecture"
+                  className="underline decoration-neutral-500 hover:text-black print:hidden"
+                >
+                  [Article]
+                </Link>
+                .
               </li>
             </ul>
           </section>
 
           {/* Education */}
-          <section className="space-y-2.5">
-            <h2 className="text-xs sm:text-sm font-bold tracking-wider text-black uppercase border-b border-black pb-1">
+          <section className="space-y-2.5 break-inside-avoid">
+            <h2 className="text-xs sm:text-sm font-bold tracking-wider text-black uppercase border-b border-black pb-1 break-after-avoid">
               Education
             </h2>
             <div className="space-y-2.5 text-xs sm:text-[13.5px] text-neutral-950 pt-0.5">
-              <div>
+              <div className="break-inside-avoid">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <div>
                     <strong className="font-bold text-black">Oregon State University</strong>{' '}
                     &mdash; <span className="font-semibold">B.S., Computer Science</span>
                   </div>
-                  <span className="font-semibold italic text-neutral-900">2017 – 2019</span>
+                  <span className="font-semibold text-neutral-900">2017 – 2019</span>
                 </div>
                 <p className="text-neutral-900 leading-relaxed mt-0.5">
                   Completed degree while working full-time; served as a{' '}
                   <strong>University Computer Science Tutor &amp; Grader</strong>, mentoring
-                  students in <strong>C++</strong> object-oriented programming, data structures,
-                  and debugging.
+                  undergraduates in <strong>C++</strong> object-oriented programming, data
+                  structures, memory management, and debugging.
                 </p>
               </div>
 
-              <div>
+              <div className="break-inside-avoid">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <div>
-                    <strong className="font-bold text-black">University of Memphis</strong>{' '}
-                    &mdash;{' '}
+                    <strong className="font-bold text-black">University of Memphis</strong> &mdash;{' '}
                     <span className="font-semibold">
                       B.S., Chemistry (ACS Certified) &amp; B.S., Biology
                     </span>
                   </div>
-                  <span className="font-semibold italic text-neutral-900">2008 – 2014</span>
+                  <span className="font-semibold text-neutral-900">2008 – 2014</span>
                 </div>
                 <p className="text-neutral-900 leading-relaxed mt-0.5">
-                  <strong>NSF Computational Research:</strong> Awarded federal{' '}
+                  <strong>NSF High-Performance Computing (HPC) Research:</strong> Awarded federal{' '}
                   <strong>National Science Foundation (NSF)</strong> research funding to model and
-                  analyze molecular energy profiles on high-performance{' '}
-                  <strong>Linux supercomputing clusters</strong>.
+                  analyze molecular energy profiles on <strong>Linux supercomputing clusters</strong>
+                  .
                 </p>
               </div>
             </div>

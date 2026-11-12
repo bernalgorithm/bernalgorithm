@@ -50,49 +50,49 @@ const CORE_CAPABILITIES = [
 const EXPERIENCE_TIMELINE = [
   {
     years: 'March 2022 – Present',
-    role: 'Digital Innovation Engineer',
-    functionalTitle: 'Senior Embedded Systems, IoT & Full-Stack Engineer',
+    role: 'Senior Embedded Systems, IoT & Full-Stack Engineer',
+    functionalTitle: 'Digital Innovation Engineer — Buckman',
     summary:
-      'Lead end-to-end software architecture, Embedded Linux development, and network integration for automated industrial control systems across water treatment, chemical, and process manufacturing facilities in 20+ countries.',
+      'Lead end-to-end software architecture, headless Embedded Linux development, and industrial network integration for automated closed-loop control systems across water treatment, chemical, and process manufacturing facilities in 20+ countries.',
     bullets: [
-      'Engineered fault-tolerant Modbus (TCP/RTU), OPC UA, and MQTT communication state machines with automated session recovery and register reconciliation to mitigate 20–40 minute third-party hardware resets.',
-      'Cut edge device memory and storage footprint by ~50% by replacing heavy container runtimes with native C/C++ cloud services, and ported core software for remote Embedded Linux OS upgrades.',
-      'Architected a web-based technical configuration and recommendation platform that standardizes commercial system proposals worldwide.',
+      'Engineered deterministic Modbus (TCP/RTU), OPC UA, and MQTT finite state machines (FSMs) with bounded quarantine and read-back verified register reconciliation to eliminate manual resets after 20–40 minute third-party hardware freezes.',
+      'Cut edge device RAM and flash footprint by ~50% by re-architecting heavy Docker container runtimes into native C/C++ systemd daemons, and ported core services for zero-touch remote Over-the-Air (OTA) Embedded Linux OS upgrades.',
+      'Architected a web-based technical configuration and sizing platform (TypeScript, React) that standardizes commercial system proposals worldwide.',
     ],
     highlights: ['Embedded Linux', 'C/C++ & Python', 'Modbus / OPC UA / MQTT', 'TypeScript & React'],
   },
   {
     years: 'June 2019 – March 2022',
-    role: 'Associate Digital Innovation Engineer',
-    functionalTitle: 'Embedded Linux & IoT Software Engineer',
+    role: 'Embedded Linux & IoT Software Engineer',
+    functionalTitle: 'Associate Digital Innovation Engineer — Buckman',
     summary:
-      'Developed production Linux edge services and field network architectures to connect industrial hardware to cloud telemetry platforms.',
+      'Developed production Linux edge daemons and segmented IT/OT field networks to connect industrial hardware to cloud telemetry platforms.',
     bullets: [
-      'Built Python, C++, and Bash background services to integrate multi-vendor sensors, variable-rate actuators, and PLCs across OPC UA, Modbus, LoRa, and 4–20mA analog/digital I/O, streaming telemetry to Azure IoT via MQTT.',
-      'Configured segmented local, cellular, and LoRaWAN field networks across industrial gateways (Cradlepoint, Teltonika, MultiTech, Milesight) and headless Linux SBCs (DHCP, NAT/port forwarding, subnet routing, and automated provisioning scripts).',
+      'Built Python, C++, and Bash background daemons to integrate multi-vendor sensors, variable-rate dosing pumps/actuators, and PLCs across OPC UA, Modbus TCP/RS-485, LoRaWAN, and 4–20mA analog/digital I/O, streaming telemetry to Azure IoT Hub over MQTT.',
+      'Architected segmented local, cellular, and LoRaWAN field networks across industrial gateways (Cradlepoint, Teltonika, MultiTech, Milesight) and headless Linux SBCs (LAN/WAN subnet routing, DHCP, NAT/port forwarding, SSH diagnostics, and automated provisioning).',
     ],
-    highlights: ['Python, C++ & Bash', 'Azure IoT & MQTT', 'Cellular & LoRaWAN', 'DHCP, NAT & Routing'],
+    highlights: ['Python, C++ & Bash', 'Azure IoT Hub & MQTT', 'Cellular & LoRaWAN', 'IT/OT Segmentation'],
   },
   {
     years: 'September 2016 – May 2019',
-    role: 'Regulatory Specialist',
-    functionalTitle: 'Automation & Data Engineering',
+    role: 'Data & Compliance Automation Engineer',
+    functionalTitle: 'Regulatory Specialist — Buckman',
     summary:
-      'Designed automated data processing and document verification software while completing a B.S. in Computer Science at Oregon State University.',
+      'Designed automated ETL data pipelines and document auditing software while completing a B.S. in Computer Science at Oregon State University.',
     bullets: [
-      'Engineered an automated Python and XML data aggregation and validation pipeline for federal U.S. EPA production reporting, saving hundreds of engineering hours annually.',
-      'Built custom Python parsing and diffing tools to audit registered product labels against federal regulatory standards.',
+      'Engineered an automated Python and XML ETL validation pipeline for federal U.S. EPA chemical production reporting, saving hundreds of engineering hours annually.',
+      'Built custom Python document-parsing and semantic-diffing tools to audit registered product labels against federal regulatory standards.',
     ],
-    highlights: ['Python & XML Pipelines', 'Automated Auditing', 'U.S. EPA Compliance', 'B.S. Computer Science'],
+    highlights: ['Python & XML ETL', 'Automated Auditing', 'U.S. EPA Compliance', 'B.S. Computer Science'],
   },
   {
     years: 'September 2014 – September 2016',
-    role: 'Technical Services Chemist & Product Development Intern',
-    functionalTitle: 'Laboratory Software & Computer Vision Automation',
+    role: 'R&D Lab Automation Developer & Chemist',
+    functionalTitle: 'Technical Services Chemist & Intern — Buckman',
     summary:
-      'Developed standalone desktop and computer-vision software to automate laboratory image analysis and R&D workflows.',
+      'Self-initiated standalone desktop and computer-vision software to automate laboratory image analysis and R&D workflows.',
     bullets: [
-      'Built standalone Python (Tkinter) desktop applications and Java (ImageJ) computer-vision scripts to automate sample area/oil-level analysis and data entry, returning hundreds of hours per month to the R&D team.',
+      'Built standalone Python (Tkinter) desktop applications and Java (ImageJ) computer-vision pipelines to automate quantitative sample image analysis and data entry, returning hundreds of R&D hours per month.',
     ],
     highlights: ['Python (Tkinter)', 'Java (ImageJ)', 'Computer Vision', 'R&D Automation'],
   },
@@ -164,7 +164,7 @@ export default function Home() {
                 </Link>
                 <a
                   href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/Alexander_Bernal_Resume.docx`}
-                  download="Alexander_Bernal_Resume.docx"
+                  download="Alexander_Bernal_Senior_Software_Engineer.docx"
                   className="card-editorial px-4 py-2.5 rounded-xl text-zinc-800 border border-stone-300 font-semibold hover:border-zinc-400"
                 >
                   Download .DOCX &darr;
